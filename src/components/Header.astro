@@ -1,64 +1,237 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-		<div class="social-links">
-			<a href="https://m.webtoo.ls/@astro" target="_blank">
-				<span class="sr-only">Follow Astro on Mastodon</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
-					></path></svg
-				>
-			</a>
-			<a href="https://twitter.com/astrodotbuild" target="_blank">
-				<span class="sr-only">Follow Astro on Twitter</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-					></path></svg
-				>
-			</a>
-			<a href="https://github.com/withastro/astro" target="_blank">
-				<span class="sr-only">Go to Astro's GitHub repo</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-					></path></svg
-				>
-			</a>
-		</div>
-	</nav>
+<header class="header">
+		<a class="header__link " href="/index.html">
+            <p class="header__logo logo__dark" id="logo">Sofi<span class="span__dark" id="span">Dev</span></p>
+        </a>
+		<nav class="menu__nav panel__styles panel" id="panel">
+            <ul class="menu__ul">
+                <img class="menu__avatar" src="./assets/img/avatar_pink.webp" alt="">
+                <li class="menu__list"><a class="menu__link menu__hamburger-link" href="#skills">Skills</a></li>
+                <li class="menu__list"><a class="menu__link menu__hamburger-link" href="#aboutMe">About me</a></li>
+                <li class="menu__list"><a class="menu__link menu__hamburger-link" href="#portafolio">Portfolio</a></li>
+                <li class="menu__list"><a class="menu__link menu__hamburger-link" href="#ytchannel">Youtube</a>
+                </li>
+                <li class="menu__list"><a class="menu__link menu__hamburger-link" href="#formulario">Contact</a></li>
+                <li class="menu__list"><a class="menu__link menu__hamburger-link" href="/blog">Blog</a></li>
+            </ul>
+			<div class="social-links">
+				<a href="https://m.webtoo.ls/@astro" target="_blank">
+					<span class="sr-only">Follow Astro on Mastodon</span>
+					<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
+						><path
+							fill="currentColor"
+							d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
+						></path></svg
+					>
+				</a>
+				<a href="https://twitter.com/astrodotbuild" target="_blank">
+					<span class="sr-only">Follow Astro on Twitter</span>
+					<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
+						><path
+							fill="currentColor"
+							d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+						></path></svg
+					>
+				</a>
+				<a href="https://github.com/withastro/astro" target="_blank">
+					<span class="sr-only">Go to Astro's GitHub repo</span>
+					<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
+						><path
+							fill="currentColor"
+							d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+						></path></svg
+					>
+				</a>
+			</div>
+        </nav>   
 </header>
+
+ <!-- menu movil (hamburguesa) -->
+ <button class="panel__btn hamburger hamburger--emphatic" type="button" aria-label="menu">
+	<span class="hamburger-box">
+		<span class="hamburger-inner" id="hamburguesa"></span>
+	</span>
+</button>
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+.header {
+	display: flex;
+    width: 100%;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    padding: 0 5rem;
+    transition: all 0.9s;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    background: #000000be;
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.46);
+}
+
+.social-links,
+	.social-links a {
+		display: flex;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+.header__logo {
+	display: flex;
+	justify-content: flex-start;
+	font-weight: bold;
+	font-size: 3rem;
+	color: var(--seccond-color);
+	font-family: 'Montserrat', sans-serif;
+	transition: all 0.7s;
+}
+.header__logo,
+.header__link:hover {
+	cursor: pointer;
+}
+
+.header__logo span {
+	color: var(--glow-blue);
+}
+
+.header__logo span:hover {
+	color: var(--blue);
+	filter: drop-shadow(0 0 12px var(--blue));
+	cursor: default;
+}
+
+.header__link {
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+.menu__ul {
+	display: flex;
+    width: inherit;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    justify-content: flex-start;
+	margin-top: 7rem;
+	gap: 2.4rem;
+}
+.menu__avatar{
+	width: 5rem;
+	margin-bottom: 0;
+}
+/* TABLET VIEW */
+@media screen and (min-width: 768px) {
+	.header {
+		padding: 0 1rem;
+		justify-content: space-between;
 	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
+	.header__logo {
+		display: flex;
+		justify-content: flex-start;
+		font-size: 2.2rem;
 	}
-	nav {
+	
+
+	/* Menu desktop */
+	.menu__nav {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		/* position: relative; */
+		transform: translateY(-200px);
+		animation: appear 0.8s ease forwards;
+		justify-content: flex-end;
+		width: 89%;
+	}
+
+	.menu__ul {
+		flex-direction: row;
+		height: auto;
+		gap: 0;
+		padding: 0;
+		justify-content: flex-end;
+		margin-top: 0;
+	}
+
+	/* Animacion de entrada para los links del menu */
+	@keyframes appear {
+		0% {
+			transform: translateY(-1400px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	.menu__list {
+		display: flex;
+		list-style: none;
+		cursor: pointer;
+		text-shadow: -0.1rem 0rem 0rem var(--main-color);
+		transition: 0.3s ease-in-out;
+		padding: 0.6rem 1rem;
+		color: var(--seccond-color);
+		align-items: flex-end;
+		transition: 0.5s ease-in-out;
+	}
+
+	.menu__list:hover {
+		background-color: black;
+		border-radius: 8px;
+	}
+
+	.menu__link {
+		text-decoration: none;
+		font-size: 1.8rem;
+		font-weight: 500;
+		color: var(--seccond-color);
+	}
+	.menu__link:hover {
+		color: var(--blue);
+		transform: scale(1.1);
+	}
+}
+
+/* DESKTOP VIEW */
+@media screen and (min-width: 1200px) {
+	.header {
+		padding: 0 7rem;
+		justify-content: space-between;
+		height: 9rem;
+	}
+	.header__logo {
+		display: flex;
+		justify-content: flex-start;
+		font-size: 3.5rem;
+	}
+	.menu__ul {
+		min-width: 127px;
+		width: 100%;
+		justify-content: flex-end;
+	}
+	.menu__list {
+		padding: 0.6rem 1rem;
+	}
+	.menu__link{
+		margin-left:2rem;
+	}
+}
+
+/* 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -81,5 +254,5 @@ import { SITE_TITLE } from '../consts';
 		.social-links {
 			display: none;
 		}
-	}
+	} */
 </style>

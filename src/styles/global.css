@@ -1,9 +1,3 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-
 :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
@@ -14,21 +8,37 @@
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+
+		--main-color: #181818;
+		--seccond-color: rgb(228, 228, 228);
+		--purple: #2e016c;
+		--dark-purple: rgb(22 0 54);
+		--purple-bg: #19003c;
+		--ligth-purple: #610094;
+		--blue: #58ecff;
+		--gradient: 181deg, #000000 35%, #2e006e 100%;
+		--gradient-transparent: 181deg, #2e006e 50%,#000000c5  100%;
+		--glow-blue: drop-shadow(0 -1px 5px rgba(0, 212, 255, 1));
+		--green-terminal: rgb(0, 255, 102);
+		--yellow-terminal:rgb(182, 182, 3);
+		--pink-terminal:rgb(255, 0, 144);
+	
+		--form-ok-color: #4caf50;
+		--form-error-color: #e81000;
+	
+		/* Darktheme */
+		--pure-black: #000000;
+		--terminal-bg-dark: rgba(18, 0, 33, 0.734);
+		--icons-glow-dark: invert(100%) var(--glow-blue);
 }
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+  }
+  
+  html{
+	font-size: 62.5%;
+  }
 body {
 	font-family: 'Atkinson', sans-serif;
 	margin: 0;
