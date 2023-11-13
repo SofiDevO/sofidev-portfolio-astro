@@ -1,5 +1,6 @@
 ---
 import DarkBg from "./DarkBg.astro";
+import BaseHead from "./BaseHead.astro";
 ---
  <section class="hero" id="hero">
     <div class="hero__contenedor">
@@ -14,10 +15,11 @@ import DarkBg from "./DarkBg.astro";
             <div class="side__profile" id="profile-pic">
                 <img class="side__img img__ligth" src="./img/avatar-black.webp"
                     alt="Sofidev profile photo">
-                <img class="side__img img__dark" src="/img/avatar_pink.webp"
+                <img class="side__img img__dark" src="./img/avatar_pink.webp"
                     alt="Sofidev profile photo">
                 <img class="side__img img__damage" src="./img/IA_damage.webp"
                     alt="Sofidev profile photo">
+               
             </div>
             <div class="social">
                 <a class="social__link github icono__dark" href="https://github.com/SofiDevO" target="_blank"
@@ -236,8 +238,15 @@ import DarkBg from "./DarkBg.astro";
     position: relative;
     max-width: 29rem;
 }
-.img__dark, .img__damage {
+
+ .img__damage {
 	display: none;
+}
+.img__dark{
+	display: none;
+}
+.img__ligth{
+	display: block;
 }
 
 @media (min-width: 768px) {

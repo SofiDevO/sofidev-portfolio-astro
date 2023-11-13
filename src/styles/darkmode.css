@@ -107,7 +107,7 @@
 .dark-mode .img__ligth {
 	display: none;
 }
-.dark-mode .img__dark {
+.dark-mode  .img__dark {
 	display: block;
 	position: relative;
 	filter: drop-shadow(1px 0 15px #ff2386);
