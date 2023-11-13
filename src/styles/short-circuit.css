@@ -1,0 +1,221 @@
+.short-circuit  body{
+    background: rgb(13, 13, 13);
+    color: white;
+}
+@keyframes flicker-in-infinite {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    10.1% {
+        opacity: 1;
+    }
+    10.2% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    20.1% {
+        opacity: 1;
+        color: var(--glow-blue);
+    filter: drop-shadow(0 0 12px var(--blue));
+    }
+    20.6% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    30.5% {
+        opacity: 1;
+        color: var(--glow-blue);
+    filter: drop-shadow(0 0 12px var(--blue));
+    }
+    30.5% {
+        opacity: 1;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    30.6% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 0;
+    }
+    45.5% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    55% {
+        opacity: 1;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    55.1% {
+        opacity: 0;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    57% {
+        opacity: 0;
+    }
+    57.1% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    60.1% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    65.5% {
+        opacity: 1;
+        color: var(--glow-blue);
+    filter: drop-shadow(0 0 12px var(--blue));
+    }
+    75% {
+        opacity: 1;
+    }
+    75.1% {
+        opacity: 0;
+    }
+    77% {
+        opacity: 0;
+    }
+    77.1% {
+        opacity: 1;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    85% {
+        opacity: 1;
+    }
+    85.1% {
+        opacity: 0;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    86% {
+        opacity: 0;
+    }
+    86.1% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.short-circuit .titulo{
+    animation: flicker-in-infinite 2s linear 0.5s both infinite;
+    transform: rotate(339deg);
+    overflow: hidden;
+
+}
+
+
+
+
+/* hero section */
+.short-circuit  .hero{
+    background: rgb(13, 13, 13);
+}
+.short-circuit .hero__titulo span{
+    transform: rotate(-90deg);
+    animation: flicker-in-infinite 2s linear 0.5s both infinite;
+	color: var(--seccond-color);
+}
+.short-circuit .img__damage{
+    display: block;
+    transform: rotate(359deg);
+}
+.short-circuit .img__ligth{
+    display: none;
+}
+.short-circuit .platzi, .short-circuit .alura, .short-circuit .linkedin, .short-circuit .github, .short-circuit .youtube {
+    filter: invert(95%) sepia(9%) saturate(6%) hue-rotate(348deg) brightness(87%) contrast(81%);
+}
+
+
+
+
+/* Dividers */
+.short-circuit .custom-shape-divider-bottom-1685513857 .shape-fill {
+    fill: none;
+}
+/* Divider 2 */
+.short-circuit .custom-shape-divider-top-1697134839 svg{
+    background-color:transparent
+}
+.short-circuit .custom-shape-divider-top-1697134839 .shape-fill{
+    fill: none;
+}
+
+/* Section Skills */
+.short-circuit .img{
+    filter: saturate(0);
+}
+
+.short-circuit .slider{
+    animation: flicker-in-infinite 22s linear 3.9s both infinite
+}
+
+
+
+/* caja terminal */
+.short-circuit .caja__cristal{
+    background-color: rgb(37, 24, 8);
+}
+
+.short-circuit .terminal__content {
+    color: rgb(210, 30, 60);
+    line-height: 3rem;
+
+}
+
+.short-circuit .terminal__content span{
+    color: gray;
+}
+
+/* Section about */
+
+.short-circuit .about__img--src{
+    filter: saturate(0);
+    transform: rotate(11deg);
+}
+
+
+.short-circuit .portafolio__tarjeta .faceA{
+    background-color: rgb(26, 26, 26);
+}
+.short-circuit .portafolio__img{
+    filter: saturate(0);
+}
+
+.short-circuit .portafolio__tarjeta:hover .faceB{
+    background-color: rgb(26, 26, 26);
+}
+
+/* Youtube section */
+.short-circuit .ytchannel{
+    overflow: hidden;
+}
+.short-circuit .ytchannel__titulo{
+    z-index: 20;
+
+}
+
+
+/* Form section */
+.short-circuit .form__img{
+    filter: invert();
+}

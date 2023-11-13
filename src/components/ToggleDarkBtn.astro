@@ -1,0 +1,170 @@
+---
+import toggleDarkMode from"../controllers/darkTheme"
+import "../styles/darkmode.css";
+---
+
+<script>
+    const d = document;
+    const btnDarkMode = d.querySelector("[data-toogle]");
+
+function shortCircuit(set_in_milisec) {
+	let audio = new Audio();
+	audio.src = "./sounds/short_circuit.mp3";
+	audio.volume -= 0.6;
+	audio.play();
+	setTimeout(() => { audio.pause(); }, 1900);
+}
+function   playSound() {
+	let audio = new Audio();
+	audio.src = "./sounds/franks-electricity.mp3";
+	audio.volume -= 0.7;
+	audio.play();
+}
+
+let botonRayo = 0;
+
+function clickSound() {
+	console.log(botonRayo)
+	botonRayo++;
+	if (botonRayo <= 8) {
+		playSound();
+	} else if (botonRayo <= 18) {
+		shortCircuit(playSound);
+	}
+}
+btnDarkMode.addEventListener("click", clickSound);
+
+/* Switch Themes */
+let darkModeState = false;
+const toogleDarkMode = d.querySelector("[data-toogle]");
+
+// MediaQueryList object
+const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+const useCircuit = window.matchMedia("(prefers-color-scheme: short-circuit)");
+
+// Toggles the "dark-mode" class
+export default function toggleDarkMode(state) {
+  d.documentElement.classList.toggle("dark-mode", state);
+  darkModeState = state; 
+  if(d.documentElement.classList.contains("dark-mode")){
+      toogleDarkMode.classList.remove("bi-lightning-charge");
+      toogleDarkMode.classList.add("bi-lightning-charge-fill");
+  }else{
+      toogleDarkMode.classList.remove("bi-lightning-charge-fill");
+      toogleDarkMode.classList.add("bi-lightning-charge");
+  } 
+} 
+// Sets localStorage state
+function setDarkModeLocalStorage(state) {
+  localStorage.setItem("dark-mode", state);
+}
+// Initial setting
+toggleDarkMode(localStorage.getItem("dark-mode") == "true");
+let botonShortCut = 0;
+
+// Listen for changes in the OS settings.
+useDark.addEventListener('state',(evt) => toggleDarkMode(evt.matches));
+// Toggles the "dark-mode" class on click and sets localStorage state
+toogleDarkMode.addEventListener("click",  (clickHandler)=>{
+  darkModeState = !darkModeState;
+})
+function clickHandler() {
+  botonShortCut++;
+  console.log(botonShortCut)
+	if (botonShortCut <= 8) {
+    toggleDarkMode(darkModeState);
+    setDarkModeLocalStorage(darkModeState);
+	} else if (botonShortCut <= 15) {
+    document.documentElement.classList.add("short-circuit");
+    document.documentElement.classList.remove("dark-mode");
+	} else {
+		alert("You messed up. Click here to reload");
+        location.reload();
+	}
+}
+toogleDarkMode.addEventListener("click", clickHandler);
+</script>
+
+<div class="toogle-dark__container">
+    <i class="bi bi-lightning-charge toogle__rayo" data-toogle></i>
+</div>
+
+<style>
+    
+.toogle-dark__container {
+  transition: 1s ease-in-out;
+	-webkit-animation: scale-up-center 0.3s ease-in 2s backwards;
+	        animation: scale-up-center 0.3s ease-in 2s backwards;
+}
+
+ @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+.toogle-dark__container {
+  z-index: 999;
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  transition: all 1s;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(var(--gradient-transparent));
+  border-radius: 50px;
+  box-shadow: -15px 35px 68px 0px rgba(145, 192, 255, 0.5), inset 12px -12px 16px 0px rgba(214, 232, 255, 0.214), inset 0px 11px 28px 0px rgb(255, 255, 255);
+  padding: 7px;
+  display: flex;
+  bottom: 10.1%;
+  right: 83%;
+  cursor: pointer;
+}
+
+
+/* icono modo oscuro */
+.dark-mode__icon {
+	padding: 20px 1px;
+	width: 45px;
+	transition: 1s ease-in-out;
+	justify-content: center;
+}
+.bi-lightning-charge {
+  font-size: 29px;
+  filter: invert(100%);
+  transition: 1s ease-in-out;
+}
+
+@media (min-width: 768px) {
+	.toogle-dark__container {
+    bottom: 23%;
+    right: 2%;
+    }
+    
+        
+}
+@media (min-width: 1200px) {
+	.toogle-dark__container {
+    bottom: 17%;
+    right: 2%;
+    }
+        
+}
+
+</style>

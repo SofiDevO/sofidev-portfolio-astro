@@ -2,8 +2,10 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import ToggleDarkBtn from '../components/ToggleDarkBtn.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -56,6 +58,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 	<body>
 		<Header />
+		<ToggleDarkBtn/>
 		<main>
 			<article>
 				<div class="hero-image">

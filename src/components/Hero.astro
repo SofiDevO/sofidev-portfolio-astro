@@ -1,0 +1,535 @@
+---
+import DarkBg from "./DarkBg.astro";
+---
+ <section class="hero" id="hero">
+    <div class="hero__contenedor">
+        <div class="hero__saludo">
+            <h1 class="hero__titulo" id="titulo-saludo" data-section="hero" data-value="heroTitulo">Hi! I'm
+                Sofi<span class="flicker-in-1 span__dark">Dev</span> </h1>
+            <h2 class="hero__subtitulo" id="subtitulo" data-section="hero" data-value="heroSubtitulo"> ≥
+                Frontend
+                Developer in Mexico </h2>
+        </div>
+        <div class="side__container">
+            <div class="side__profile" id="profile-pic">
+                <img class="side__img img__ligth" src="./img/avatar-black.webp"
+                    alt="Sofidev profile photo">
+                <img class="side__img img__dark" src="/img/avatar_pink.webp"
+                    alt="Sofidev profile photo">
+                <img class="side__img img__damage" src="./img/IA_damage.webp"
+                    alt="Sofidev profile photo">
+            </div>
+            <div class="social">
+                <a class="social__link github icono__dark" href="https://github.com/SofiDevO" target="_blank"
+                    rel="nofollow noreferrer noopener">
+                    <img class="social__icon" src="./svg/github-light.svg" alt="GitHub icon">
+                </a>
+                <a class="social__link alura icono__dark"
+                    href="https://app.aluracursos.com/emprega-one/profile/sofidev" target="_blank"
+                    rel="nofollow noreferrer noopener">
+                    <img class="social__icon" src="./svg/alura.svg" alt="Aluura icon">
+                </a>
+
+                <a class="social__link linkedin icono__dark" href="https://www.linkedin.com/in/sofidev/"
+                    target="_blank" rel="nofollow noreferrer noopener">
+                    <img class="social__icon " src="./svg/linkedin.svg" alt="LinkedIn icon">
+                </a>
+
+                <a class="social__link platzi icono__dark" href="https://platzi.com/p/SofiDev/" target="_blank"
+                    rel="nofollow noreferrer noopener">
+                    <img class="social__icon " src="./svg/platzi.svg" alt="Platzi icon">
+                </a>
+                <a class="social__link youtube icono__dark"
+                    href="https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw" target="_blank"
+                    rel="nofollow noreferrer noopener">
+                    <img class="social__icon " src="./svg/youtube-solid.svg" alt="Youtube icon">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+	transition: all 0.9s ease;
+    display: flex;
+    height: 697px;
+    background: linear-gradient(var(--gradient));
+    flex-direction: column;
+    z-index: 2;
+    justify-content: space-evenly;
+}
+.hero__contenedor {
+	display: flex;
+    flex-direction: column-reverse;
+    height: 56vh;
+    align-items: center;
+    /* margin-bottom: 8rem; */
+    justify-content: center;
+}
+
+.hero__titulo {
+	font-family: "Montserrat", sans-serif;
+	transition: all 0.9s;
+	color: var(--seccond-color);
+	font-size: 4.3rem;
+	text-align: center;
+	font-weight: bold;
+	filter: drop-shadow(2 -1px 1px var(--pure-black));
+}
+.hero__titulo span {
+	transition: all 0.9s;
+}
+.hero__titulo span:hover {
+	color: var(--blue);
+	filter: drop-shadow(0 0 12px var(--blue));
+}
+
+.flicker-in-1 {
+	animation: flicker-in-1 2s linear 0.5s both;
+	color: var(--seccond-color);
+}
+	
+
+@keyframes flicker-in-1 {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 0;
+	}
+	10.1% {
+		opacity: 1;
+	}
+	10.2% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 0;
+	}
+	20.1% {
+		opacity: 1;
+		color: var(--glow-blue);
+	filter: drop-shadow(0 0 12px var(--blue));
+	}
+	20.6% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 0;
+	}
+	30.1% {
+		opacity: 1;
+		color: var(--glow-blue);
+	filter: drop-shadow(0 0 12px var(--blue));
+	}
+	30.5% {
+		opacity: 1;
+		color: var(--glow-blue);
+		filter: drop-shadow(0 0 12px var(--blue));
+	}
+	30.6% {
+		opacity: 0;
+	}
+	45% {
+		opacity: 0;
+	}
+	45.1% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 1;
+		color: var(--glow-blue);
+		filter: drop-shadow(0 0 12px var(--blue));
+	}
+	55% {
+		opacity: 1;
+		color: var(--glow-blue);
+		filter: drop-shadow(0 0 12px var(--blue));
+	}
+	55.1% {
+		opacity: 0;
+		color: var(--glow-blue);
+		filter: drop-shadow(0 0 12px var(--blue));
+	}
+	57% {
+		opacity: 0;
+	}
+	57.1% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 1;
+	}
+	60.1% {
+		opacity: 0;
+	}
+	65% {
+		opacity: 0;
+	}
+	65.1% {
+		opacity: 1;
+		color: var(--glow-blue);
+	filter: drop-shadow(0 0 12px var(--blue));
+	}
+	75% {
+		opacity: 1;
+	}
+	75.1% {
+		opacity: 0;
+	}
+	77% {
+		opacity: 0;
+	}
+	77.1% {
+		opacity: 1;
+		color: var(--glow-blue);
+		filter: drop-shadow(0 0 12px var(--blue));
+	}
+	85% {
+		opacity: 1;
+	}
+	85.1% {
+		opacity: 0;
+		color: var(--glow-blue);
+		filter: drop-shadow(0 0 12px var(--blue));
+	}
+	86% {
+		opacity: 0;
+	}
+	86.1% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.hero__subtitulo {
+	font-size: 1.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 0;
+    margin-top: -3rem;
+    text-align: center;
+}
+.mexico-bandera {
+	width: 35px;
+}
+.side__container {
+	transition: all 0.9s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+/* Foto de perfil */
+.side__profile{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	position: relative;
+}
+.side__img {
+	min-width: 28rem;
+    width: 60%;
+    position: relative;
+    max-width: 29rem;
+}
+.img__dark, .img__damage {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.hero {
+		height: 756px;
+	}
+	.side__img {
+		min-width: 32rem;
+		width: 55%;
+	}
+	.hero__contenedor {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		width: 93%;
+		gap: 4rem;
+	}
+	.hero__titulo {
+		font-size: 6em;
+		font-weight: 900;
+		
+		padding: 0;
+	}
+	.hero__subtitulo {
+		font-size: 2rem;
+		font-weight: 400;
+	}
+	.side__container {
+		display: flex;
+		flex-direction: row;
+	}
+}
+@media (min-width: 1200px) {
+	.hero {
+		height: 129vh;
+		justify-content: center;
+	}
+	.hero__contenedor {
+		display: flex;
+		height: auto;
+		width: 100%;
+		justify-content: space-evenly;
+		gap: 0;
+		margin-top: -12rem;
+	}
+	.hero__titulo {
+		font-size: 10rem;
+		font-weight: 700;
+	}
+	.hero__subtitulo {
+		font-size: 2rem;
+	}
+	.side__img {
+		min-width: 25rem;
+		width: 85%;
+		max-width: 60rem;
+	}
+	
+}
+/* Social icons */
+.social {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	position: absolute;
+	z-index: 80;
+}
+
+.social__link {
+	position: absolute;
+	z-index: 20;
+}
+.github {
+  bottom: 60px;
+  right: 82px;
+  transform: translateY(-200px);
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+.github .social__icon {
+    width: 55px;
+}
+.alura {
+	filter: invert(30%) sepia(100%) saturate(1072%) hue-rotate(180deg) brightness(96%) contrast(97%) drop-shadow(0 0 3px var(--pure-black));
+    bottom: -102px;
+    right: 115px;
+    transform: translateY(-600px);
+    animation: expand 0.8s ease forwards;
+}
+.alura .social__icon {
+	width: 30px;
+}
+
+.linkedin {
+  filter: invert(30%) sepia(100%) saturate(1072%) hue-rotate(180deg) brightness(96%) contrast(97%) drop-shadow(0 0 3px var(--pure-black));
+  bottom: -50px;
+  right: -141px;
+  transform: translateY(-300px);
+  animation: expand 0.8s ease forwards;
+}
+.linkedin .social__icon {
+	width: 4.7rem;
+}
+.platzi {
+  filter: invert(53%) sepia(39%) saturate(3085%) hue-rotate(64deg) brightness(100%) contrast(101%);
+  bottom: 78px;
+  right: -130px;
+  transform: translateY(-300px);
+  animation: expand 1.5s ease-in-out forwards;
+}
+.platzi .social__icon {
+	width: 53px;
+}
+.youtube {
+	bottom: -189px;
+    right: -33px;
+    transform: translateY(500px);
+    animation: expand 0.6s ease-in-out forwards 0.8s;
+}
+.social__icon {
+	width: 8.4rem;
+	filter: drop-shadow(0 0 12px var(--seccond-color));
+	transition: 0.2s ease-in-out;
+}
+.social__icon:hover {
+	transform: scale(1.3);
+}
+.social__link:hover {
+	transform: scale(1.2);
+}
+
+/* Animaciones  de entrada */
+@keyframes slideIn {
+	0% {
+		transform: translateY(600px) scale(6.2);
+	}
+	100% {
+		transform: translateY(0px) scale(1);
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(300px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes expand {
+	0% {
+		transform: translateY(1400px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+/* VISTA DESKTOP */
+
+@media (min-width: 768px) {
+	.social {
+		display: flex;
+		flex-direction: column;
+		width: 50px;
+		gap: 16px;
+	}
+	.github {
+    top: -168px;
+    right: 103px;
+	}
+
+	.github .social__icon {
+		width: 88px;
+	}
+	.alura {
+    top: 44px;
+    right: 151px;
+	}
+	.alura .social__icon {
+		width: 3.7rem;
+	}
+	.linkedin {
+    top: -20px;
+    right: -147px;
+	}
+	.linkedin .social__icon {
+		width: 5.7rem;
+
+	}
+	.platzi {
+    top: -161px;
+    right: -106px;
+	}
+	.platzi .social__icon {
+		width: 60px;
+	}
+	.youtube {
+    top: 140px;
+    right: -6px;
+    rotate: -23deg;
+	}
+
+	.youtube .social__icon {
+		width: 8rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.github {
+		top: -224px;
+		right: 165px;
+	}
+	.github .social__icon {
+		width: 100px;
+	}
+	.alura {
+		top: 44px;
+		right: 225px;
+	}
+	.alura .social__icon {
+		width: 5.4rem;
+	}
+	.linkedin {
+		top: -20px;
+		right: -204px;
+	}
+	.linkedin .social__icon {
+		width: 65px;
+	}
+	.platzi {
+		top: -239px;
+		right: -146px;
+	}
+	.platzi .social__icon {
+		width: 9rem;
+	}
+	.youtube {
+		top: 217px;
+		right: -6px;
+		rotate: -23deg;
+	}
+	.youtube .social__icon {
+		width: 12rem;
+	}
+}
+
+</style>
