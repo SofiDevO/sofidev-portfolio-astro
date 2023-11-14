@@ -1,11 +1,17 @@
 .dark-mode body {
 	background: rgba(0, 0, 0, 0.783);
-	color: rgb(238, 235, 235);
 	z-index: 10;
 }
-.dark-mode p{
-	color: white;
+.dark-mode {
+	.blockquote-with-attribution  h1,h2,h3,h4,h5, th,p,strong,em, li{
+		color: var(--seccond-color);
+	}
+} 
+	
+.dark-mode mark{
+	background-color: var(--blue);
 }
+
 /* elemntos del header */
 .dark-mode .header {
 	background: rgba(0, 0, 0, 0.802);
@@ -262,6 +268,8 @@
 .dark-mode .formulario {
 	background-color: black;
 }
+
+
 
 @media (min-width: 768px) {
 	.dark-mode .header {
