@@ -1,47 +1,50 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import ToggleDarkBtn from '../../components/ToggleDarkBtn.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import BtnToTop from '../../components/BtnToTop.astro';
-import SecundadyMenu from '../../components/SecundadyMenu.astro';
-import BarraTerminal from '../../components/BarraTerminal.astro';
-import CardTerminal from '../../layouts/CardTerminal.astro';
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import ToggleDarkBtn from "../../components/ToggleDarkBtn.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import BtnToTop from "../../components/BtnToTop.astro";
+import SecundadyMenu from "../../components/SecundadyMenu.astro";
+import BarraTerminal from "../../components/BarraTerminal.astro";
+import CardTerminal from "../../layouts/CardTerminal.astro";
 
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf() 
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<SecundadyMenu />
 	<ToggleDarkBtn />
 	<BtnToTop />
 	<body>
 		<main>
-			<section>
+			<section class="blog__hero">
+				<div class="hero__img"></div>
+			</section>
+			<section class="blog">
 				<ul>
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.slug}/`} transition:animate="slide">
-									<CardTerminal>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">≥ {post.data.title}</h4>
-									<p class="date"> ≥
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+								<a class="post__link" href={`/blog/${post.slug}/`}>
+									<div class="text__content">
+										<h4 class="title">≥ {post.data.title}</h4>
+										<p class="post__description">{post.data.description}</p>
+										<p class="date"> ≥
+											{" "}
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+									</div>
+									<img class="post__img" src={post.data.heroImage} alt="" />
 								</a>
-								</CardTerminal>
-								
 							</li>
 						))
 					}
@@ -50,95 +53,102 @@ const posts = (await getCollection('blog')).sort(
 		</main>
 		<Footer />
 	</body>
-</html>
-<style>
-	.dark-mode body{
-		background-color: var(--dark-purple);
-	}
-	
-	main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-	padding-top: 15rem;
-	}	
-	
-	
-	main {
-		width: 960px;
-	}
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 2rem;
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-	ul li {
-		width: calc(2% - -43rem);
-	}
-	ul li * {
-		text-decoration: none;
-		transition: 0.2s ease;
-	}
-	ul li:first-child {
-		width: 100%;
-		margin-bottom: 1rem;
-		text-align: center;
-	}
-	ul li:first-child img {
-		width: 100%;
-	}
-	ul li:first-child .title {
-		font-size: 2.369rem;
-	}
-	ul li img {
-		margin-bottom: 0.5rem;
-		border-radius: 12px;
-		width: 100%;
-		height: auto;
-
-	}
-	ul li a {
-		display: block;
-	}
-	.title {
-		margin: 0;
-		line-height: 1;
-		font-size: 1.9rem;
-		text-align: center ;
-		color: var(--green-terminal);
-	}
-	.date {
-		margin: 0;
-		text-align: center;
-		
-	}
-	ul li a:hover h4,
-	ul li a:hover .date {
-		color: rgb(var(--accent));
-	}
-	ul a:hover img {
-		box-shadow: var(--box-shadow);
-	}
-	.dark-mode ul a:hover img {
-		box-shadow: none;
-	}
-	@media (max-width: 720px) {
-		ul {
-			gap: 0.5em;
-		}
-		ul li {
+	<style>
+		main {
+			padding-top: 1rem;
 			width: 100%;
-			text-align: center;
 		}
-		ul li:first-child {
-			margin-bottom: 0;
+		.blog__hero {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
-		ul li:first-child .title {
-			font-size: 1.563em;
+		.hero__img {
+			background-size: cover;
+			height: 26vh;
+			background-position: center;
+			width: 100%;
+			background-image: url(./public/img/write.webp);
 		}
-	}
-</style>
+		.dark-mode body {
+			background-color: var(--dark-purple);
+		}
+		.post__description {
+			font-family: var(--fira-code);
+			color: var(--main-color);
+		}
+		.dark-mode .post__description {
+			color: var(--yellow-terminal);
+		}
+		.date {
+			color: var(--pink-terminal);
+		}
+
+		.blog {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		ul {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 2.5em;
+			flex-direction: column;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+		}
+		.post__link {
+			display: flex;
+			align-items: center;
+			width: 61vw;
+			justify-content: space-between;
+			padding: 1rem;
+			border-bottom: solid 0.1rem #cacaca;
+		}
+		.post__img {
+			width: 10rem;
+			height: auto;
+		}
+
+		.text__content {
+			display: flex;
+			flex-direction: column;
+			word-break: break-word;
+			width: 15rem;
+		}
+		.title {
+			margin: 0;
+			font-size: 2rem;
+			line-height: 1;
+			text-align: left;
+			color: var(--main-color);
+			font-family: var(--fira-code);
+		}
+		.dark-mode .title {
+			color: var(--green-terminal);
+		}
+
+		.date {
+			margin: 0;
+			text-align: left;
+		}
+		.dark-mode ul a:hover img {
+			box-shadow: var(--box-shadow);
+		}
+		@media (min-width: 720px) {
+			.hero__img {
+				width: 103vw;
+				height: 60vh;
+				min-width: 56vw;
+			}
+			.text__content {
+				width: 30rem;
+			}
+			.post__img {
+				width: 21rem;
+			}
+		}
+	</style>
+</html>

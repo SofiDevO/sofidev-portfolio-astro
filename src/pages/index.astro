@@ -12,6 +12,8 @@ import BtnToTop from "../components/BtnToTop.astro";
 import "../styles/hero.css"
 
 import CardsPostsHome from "../components/CardsPostsHome.astro"
+import Divider2 from "../components/Divider2.astro";
+import Tools from "../components/Tools.astro";
 
 
 
@@ -27,12 +29,13 @@ import CardsPostsHome from "../components/CardsPostsHome.astro"
 		<ToogleDarkBtn  />
 		<BtnToTop  />
 		<main transition:animate="slide">
-			<DarkBg/>
 			<Hero/>
 			<Divider1/>
 			<Skills/>
-			<CardsPostsHome/>
+			<Divider2/>
+			<Tools/>
 		</main>
 		<Footer />
+		<DarkBg/>
 	</body>
 </html>

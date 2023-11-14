@@ -42,7 +42,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 								)
 							}
 						</div>
-						<h1>{title}</h1>
+						<h1 class="article__title">≥ {title}</h1>
 						<hr />
 					</div>
 					<slot />
@@ -58,17 +58,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		max-width: 100%;
 		margin: 0;
 		margin-top: 14rem;
+		overflow: hidden;
 	}
 	article{
 		margin-right: -2rem;
 	}
-	
 
 	.dark-mode body{
 		background-color: var(--dark-purple);
 	}
 	.hero-image {
-		width: 100%;display: flex;
+		width: 100%;
+		display: flex;
 		justify-content: center;
 	}
 	.hero-image img {
@@ -98,12 +99,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		line-height: 1;
 		font-size: rem;
 	}
-	.title h1 {
+	.article__title {
 		margin: 0 0 0.5em 0;
 	}
+	.dark-mode .article__title{
+		color: var(--seccond-color);
+	}
+		
 	.date {
 		margin-bottom: 0.5em;
 		color: rgb(var(--gray));
+	}
+	.dark-mode .date{
+		color: var(--blue);
 	}
 	.last-updated-on {
 		font-style: italic;

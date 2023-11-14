@@ -6,12 +6,15 @@
 	background: rgba(0, 0, 0, 0.783);
 }
 .dark-mode {
-	.blockquote-with-attribution  h1,h2,h3,h4,h5, th,p,strong,em, li{
+	.blockquote-with-attribution  h1,h2,h3,h4,h5,h6 th,p,strong,em, li{
 		color: var(--seccond-color);
 	}
 } 
 .dark-mode a{
 	color: var(--green-terminal);
+}
+.dark-mode  code span{
+	background-color: #24292e;
 }
 
 .dark-mode code{

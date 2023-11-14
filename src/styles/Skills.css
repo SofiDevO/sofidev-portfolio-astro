@@ -52,7 +52,7 @@
     justify-content: center;
     align-items: center;
     transition: 0.2s ease-in-out;
-    padding: 7rem;
+    padding: 6rem;
 }
 .img {
 	position: absolute;
@@ -141,19 +141,13 @@
 		justify-content: flex-start;
 	}
 	.skills__cajas {
-		display: flex;
-    width: 100%;
-    align-items: center;
-    z-index: 10;
-    position: relative;
-    flex-direction: row;
-    justify-content: center;
-    height: fit-content;
-    gap: 27px;
+		display: flex; 
+		align-items: center;
+		z-index: 10;
 	}
 	.skills__caja {
-		height: 157px;
-		width: 120px;
+		height: 130px;
+		width: 132px;
 		display: flex;
 		justify-content: center;
 		align-items: center;

@@ -1,4 +1,4 @@
-import "../styles/skills/Skills.css"
+import "../styles/Skills.css"
 
 const cardsData = [
 	{
