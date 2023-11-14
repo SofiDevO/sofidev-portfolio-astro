@@ -8,9 +8,12 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import BtnToTop from '../../components/BtnToTop.astro';
 import SecundadyMenu from '../../components/SecundadyMenu.astro';
+import BarraTerminal from '../../components/BarraTerminal.astro';
+import CardTerminal from '../../layouts/CardTerminal.astro';
+
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf() 
 );
 ---
 
@@ -19,24 +22,26 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
 	</head>
-		
+	<SecundadyMenu />
+	<ToggleDarkBtn />
+	<BtnToTop />
 	<body>
-		<SecundadyMenu/>
-		<ToggleDarkBtn/>
-		<BtnToTop/>
 		<main>
 			<section>
 				<ul>
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.slug}/`}>
+								<a href={`/blog/${post.slug}/`} transition:animate="slide">
+									<CardTerminal>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+									<h4 class="title">≥ {post.data.title}</h4>
+									<p class="date"> ≥
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>
+								</CardTerminal>
+								
 							</li>
 						))
 					}
@@ -47,6 +52,9 @@ const posts = (await getCollection('blog')).sort(
 	</body>
 </html>
 <style>
+	.dark-mode body{
+		background-color: var(--dark-purple);
+	}
 	
 	main {
 	width: 720px;
@@ -54,7 +62,9 @@ const posts = (await getCollection('blog')).sort(
 	margin: auto;
 	padding: 3em 1em;
 	padding-top: 15rem;
-}
+	}	
+	
+	
 	main {
 		width: 960px;
 	}
@@ -96,13 +106,15 @@ const posts = (await getCollection('blog')).sort(
 	}
 	.title {
 		margin: 0;
-		color: rgb(var(--black));
 		line-height: 1;
 		font-size: 1.9rem;
+		text-align: center ;
+		color: var(--green-terminal);
 	}
 	.date {
 		margin: 0;
-		color: rgb(var(--gray));
+		text-align: center;
+		
 	}
 	ul li a:hover h4,
 	ul li a:hover .date {

@@ -2,12 +2,23 @@
 	background: rgba(0, 0, 0, 0.783);
 	z-index: 10;
 }
+.dark-mode .about__page{
+	background: rgba(0, 0, 0, 0.783);
+}
 .dark-mode {
 	.blockquote-with-attribution  h1,h2,h3,h4,h5, th,p,strong,em, li{
 		color: var(--seccond-color);
 	}
 } 
-	
+.dark-mode a{
+	color: var(--green-terminal);
+}
+.dark-mode a:hover{
+	filter: var(--glow-blue);
+}	
+.dark-mode code{
+	background-color: var(--main-color);
+}
 .dark-mode mark{
 	background-color: var(--blue);
 }

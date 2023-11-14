@@ -25,7 +25,9 @@
 	
 		--form-ok-color: #4caf50;
 		--form-error-color: #e81000;
-	
+
+		--fira-code: 'Fira Code', monospace;
+		--montserrat: 'Montserrat', sans-serif;
 		/* Darktheme */
 		--pure-black: #000000;
 		--terminal-bg-dark: rgba(18, 0, 33, 0.734);
@@ -40,7 +42,7 @@
 	font-size: 62.5%;
   }
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: var(--montserrat);
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -58,11 +60,12 @@ li{
 
 .titulo{
 	font-size: 4rem;
-	font-family: 'Montserrat', sans-serif;
+	font-family: var(--montserrat);
 	}
 
 
 a {
+	color: var(--pink-terminal);
 	text-decoration: none;
 }
 
@@ -96,5 +99,5 @@ blockquote {
 }
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	border-top: 1px solid var(--main-color);
 }

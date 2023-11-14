@@ -8,9 +8,13 @@ import FormattedDate from "../components/FormattedDate.astro";
 import SecundadyMenu from "../components/SecundadyMenu.astro";
 import BtnToTop from "../components/BtnToTop.astro";
 
+
+
+
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
 ---
 
 <html lang="en">
@@ -20,17 +24,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
 	<body>
-		<SecundadyMenu/>
+		<SecundadyMenu />
 		<ToggleDarkBtn />
-		<BtnToTop/>
+		<BtnToTop />
 		<main>
 			<article>
-				<div class="hero-image">
-					{
-						heroImage && (
-							<img width={1020} height={510} src={heroImage} alt="" />
-						)
-					}
 				</div>
 				<div class="prose">
 					<div class="title">
@@ -60,6 +58,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		max-width: 100%;
 		margin: 0;
 		margin-top: 14rem;
+	}
+	article{
+		margin-right: -2rem;
+
 	}
 	.dark-mode body{
 		background-color: var(--dark-purple);

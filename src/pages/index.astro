@@ -11,6 +11,8 @@ import Skills from "../components/Skills.astro";
 import BtnToTop from "../components/BtnToTop.astro";
 import "../styles/hero.css"
 
+import CardsPostsHome from "../components/CardsPostsHome.astro"
+
 
 
 ---
@@ -21,16 +23,16 @@ import "../styles/hero.css"
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
-		<ToogleDarkBtn/>
-		<BtnToTop/>
-		<main>
+		<Header  />
+		<ToogleDarkBtn  />
+		<BtnToTop  />
+		<main transition:animate="slide">
 			<DarkBg/>
 			<Hero/>
 			<Divider1/>
 			<Skills/>
+			<CardsPostsHome/>
 		</main>
 		<Footer />
-			
 	</body>
 </html>

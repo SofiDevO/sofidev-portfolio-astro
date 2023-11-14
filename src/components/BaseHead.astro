@@ -11,6 +11,7 @@ import "../styles/footer.css"
 
 
 
+
 interface Props {
 	title: string;
 	description: string;
@@ -19,7 +20,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
+const { title, description, image = "/img/Sofi-portada.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->

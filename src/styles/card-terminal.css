@@ -16,6 +16,8 @@
 	justify-content: space-around;
 	width: 23%;
 	max-width: 9rem;
+	min-width: 6rem;
+
 }
 
 .btn {
@@ -62,7 +64,8 @@
 	margin-left: 6px;
 	font-size: 1.5rem;
 	line-height: 15px;
-	font-family: 'Fira Code', monospace;}
+	font-family: var(--fira-code);
+}
 
 .caja__cristal{
     animation: myAnim 1s ease 4s 1 normal forwards;
@@ -80,8 +83,7 @@
 	font-size: 1.9rem;
     text-align: left;
     padding: 1rem;
-	width: 100%;
-	font-family: 'Fira Code', monospace;
+	font-family: var(--fira-code);
 }
 .caja__cristal img{
 	max-width: 100%;
@@ -102,16 +104,18 @@
     text-align: left;
     font-size: 18px;
     font-weight: 400;
-	font-family: 'Fira Code', monospace;    line-height: 1.5;
+	font-family:var(--fira-code);  
+	line-height: 1.5;
+	margin: 0;
 }
 .terminal__content h3{
     color: var(--pink-terminal);
-	font-family: 'Fira Code', monospace;
+	font-family:var(--fira-code);
 }
 .terminal__content span{
     color: var(--green-terminal);
     font-weight: 500;
-	font-family: 'Fira Code', monospace;
+	font-family:var(--fira-code);
 }
 .terminal__link{
 	color: var(--pink-terminal);
@@ -124,8 +128,8 @@
 }
 
 @media (min-width:768px){
-	.caja__cristal{
+	/* .caja__cristal{
 		max-width: 70rem;
-	}
+	} */
 }
 
