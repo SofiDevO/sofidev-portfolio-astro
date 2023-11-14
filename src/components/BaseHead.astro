@@ -1,10 +1,13 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import "../styles/darkmode-bg.css";
-import "../styles/darkmode.css";
-import "../styles/short-circuit.css";
 import "../styles/global.css";
+import "../styles/dark-mode-bg.css";
+import "../styles/dar-kmode.css"
+import "../styles/short-circuit.css";
+import "../styles/Dividers/divider-1.css";
+
+
 
 
 interface Props {
@@ -21,7 +24,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/public/img/avatar_pink.webp" />
+<link rel="icon" type="image/svg+xml" href="/img/avatar_pink.webp" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->

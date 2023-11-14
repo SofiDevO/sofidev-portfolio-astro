@@ -1,4 +1,3 @@
-
 .dark-mode body {
 	background: rgba(0, 0, 0, 0.783);
 	color: rgb(238, 235, 235);
@@ -121,6 +120,8 @@
 	filter: invert(94%) sepia(97%) saturate(0%) hue-rotate(348deg)
 		brightness(102%) contrast(102%) drop-shadow(5px 5px 10px #76ffc3);
 }
+
+
 
 /* SKILLS */
 .dark-mode .skills {

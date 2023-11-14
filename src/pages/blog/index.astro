@@ -6,6 +6,8 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import BtnToTop from '../../components/BtnToTop.astro';
+import SecundadyMenu from '../../components/SecundadyMenu.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -19,8 +21,9 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 		
 	<body>
-		<Header />
+		<SecundadyMenu/>
 		<ToggleDarkBtn/>
+		<BtnToTop/>
 		<main>
 			<section>
 				<ul>
@@ -64,7 +67,7 @@ const posts = (await getCollection('blog')).sort(
 		padding: 0;
 	}
 	ul li {
-		width: calc(50% - 1rem);
+		width: calc(2% - -43rem);
 	}
 	ul li * {
 		text-decoration: none;
@@ -84,6 +87,9 @@ const posts = (await getCollection('blog')).sort(
 	ul li img {
 		margin-bottom: 0.5rem;
 		border-radius: 12px;
+		width: 100%;
+		height: auto;
+
 	}
 	ul li a {
 		display: block;
@@ -92,6 +98,7 @@ const posts = (await getCollection('blog')).sort(
 		margin: 0;
 		color: rgb(var(--black));
 		line-height: 1;
+		font-size: 1.9rem;
 	}
 	.date {
 		margin: 0;

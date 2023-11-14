@@ -40,75 +40,42 @@
 	font-size: 62.5%;
   }
 body {
-	font-family: 'Fira Code', monospace;
+	font-family: 'Montserrat', sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
+	font-size: 1.2rem;
 	line-height: 1.7;
+	background-color: var(--seccond-color);
 }
 
+li{
+	list-style: none;
+}
 
 .titulo{
 	font-size: 4rem;
 	font-family: 'Montserrat', sans-serif;
 	}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-li{
-	list-style: none;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
+
+
 a {
-	color: var(--accent);
 	text-decoration: none;
-}
-a:hover {
-	color: var(--accent);
 }
 
 .prose p {
 	margin-bottom: 2em;
+	font-size: 1.6rem;
+	
 }
 textarea {
 	width: 100%;
 	font-size: 16px;
 }
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
+
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
@@ -130,22 +97,4 @@ blockquote {
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
-}
-
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
 }

@@ -32,7 +32,7 @@
 	background-size: cover;
 	background-position: center;
 	top: 30%;
-	left: -15%;
+	left: 15%;
 	animation-duration: 122s;
 	animation-delay: -86s;
 	transform-origin: 19vw -3vh;
@@ -43,8 +43,8 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	top: 2%;
-	left: 4%;
+	top: 65%;
+	left: 34%;
 	animation-duration: 150s;
 	animation-delay: -132s;
 	transform-origin: 3vw 24vh;
@@ -55,7 +55,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	top: 9%;
+	top: 40%;
 	left: 6%;
 	animation-duration: 95s;
 	animation-delay: -55s;
@@ -64,7 +64,7 @@
 }
 .dark-mode .background span:nth-child(3) {
 	color: var(--yellow-terminal);
-	top: 24%;
+	top: 44%;
 	left: 6%;
 	animation-duration: 103s;
 	animation-delay: -177s;
@@ -76,7 +76,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	top: 14%;
+	top: 54%;
 	left: 65%;
 	animation-duration: 175s;
 	animation-delay: -181s;
