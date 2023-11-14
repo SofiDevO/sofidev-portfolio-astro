@@ -123,6 +123,9 @@ const posts = (await getCollection('blog')).sort(
 	ul a:hover img {
 		box-shadow: var(--box-shadow);
 	}
+	.dark-mode ul a:hover img {
+		box-shadow: none;
+	}
 	@media (max-width: 720px) {
 		ul {
 			gap: 0.5em;

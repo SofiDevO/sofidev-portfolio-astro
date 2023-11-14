@@ -13,9 +13,7 @@
 .dark-mode a{
 	color: var(--green-terminal);
 }
-.dark-mode a:hover{
-	filter: var(--glow-blue);
-}	
+
 .dark-mode code{
 	background-color: var(--main-color);
 }
