@@ -1,0 +1,28 @@
+.wraper__tools{
+    position: relative;
+    height: 21vh;
+
+}
+.dark-mode .wraper__tools {
+    background: black;
+}
+.custom-shape-divider-top-1699780157 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1699780157 svg {
+    position: relative;
+    display: block;
+    width: calc(131% + 1.3px);
+    height: 81px;
+}
+
+.custom-shape-divider-top-1699780157 .shape-fill {
+    fill: #000000;
+}

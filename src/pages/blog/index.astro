@@ -65,7 +65,7 @@ const posts = (await getCollection("blog")).sort(
 		}
 		.hero__img {
 			background-size: cover;
-			height: 26vh;
+			height: 33vh;
 			background-position: center;
 			width: 100%;
 			background-image: url(./public/img/write.webp);
@@ -88,6 +88,7 @@ const posts = (await getCollection("blog")).sort(
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			margin-top: 4rem;
 		}
 		ul {
 			display: flex;
@@ -102,7 +103,7 @@ const posts = (await getCollection("blog")).sort(
 		.post__link {
 			display: flex;
 			align-items: center;
-			width: 61vw;
+			width: 91vw;
 			justify-content: space-between;
 			padding: 1rem;
 			border-bottom: solid 0.1rem #cacaca;
@@ -117,6 +118,7 @@ const posts = (await getCollection("blog")).sort(
 			flex-direction: column;
 			word-break: break-word;
 			width: 15rem;
+			width: 60%;
 		}
 		.title {
 			margin: 0;
@@ -142,6 +144,10 @@ const posts = (await getCollection("blog")).sort(
 				width: 103vw;
 				height: 60vh;
 				min-width: 56vw;
+			}
+			.post__link{
+				width: 64vw;
+
 			}
 			.text__content {
 				width: 30rem;

@@ -8,9 +8,7 @@
     z-index: 2;
     justify-content: space-evenly;
 }
-img{
-	max-width: none;
-}
+
 
 
 .hero__contenedor {
@@ -18,7 +16,6 @@ img{
     flex-direction: column-reverse;
     height: 56vh;
     align-items: center;
-    /* margin-bottom: 8rem; */
     justify-content: center;
 }
 

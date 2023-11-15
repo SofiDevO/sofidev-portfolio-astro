@@ -2,11 +2,12 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
 import Footer from "../components/Footer.astro";
+import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import SecundadyMenu from "../components/SecundadyMenu.astro";
 import BtnToTop from "../components/BtnToTop.astro";
+import "../styles/blog.css"
 
 
 
@@ -14,7 +15,6 @@ import BtnToTop from "../components/BtnToTop.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
-
 ---
 
 <html lang="en">
@@ -52,74 +52,3 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Footer />
 	</body>
 </html>
-<style>
-	main {
-		width: calc(100% - 2em);
-		max-width: 100%;
-		margin: 0;
-		margin-top: 14rem;
-		overflow: hidden;
-	}
-	article{
-		margin-right: -2rem;
-	}
-
-	.dark-mode body{
-		background-color: var(--dark-purple);
-	}
-	.hero-image {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-	}
-	.hero-image img {
-		display: block;
-		margin: 0 auto;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-		width: 95%;
-		height: 29rem;
-		object-fit: cover;
-	}
-	.dark-mode .hero-image img {
-		box-shadow: none;
-	}
-	
-	.prose {
-		width: 720px;
-		max-width: calc(100% - 2em);
-		margin: auto;
-		padding: 1em;
-		color: rgb(var(--gray-dark));
-	}
-	.title {
-		margin-bottom: 1em;
-		padding: 1em 0;
-		text-align: center;
-		line-height: 1;
-		font-size: rem;
-	}
-	.article__title {
-		margin: 0 0 0.5em 0;
-	}
-	.dark-mode .article__title{
-		color: var(--seccond-color);
-	}
-		
-	.date {
-		margin-bottom: 0.5em;
-		color: rgb(var(--gray));
-	}
-	.dark-mode .date{
-		color: var(--blue);
-	}
-	.last-updated-on {
-		font-style: italic;
-	}
-	@media(min-width:768px){
-		.hero-image img {
-			width: 80%;
-			height: 60rem;
-		}
-	}
-</style>
