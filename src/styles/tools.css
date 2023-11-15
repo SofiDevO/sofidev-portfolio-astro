@@ -22,7 +22,7 @@
 
 .slider {
 	display: inline-block;
-	height: 19vh;
+	height: auto;
 	animation: 35s slide infinite linear;
 }
 @keyframes slide {
@@ -132,7 +132,6 @@
 	
 	.slider {
 		animation: 40s slide infinite linear;
-		min-height: 237px;
 	}
 	@keyframes slide {
 		from {

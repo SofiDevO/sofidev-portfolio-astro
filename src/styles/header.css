@@ -70,9 +70,6 @@
 	border-radius: 3rem 0 ;
 	border:  1px  solid rgba(255, 255, 255, 0.18);
 }
-
-
-
 .menu__hamburger-link {
     display: block;
     font-size: 3rem;
@@ -90,8 +87,8 @@
     align-items: flex-start;
     height: 100vh;
     justify-content: flex-start;
-	margin-top: 7rem;
-	gap: 2.4rem;
+    margin-top: 3rem;
+    gap: 2.4rem;
 }
 .menu__avatar{
 	width: 5rem;

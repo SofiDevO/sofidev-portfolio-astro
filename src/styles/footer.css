@@ -3,6 +3,8 @@
     background-color: var(--pure-black);
     width: 100%;
     height: auto;
+    z-index: 40;
+    position: absolute;
 }
 
 

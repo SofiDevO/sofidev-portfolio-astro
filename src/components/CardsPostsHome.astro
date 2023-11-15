@@ -25,7 +25,9 @@ const posts = (await getCollection("blog")).sort(
 							/>
 							<div class="card__content">
 								<h4 class="card__title"> ≥ {post.data.title}</h4>
-								<p class="card__date"> ≥
+								<p class="card__date">
+									{" "}
+									≥
 									<FormattedDate date={post.data.pubDate} />
 								</p>
 							</div>
@@ -38,30 +40,30 @@ const posts = (await getCollection("blog")).sort(
 </section>
 
 <style>
-	.cards {
-		width: 100%;
-	}
+	
 	.cards__list {
 		display: flex;
-		justify-content: space-around;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
 	}
-    .card__title{
-        font-size: 2.3rem;
-        color: var(--green-terminal);
-        margin: 0;
-    }
-	.card__date{
-        text-align: center;
-    }
+	.card__title {
+		font-size: 2.3rem;
+		color: var(--green-terminal);
+		margin: 0;
+	}
+	.card__date {
+		text-align: center;
+	}
 
 	.card__link {
 		justify-content: center;
 		align-items: center;
 	}
 	.card__img {
-        width: 44rem;
-        height: auto;
-        object-fit: cover;
+		width: 44rem;
+		height: auto;
+		object-fit: cover;
 	}
 	.card__content {
 		padding: 0 1rem;

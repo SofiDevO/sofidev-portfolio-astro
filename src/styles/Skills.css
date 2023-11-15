@@ -8,8 +8,7 @@
     position: relative;
     z-index: 10;
     align-items: center;
-    padding: 2rem 0;
-	
+	padding: 0 1rem;
 }
 
 .skills__container {
@@ -165,7 +164,6 @@
 @media (min-width: 1200px) {
 	.skills{
 		width: 100%;
-		justify-content: flex-start;
 	}
 	.skills__container {
 		flex-direction: row;
