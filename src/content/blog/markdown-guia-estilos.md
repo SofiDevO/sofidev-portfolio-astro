@@ -2,10 +2,11 @@
 title: 'Guía de estilo de Markdown'
 description: 'Aprende las bases para escribir en Markdown'
 pubDate: 'Nov 11 2023'
-heroImage: '..img/IA_coca.webp'
+heroImage: '../img/IA_coca.webp'
 ---
 
 Aquí tienes una muestra de la sintaxis básica de Markdown que puedes usar al escribir contenido en Astro o cualquier otro editor que soporte Markdown 🖤.
+
 
 ## Encabezados
 
