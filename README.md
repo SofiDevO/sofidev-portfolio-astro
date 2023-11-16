@@ -1,6 +1,6 @@
 # My First Portfolio - Created with HTML, CSS, and Javascript
 
-This is my first portfolio, built using HTML, CSS, and Javascript. I've used Javascript DOM to generate cards and elements that can be dynamically reused.
+This is my first portfolio, built using Astro framework and some components from react.
 
 Feel free to clone this repository and customize it to your liking.
 
