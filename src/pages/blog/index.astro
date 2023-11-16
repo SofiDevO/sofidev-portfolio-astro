@@ -38,9 +38,9 @@ const posts = (await getCollection("blog")).sort(
 									<div class="text__content">
 										<h4 class="title">≥ {post.data.title}</h4>
 										<p class="post__description">{post.data.description}</p>
-										<p class="date"> ≥
+										<p class="date">
 											{" "}
-											<FormattedDate date={post.data.pubDate} />
+											≥ <FormattedDate date={post.data.pubDate} />
 										</p>
 									</div>
 									<img class="post__img" src={post.data.heroImage} alt="" />
@@ -109,7 +109,9 @@ const posts = (await getCollection("blog")).sort(
 		}
 		.post__img {
 			width: 35%;
-			height: auto;
+    max-height: 21.2rem;
+    height: auto;
+    object-fit: cover;
 		}
 
 		.text__content {
@@ -144,15 +146,14 @@ const posts = (await getCollection("blog")).sort(
 				height: 60vh;
 				min-width: 56vw;
 			}
-			.post__link{
+			.post__link {
 				width: 59vw;
-
 			}
 			.text__content {
 				width: 30rem;
 			}
 			.post__img {
-				width: 40%;
+				width: 43%;
 			}
 		}
 	</style>
