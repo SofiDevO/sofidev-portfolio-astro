@@ -48,12 +48,16 @@ const posts = (await getCollection("blog")).sort(
 		padding: 0;
 	}
 	.card__title {
-		font-size: 2.3rem;
+		font-size: 1.5rem;
 		color: var(--green-terminal);
 		margin: 0;
 	}
 	.card__date {
 		text-align: center;
+		font-size: 1.5rem;
+	}
+	.card__item{
+		list-style: none;
 	}
 
 	.card__link {
@@ -66,7 +70,11 @@ const posts = (await getCollection("blog")).sort(
 		object-fit: cover;
 	}
 	.card__content {
-		padding: 0 1rem;
 		text-align: center;
+	}
+	@media screen and (min-width: 768px) {
+		.card__title{
+			font-size: 1.7rem;
+		}
 	}
 </style>

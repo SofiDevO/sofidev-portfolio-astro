@@ -16,12 +16,14 @@ import Divider2 from "../components/Divider2.astro";
 import Tools from "../components/Tools.astro";
 import Divider3 from "../components/Divider3.astro";
 import AboutHome from "../components/AboutHome.astro";
+import PortfolioSection from "../components/PortfolioSection.astro";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>	
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 	</head>
 	<body>
 		<Header  />
@@ -36,6 +38,7 @@ import AboutHome from "../components/AboutHome.astro";
 			<Tools/>
 			<Divider3/>
 			<AboutHome/>
+			<PortfolioSection/>
 		</main>
 		<Footer />
 	</body>

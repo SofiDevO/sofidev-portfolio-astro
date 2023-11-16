@@ -1,0 +1,24 @@
+---
+import "../styles/cards-portfolio.css"
+import PortfolioCards from "./PortfolioCards.astro";
+import Button from "./Button";
+
+---
+
+
+    <section class="portafolio " id="portafolio">
+            <h2 class="titulo titulo__dark">Portfolio</h2>
+            <div class="portafolio__contenedor" data-card>
+                <PortfolioCards
+                    mostrar="0, 1"
+                />
+                <Button
+                    href="/portfolio"
+                    text="See More"
+                />
+            </div>
+        </section>
+
+
+
+

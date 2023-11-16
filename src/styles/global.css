@@ -54,10 +54,16 @@ body {
 	background-color: var(--seccond-color);
 }
 
-
-li{
-	list-style: none;
+ol li {
+	list-style: decimal;
+	font-size: 1.7rem;
 }
+ul li{
+	font-size: 1.7rem;
+}
+
+	
+
 
 .titulo{
 	font-size: 4rem;
@@ -72,9 +78,7 @@ a {
 }
 
 .prose p {
-
-	font-size: 1.6rem;
-	
+	font-size: 1.7rem;
 }
 textarea {
 	width: 100%;
@@ -82,9 +86,15 @@ textarea {
 }
 
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	padding: .3rem 1rem;
+	background-color:rgb(51, 51, 51);
+	border-radius: .3rem;
+    font-size: 1.4rem;
+	color: var(--green-terminal);
+}
+
+code .line span{
+	font-size: 1.7rem;
 }
 pre {
 	padding: 1.5em;

@@ -90,6 +90,9 @@ const posts = (await getCollection("blog")).sort(
 			justify-content: center;
 			margin-top: 4rem;
 		}
+		li{
+			list-style: none;
+		}
 		ul {
 			display: flex;
 			justify-content: center;
@@ -109,9 +112,9 @@ const posts = (await getCollection("blog")).sort(
 		}
 		.post__img {
 			width: 35%;
-    max-height: 21.2rem;
-    height: auto;
-    object-fit: cover;
+			max-height: 21.2rem;
+			height: auto;
+			object-fit: cover;
 		}
 
 		.text__content {

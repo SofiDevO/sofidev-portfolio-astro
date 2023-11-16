@@ -3,17 +3,12 @@
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
 import "../styles/dark-mode-bg.css";
-import "../styles/dar-kmode.css"
+import "../styles/dark-kmode.css";
 import "../styles/short-circuit.css";
 import "../styles/Dividers/divider-1.css";
 import "../styles/Dividers/divider-2.css";
-import "../styles/footer.css"
-import "../styles/tools.css"
-
-
-
-
-
+import "../styles/footer.css";
+import "../styles/tools.css";
 
 interface Props {
 	title: string;
@@ -79,10 +74,7 @@ const { title, description, image = "/img/Sofi-portada.png" } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- css librerias/ cdn -->
-<link
-	rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
-/>
+
 <link
 	rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -90,11 +82,19 @@ const { title, description, image = "/img/Sofi-portada.png" } = Astro.props;
 	crossorigin="anonymous"
 	referrerpolicy="no-referrer"
 />
+
+
+<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+/>
+
 <link
 	rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
 	integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
 	crossorigin="anonymous"
 />
+
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
 ></script>
