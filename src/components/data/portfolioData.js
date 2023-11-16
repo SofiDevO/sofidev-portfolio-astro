@@ -34,10 +34,10 @@ export const portafolioData = [
     {
         imgSrc: "../img/portfolio_img//portfolio.webp",
         titulo: "My Portfolio",
-        skills: ["JavaScript"],
+        skills: ["Astro", "React","JavaScript"],
         descripcion: "Just the repository of my portfolio on GitHub.",
-        demoURL: "./index.html",
-        repoURL: "https://github.com/SofiDevO/portafolio-sofidev"
+        demoURL: "https://sofidev-portfolio-astro.vercel.app/",
+        repoURL: "https://github.com/SofiDevO/sofidev-portfolio-astro"
     },
     {
         imgSrc: "../img/portfolio_img//encriptador_mensajes_dark.webp",

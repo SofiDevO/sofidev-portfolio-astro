@@ -18,31 +18,19 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/img/Sofi-portada.png" } = Astro.props;
+const { title, description, image = "../img/Sofi-portada.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/img/avatar_pink.webp" />
+<link rel="icon" type="image/svg+xml" href="./img/avatar_pink.webp" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
 
-<link
-	rel="preload"
-	href="/fonts/atkinson-regular.woff"
-	as="font"
-	type="font/woff"
-	crossorigin
-/>
-<link
-	rel="preload"
-	href="/fonts/atkinson-bold.woff"
-	as="font"
-	type="font/woff"
-	crossorigin
-/>
+
+<!--  -->
 <!-- Google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

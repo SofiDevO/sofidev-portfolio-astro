@@ -38,7 +38,3 @@ AddDefaultCharset UTF-8
    RewriteCond %{HTTP_USER_AGENT} ^.*(craftbot|download|extract|stripper|sucker|ninja|clshttp|webspider|leacher|collector|grabber|webpictures).*$ [NC]
    RewriteRule . - [F,L]
 </IfModule>
-
-
-
-    
