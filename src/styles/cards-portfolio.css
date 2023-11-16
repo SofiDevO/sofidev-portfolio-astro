@@ -25,20 +25,18 @@
 	position: relative;
 	flex-direction: column;
 	align-items: center;
-	height: 318px;
-	overflow: hidden;
+    height: 285px;
 	justify-content: space-evenly;
 	width: 100%;
 	border-radius: 20px;
 	min-width: 100%;
 	border-radius: 15px;
+	overflow: hidden;
 }
 .portafolio__cara {
 	display: flex;
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
+	overflow: hidden;
 	position: absolute;
-	backface-visibility: hidden;
 	transition: 0.5s;
 	height: 286px;
 	width: 100%;
@@ -47,38 +45,43 @@
 	overflow: hidden;
 	flex-direction: column;
 	border-radius: 15px;
-	background: var(--dark-purple);
+	backface-visibility: hidden;
 }
 
 
 
 .portafolio__tarjeta .faceA {
 	border-radius: 15px;
-	transform: translateY(0) ;
-	/* transform: perspective(600px) rotateY(0deg); */
+	background-color: var(--dark-purple);
+	border-radius: 15px;
+	transform: perspective(100%) rotateY(0deg);
 }
 
 .portafolio__tarjeta:hover .faceA {
-	transition: 2s ease-in-out;
-	transform:   translateY(7px);
-	/* transform: perspective(600px)   rotateY(180deg); */
+	transition: 1.3s ease-in-out;
+	filter: blur(8px);
+	animation: anim 4s infinite;
+	transform: perspective(100%) rotateY(180deg);
 }
 
+
 .portafolio__tarjeta .faceB {
-	background: #19003cbb;
 	border-radius: 15px;
-	border: 1px solid rgba(255, 255, 255, 0.18);
-	align-items: center;
-	justify-content: center;
-	transform: translateY(500px) ;
-	/* transform: perspective(600px) rotateY(180deg); */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform:  translateY(62px);
+    /* transform: perspective(600px) rotateY(180deg); */
+    overflow: hidden;
+	background: rgba(22, 0, 54, 0.741);
 }
 
 .portafolio__tarjeta:hover .faceB {
 	transition: .6s ease-in-out;
-	backdrop-filter: blur(20px);	
-	transform:  translateY(5px);
-	/* transform:  perspective(600px)   rotateY(360deg); */
+	/* backdrop-filter: blur(20px); */	
+	transform: perspective(0) translateY(0);
+	opacity: 1;
+	
 }
 
 .img__container {
@@ -243,6 +246,8 @@
 		width: 31%;
 		min-width: 36rem;
 		align-items: center;
+		height: 374px;
+
 	}
 	.portafolio__cara {
 		height: 308px;

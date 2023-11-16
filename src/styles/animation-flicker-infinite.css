@@ -1,0 +1,113 @@
+@keyframes flicker-in-infinite {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    10.1% {
+        opacity: 1;
+    }
+    10.2% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    20.1% {
+        opacity: 1;
+        color: var(--glow-blue);
+    filter: drop-shadow(0 0 12px var(--blue));
+    }
+    20.6% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    30.5% {
+        opacity: 1;
+        color: var(--glow-blue);
+    filter: drop-shadow(0 0 12px var(--blue));
+    }
+    30.5% {
+        opacity: 1;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    30.6% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 0;
+    }
+    45.5% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    55% {
+        opacity: 1;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    55.1% {
+        opacity: 0;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    57% {
+        opacity: 0;
+    }
+    57.1% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    60.1% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    65.5% {
+        opacity: 1;
+        color: var(--glow-blue);
+    filter: drop-shadow(0 0 12px var(--blue));
+    }
+    75% {
+        opacity: 1;
+    }
+    75.1% {
+        opacity: 0;
+    }
+    77% {
+        opacity: 0;
+    }
+    77.1% {
+        opacity: 1;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    85% {
+        opacity: 1;
+    }
+    85.1% {
+        opacity: 0;
+        color: var(--glow-blue);
+        filter: drop-shadow(0 0 12px var(--blue));
+    }
+    86% {
+        opacity: 0;
+    }
+    86.1% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}

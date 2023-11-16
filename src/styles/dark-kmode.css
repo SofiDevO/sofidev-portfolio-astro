@@ -1,3 +1,4 @@
+
 .dark-mode body {
 	background: rgba(0, 0, 0, 0.783);
 	z-index: 10;
@@ -131,6 +132,9 @@
 	transition: 3s ease-in-out;
 }
 
+.dark-mode .alura .social__icon ,.dark-mode .platzi .social__icon , .dark-mode .linkedin .social__icon ,.dark-mode .youtube .social__icon , .dark-mode .github .social__icon {
+	animation:  none;
+}
 .dark-mode .icono__dark {
 	filter: invert(100%) saturate(0%) drop-shadow(0 0 10px #5cb5ac);
 }
@@ -249,12 +253,18 @@
 	-webkit-backdrop-filter: blur(7px);
 }
 .dark-mode .caja__dark__portafolio {
-	background: rgba(0, 0, 0, 0.16);
+	background: rgba(0, 0, 0, 0.23);
     box-shadow: 0 0px 12px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.dark-mode .portafolio__tarjeta .faceA, .dark-mode .portafolio__tarjeta .faceB{
+	background-color: unset;
+}
+ .dark-mode .portafolio__tarjeta .faceB{
+	background: rgba(0, 0, 0, 0.9);
 }
 
 /* Seccion Hobbies */

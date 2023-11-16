@@ -1,5 +1,5 @@
 /** @format */
-
+@import url('./animation-up-down.css');
 .skills {
     display: flex;
     flex-direction: column;
@@ -84,19 +84,6 @@
 	animation: anim 3s infinite;
 }
 
-@keyframes anim {
-	0% {
-		transform: translateY(0);
-	}
-
-	50% {
-		transform: translateY(-20px);
-	}
-
-	100% {
-		transform: translateY(0);
-	}
-}
 
 .skills__caja:hover {
 	transform: scale(1.04) rotate(-1deg);
