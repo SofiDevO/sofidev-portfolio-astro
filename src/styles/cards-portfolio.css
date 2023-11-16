@@ -70,8 +70,7 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transform:  translateY(62px);
-    /* transform: perspective(600px) rotateY(180deg); */
+    transform: translateY(95px);
     overflow: hidden;
 	background: rgba(22, 0, 54, 0.741);
 }

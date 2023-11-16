@@ -3,8 +3,11 @@ import CardTerminal from "../layouts/CardTerminal.astro";
 import "../styles/global.css"
 import Button from "../components/Button"
 import BaseHead from "../components/BaseHead.astro";
+import DarkBg from "../components/DarkBg.astro";
+import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
 ---
 <section>
+    <ToggleDarkBtn/>
     <div class="container">
         <div class="container__elements">
             <img src="/img/sofidev_laptop.gif" alt="">
@@ -20,6 +23,7 @@ import BaseHead from "../components/BaseHead.astro";
             />
             </div>
         </CardTerminal>
+        <DarkBg/>
     </div>
         
     </section>

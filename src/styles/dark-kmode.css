@@ -4,7 +4,8 @@
 	z-index: 10;
 }
 .dark-mode .about__page{
-	background: rgba(0, 0, 0, 0.783);
+	background: rgba(0, 0, 0, 0.241);
+	backdrop-filter: blur(3px);
 }
 .dark-mode {
 	.blockquote-with-attribution  h1,h2,h3,h4,h5,h6 th,p,strong,em, li{
@@ -260,13 +261,10 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.dark-mode .portafolio__tarjeta .faceA, .dark-mode .portafolio__tarjeta .faceB{
+ .dark-mode .portafolio__tarjeta .faceA, .dark-mode .portafolio__tarjeta .faceB{
 	background-color: unset;
-}
- .dark-mode .portafolio__tarjeta .faceB{
 	background: rgba(0, 0, 0, 0.9);
 }
-
 /* Seccion Hobbies */
 .dark-mode .ytchannel{
 	background: linear-gradient(var(--gradient));

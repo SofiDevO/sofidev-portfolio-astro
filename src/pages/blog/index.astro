@@ -7,9 +7,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import BtnToTop from "../../components/BtnToTop.astro";
-import SecundadyMenu from "../../components/SecundadyMenu.astro";
 import BarraTerminal from "../../components/BarraTerminal.astro";
 import CardTerminal from "../../layouts/CardTerminal.astro";
+import SecundaryMenu from "../../components/SecundaryMenu.astro";
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -21,7 +21,7 @@ const posts = (await getCollection("blog")).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<SecundadyMenu />
+	<SecundaryMenu/>
 	<ToggleDarkBtn />
 	<BtnToTop />
 	<body>
