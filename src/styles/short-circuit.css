@@ -45,7 +45,9 @@
 .short-circuit .slider{
     animation: flicker-in-infinite 2s linear 0.7s both infinite;
 }
-
+.short-circuit .boton{
+    display:none;
+}
 /* caja terminal */
 .short-circuit .caja__cristal{
     background-color: rgb(37, 24, 8);

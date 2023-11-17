@@ -107,7 +107,7 @@
 	right: 82px;
 	transform: translateY(-200px);
 	animation: slideIn 1s ease-in-out forwards;
-}
+} 
 .social__icon:hover{
 	animation: anim none;
 }
