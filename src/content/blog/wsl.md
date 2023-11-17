@@ -35,11 +35,11 @@ Si aún no te permite. deberás activar la virtualización de windows, desde el 
 Ya debes tener instalado Visual studio Code EN WINDOWS.
 
 Si no lo tienes, instálalo aquí:
-[INSTALAR VISUAL STUDIO CODE](https://code.visualstudio.com/download)
+[AQUÍ](https://code.visualstudio.com/download) PODRÁS INSTALAR VISUAL STUDIO CODE
 
 Una vez que instales Vscode, Busca el plugin WSL for windos, o instálalo aquí:
 
-[PLUGIN WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+[AQUÍ](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)PODRÁS INSTALAR EL PLUGIN WSL
 
 Necesitas Conectar Wsl a vscode. Recuerda que todas tus extensiones y temas de vscode, deberás instalarlos también en wsl.
 
@@ -105,7 +105,7 @@ Install oh-my-zsh via wget
 sh -c "$(wget <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh> -O -)"
 ```
 
-[Oh My ZSH Sitio oficial](https://ohmyz.sh/)
+Oh My ZSH Sitio oficial: [Ir al sitio](https://ohmyz.sh/)
 
 Y podremos instalar los temas en este reposiorio
 Este es mi tema favorito (Y el de muchos)
@@ -170,11 +170,11 @@ Install oh-my-zsh via wget
 sh -c "$(wget <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh> -O -)"
 ```
 
-[Oh My ZSH Sitio oficial](https://ohmyz.sh/)
+Oh My ZSH Sitio oficial: [Ir al sitio](https://ohmyz.sh/)
 
-[Y podremos instalar los temas en este repositorio](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+[Aquí](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) podremos instalar los temas en este repositorio
 
-[Necesitarás esta FUENTE](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+Necesitarás esta FUENTE: [Descagar Fuente](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
 
 
 Tu tema debes agregarlo de la siguiente manera:
@@ -184,7 +184,7 @@ ZSH_THEME='powerlevel10k/powerlevel10k'
 
 ## Para comenzar a instalar los plugins debemos acceder a este repositorio
 
-[PLUGINS](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)
+PLUGINS: [Ir al repositorio](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)
 
 - colorize (Ya vienen instalados)
 
