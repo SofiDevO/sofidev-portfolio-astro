@@ -96,7 +96,11 @@
 	position: absolute;
 	z-index: 20;
 }
-
+.social__icon {
+	width: 8.4rem;
+	filter: drop-shadow(0 0 12px var(--seccond-color));
+	transition: 0.2s ease-in-out;
+}
 
 .github {
 	bottom: 60px;
@@ -197,11 +201,7 @@
 		width: 50px;
 		gap: 16px;
 	}
-	.social__icon {
-		width: 8.4rem;
-		filter: drop-shadow(0 0 12px var(--seccond-color));
-		transition: 0.2s ease-in-out;
-	}
+	
 	.social__icon:hover {
 		animation: anim none;
 		transform: scale(1.3);
