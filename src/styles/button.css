@@ -32,9 +32,8 @@
 @media (min-width: 768px) {
 	.boton {
 		font-size: 1.3rem;
-		width: 65%;
+		width: 20rem;
 		padding: 11px 1px;
-		max-width: 29rem;
 	}
 
 	.boton:hover {
@@ -52,11 +51,6 @@
 
 @media (min-width: 1200px) {
 	.boton {
-		display: flex;
-		width: 50%;
-		align-items: center;
-		border-radius: 40px;
-		font-weight: 800;
 		margin-bottom: 2rem;
 	}
 }

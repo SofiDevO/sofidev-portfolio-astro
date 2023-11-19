@@ -153,9 +153,9 @@
 	width: 100%;
 	margin: 15px 0;
 }
-.contactar__boton__icono {
-	width: 25px;
-	filter: invert(100%) saturate(5);
+.icono__boton {
+	width: 2.5rem;
+	filter: invert(100%) saturate(0);
 }
 
 @media (min-width: 768px) {

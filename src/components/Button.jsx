@@ -1,12 +1,13 @@
 import React from "react"
 import Styles from "../styles/button.css"
-const Button = ({ href, src, text, target,clase} )=>{
+const Button = ({ href, text, target} )=>{
     return(
+        <>
         <a class="link__boton boton titulo__dark  span"
         href={href}  target={target}>
-        {text}<img className={`${clase} icono__boton`}
-            src={src} />
+        {text}
     </a>
+    </>
     )
 }
 export default Button;

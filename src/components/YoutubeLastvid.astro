@@ -19,7 +19,7 @@ import CardTerminal from "../layouts/CardTerminal.astro";
 				const id = link.substr(link.indexOf("=") + 1);
 				iframe.setAttribute(
 					"src",
-					`https://youtube.com/embed/${id}?controls=0&autoplay=1`
+					`https://youtube.com/embed/${id}/`
 				);
 			})
 			.catch((error) => console.log("error", error));
@@ -70,7 +70,7 @@ import CardTerminal from "../layouts/CardTerminal.astro";
 				height="340"
 				frameborder="0"
 				allowfullscreen
-				controls="1"></iframe>
+				></iframe>
 		</div>
 	</div>
 </section>

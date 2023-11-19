@@ -183,7 +183,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-evenly;
-		height: 79dvh;
+		height: auto;
 	}
 	.portafolio__contenedor {
 		justify-content: center;
