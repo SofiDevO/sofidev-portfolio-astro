@@ -113,3 +113,7 @@ hr {
 	border: none;
 	border-top: 1px solid var(--main-color);
 }
+
+.cards__list{
+	padding: 0;
+}

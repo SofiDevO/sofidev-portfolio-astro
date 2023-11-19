@@ -38,14 +38,13 @@ const posts = (await getCollection("blog")).sort(
 		}
 	</ul>
 </section>
-
 <style>
-	
 	.cards__list {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		padding: 0;
+		margin: 0;
 	}
 	.card__title {
 		font-size: 1.5rem;
@@ -57,8 +56,9 @@ const posts = (await getCollection("blog")).sort(
 		font-size: 1.5rem;
 	}
 	.card__item{
-		list-style: none;
-	}
+		width: min-content;
+    list-style: none;
+}
 
 	.card__link {
 		justify-content: center;

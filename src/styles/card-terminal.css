@@ -76,8 +76,10 @@
 	-webkit-backdrop-filter: blur(14.5px);
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.18);
-    max-width: 100rem;
-	min-width: 25rem;
+	max-width: 100rem;
+    min-width: 30rem;
+    height: auto;
+    width: 100%;
 	
 }
 
@@ -86,6 +88,7 @@
 	text-align: left;
 	padding: 1rem;
 	font-family: var(--fira-code);
+	width: 100%;
 }
 .caja__cristal img {
 	max-width: 100%;

@@ -31,8 +31,9 @@
 	border-radius: 17px;
 	border: 1px solid rgba(255, 255, 255, 0.18);
 	min-width: 23rem;
-
 }
+
+
 
 .card-title p {
 	text-align: center;
@@ -112,6 +113,9 @@
 	justify-content: center;
 	font-family: "Montserrat", sans-serif;
 }
+.color__white{
+	color: var(--seccond-color);
+}
 .about__titulo span {
 	color: var(--seccond-color);
 	text-shadow: 0px 1px 3px #000000;
@@ -190,6 +194,7 @@
 	.about__titulo {
 		display: flex;
 		font-size: 4em;
+		margin: 0;
 	}
 
 	.about__caja {
