@@ -86,7 +86,7 @@
 .terminal__content {
 	font-size: 1.9rem;
 	text-align: left;
-	padding: 1rem;
+	padding: 0 1rem;
 	font-family: var(--fira-code);
 	width: 100%;
 }
