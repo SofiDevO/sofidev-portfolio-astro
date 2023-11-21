@@ -12,7 +12,7 @@
 		--main-color: #181818;
 		--seccond-color: rgb(228, 228, 228);
 		--purple: #2e016c;
-		--dark-purple: rgb(13, 0, 32);
+		--dark-purple: rgb(22 0 54);
 		--purple-bg: #19003c;
 		--ligth-purple: #610094;
 		--blue: #58ecff;
@@ -22,14 +22,9 @@
 		--green-terminal: rgb(0, 255, 102);
 		--yellow-terminal:rgb(182, 182, 3);
 		--pink-terminal:rgb(255, 0, 144);
-		--blue-terminal: aqua;
 	
 		--form-ok-color: #4caf50;
 		--form-error-color: #e81000;
-
-
-		--drop-shadow-black: drop-shadow(2 -1px 1px black);
-	
 
 		--fira-code: 'Fira Code', monospace;
 		--montserrat: 'Montserrat', sans-serif;

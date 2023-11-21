@@ -5,9 +5,7 @@
     height: 28vh;
 }
 .dark-mode .wrapper__black {
-    background-color: #000000a3;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background-color: #2e006e;
 }
 .custom-shape-divider-bottom-1693539436 {
     position: absolute;
@@ -25,7 +23,7 @@
     height: 129px;
 }
 .custom-shape-divider-bottom-1693539436 .shape-fill {
-    fill: black;
+    fill: #000000;
 }
 @media (min-width:768px){
     .wrapper__black {
@@ -47,5 +45,8 @@
     display: block;
     width: calc(126% + -39.7px);
     height: 168px;
+    }
+    .custom-shape-divider-bottom-1693539436 .shape-fill {
+        fill: #000000;
     }
 }

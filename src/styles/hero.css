@@ -5,12 +5,12 @@
 
 .hero {
 	transition: 0.9s ease;
-    display: flex;
-    height: 110dvh;
-    background: linear-gradient(var(--gradient));
-    flex-direction: column;
-    z-index: 2;
-    justify-content: space-evenly;
+	display: flex;
+	height: 752px;
+	background: linear-gradient(var(--gradient));
+	flex-direction: column;
+	z-index: 2;
+	justify-content: space-evenly;
 }
 
 .hero__contenedor {
@@ -26,13 +26,13 @@
 }
 
 .hero__titulo {
-    font-family: var(--montserrat);
-    transition: all 0.9s;
-    color: var(--seccond-color);
-    font-size: 3.7rem;
-    text-align: center;
-    font-weight: bold;
-    filter: var(--drop-shadow-black);
+	font-family: "Montserrat", sans-serif;
+	transition: all 0.9s;
+	color: var(--seccond-color);
+	font-size: 4.3rem;
+	text-align: center;
+	font-weight: bold;
+	filter: drop-shadow(2 -1px 1px var(--pure-black));
 }
 
 .hero__titulo span {
@@ -68,7 +68,7 @@
 	width: 100%;
 }
 
-/* Profile pic*/
+/* Foto de perfil */
 .side__profile {
 	display: flex;
 	align-items: center;
@@ -76,7 +76,7 @@
 }
 
 .side__img {
-	min-width: 25rem;
+	min-width: 28rem;
 	width: 60%;
 	position: relative;
 	max-width: 29rem;
@@ -278,7 +278,7 @@
 	.youtube {
 		top: 112px;
 		right: -33px;
-		transform: rotate(-23deg);
+		rotate: -23deg;
 	}
 
 	.youtube .social__icon {
@@ -299,15 +299,14 @@
 	.hero {
 		height: 129vh;
 		justify-content: center;
-		height: 133vh;
 	}
 
 	.hero__contenedor {
 		justify-content: space-around;
+		/* gap: 7rem; */
 		margin-top: -12rem;
 		flex-wrap: nowrap;
-		max-width: 1390px;
-		align-self: center;
+		max-width: 1920px;
 	}
 
 	.hero__titulo {
@@ -364,6 +363,7 @@
 	.youtube {
 		top: 181px;
 		right: -44px;
+		rotate: -23deg;
 	}
 
 
