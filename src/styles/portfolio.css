@@ -236,7 +236,7 @@
 	.portafolio__contenedor {
 		justify-content: center;
 		align-items: center;
-		gap: 3rem;
+		gap: 0rem;
 		padding: 0 3rem;
 	}
 
