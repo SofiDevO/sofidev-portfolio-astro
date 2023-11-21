@@ -1,0 +1,41 @@
+import type { DevOverlayPlugin as DevOverlayPluginDefinition } from '../../../@types/astro.js';
+import { type Icon } from './ui-library/icons.js';
+export type DevOverlayPlugin = DevOverlayPluginDefinition & {
+    builtIn: boolean;
+    active: boolean;
+    status: 'ready' | 'loading' | 'error';
+    eventTarget: EventTarget;
+};
+export declare class AstroDevOverlay extends HTMLElement {
+    shadowRoot: ShadowRoot;
+    hoverTimeout: number | undefined;
+    isHidden: () => boolean;
+    devOverlay: HTMLDivElement | undefined;
+    plugins: DevOverlayPlugin[];
+    HOVER_DELAY: number;
+    hasBeenInitialized: boolean;
+    constructor();
+    connectedCallback(): Promise<void>;
+    attachEvents(): void;
+    initAllPlugins(): Promise<void>;
+    initPlugin(plugin: DevOverlayPlugin): Promise<void>;
+    getPluginTemplate(plugin: DevOverlayPlugin): string;
+    getPluginIcon(icon: Icon): string | undefined;
+    getPluginById(id: string): DevOverlayPlugin | undefined;
+    getPluginCanvasById(id: string): HTMLElement | null;
+    /**
+     * @param plugin The plugin to toggle the status of
+     * @param newStatus Optionally, force the plugin into a specific state
+     */
+    togglePluginStatus(plugin: DevOverlayPlugin, newStatus?: boolean): Promise<void>;
+    /**
+     * @param newStatus Optionally, force the minimize button into a specific state
+     */
+    toggleMinimizeButton(newStatus?: boolean): void;
+    toggleOverlay(newStatus?: boolean): void;
+}
+export declare class DevOverlayCanvas extends HTMLElement {
+    shadowRoot: ShadowRoot;
+    constructor();
+    connectedCallback(): void;
+}

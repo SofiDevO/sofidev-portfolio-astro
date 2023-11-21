@@ -1,0 +1,23 @@
+/// <reference types="node" resolution-mode="require"/>
+import type { APIContext, EndpointHandler, EndpointOutput, MiddlewareHandler, Params } from '../../@types/astro.js';
+import { type Environment, type RenderContext } from '../render/index.js';
+type CreateAPIContext = {
+    request: Request;
+    params: Params;
+    site?: string;
+    props: Record<string, any>;
+    adapterName?: string;
+    locales: string[] | undefined;
+};
+/**
+ * Creates a context that holds all the information needed to handle an Astro endpoint.
+ *
+ * @param {CreateAPIContext} payload
+ */
+export declare function createAPIContext({ request, params, site, props, adapterName, locales, }: CreateAPIContext): APIContext;
+type ResponseParameters = ConstructorParameters<typeof Response>;
+export declare class ResponseWithEncoding extends Response {
+    constructor(body: ResponseParameters[0], init: ResponseParameters[1], encoding?: BufferEncoding);
+}
+export declare function callEndpoint<MiddlewareResult = Response | EndpointOutput>(mod: EndpointHandler, env: Environment, ctx: RenderContext, onRequest: MiddlewareHandler<MiddlewareResult> | undefined, locales: undefined | string[]): Promise<Response>;
+export {};

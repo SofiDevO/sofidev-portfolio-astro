@@ -1,0 +1,5 @@
+import type { DevOverlayHighlight } from '../../ui-library/highlight.js';
+import type { Icon } from '../../ui-library/icons.js';
+export declare function createHighlight(rect: DOMRect, icon?: Icon): DevOverlayHighlight;
+export declare function positionHighlight(highlight: DevOverlayHighlight, rect: DOMRect): void;
+export declare function attachTooltipToHighlight(highlight: DevOverlayHighlight, tooltip: HTMLElement, originalElement: Element): void;

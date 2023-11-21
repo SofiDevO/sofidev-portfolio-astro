@@ -1,0 +1,326 @@
+import { createI18nMiddleware } from "../../i18n/middleware.js";
+import { getSetCookiesFromResponse } from "../cookies/index.js";
+import { consoleLogDestination } from "../logger/console.js";
+import { AstroIntegrationLogger, Logger } from "../logger/core.js";
+import { sequence } from "../middleware/index.js";
+import {
+  collapseDuplicateSlashes,
+  prependForwardSlash,
+  removeTrailingForwardSlash
+} from "../path.js";
+import { RedirectSinglePageBuiltModule } from "../redirects/index.js";
+import { createEnvironment, createRenderContext } from "../render/index.js";
+import { RouteCache } from "../render/route-cache.js";
+import {
+  createAssetLink,
+  createModuleScriptElement,
+  createStylesheetElementSet
+} from "../render/ssr-element.js";
+import { matchRoute } from "../routing/match.js";
+import { EndpointNotFoundError, SSRRoutePipeline } from "./ssrPipeline.js";
+import { deserializeManifest } from "./common.js";
+const clientLocalsSymbol = Symbol.for("astro.locals");
+const responseSentSymbol = Symbol.for("astro.responseSent");
+const STATUS_CODES = /* @__PURE__ */ new Set([404, 500]);
+class App {
+  /**
+   * The current environment of the application
+   */
+  #manifest;
+  #manifestData;
+  #routeDataToRouteInfo;
+  #logger = new Logger({
+    dest: consoleLogDestination,
+    level: "info"
+  });
+  #baseWithoutTrailingSlash;
+  #pipeline;
+  #adapterLogger;
+  constructor(manifest, streaming = true) {
+    this.#manifest = manifest;
+    this.#manifestData = {
+      routes: manifest.routes.map((route) => route.routeData)
+    };
+    this.#routeDataToRouteInfo = new Map(manifest.routes.map((route) => [route.routeData, route]));
+    this.#baseWithoutTrailingSlash = removeTrailingForwardSlash(this.#manifest.base);
+    this.#pipeline = new SSRRoutePipeline(this.#createEnvironment(streaming));
+    this.#adapterLogger = new AstroIntegrationLogger(
+      this.#logger.options,
+      this.#manifest.adapterName
+    );
+  }
+  getAdapterLogger() {
+    return this.#adapterLogger;
+  }
+  /**
+   * Creates an environment by reading the stored manifest
+   *
+   * @param streaming
+   * @private
+   */
+  #createEnvironment(streaming = false) {
+    return createEnvironment({
+      adapterName: this.#manifest.adapterName,
+      logger: this.#logger,
+      mode: "production",
+      compressHTML: this.#manifest.compressHTML,
+      renderers: this.#manifest.renderers,
+      clientDirectives: this.#manifest.clientDirectives,
+      resolve: async (specifier) => {
+        if (!(specifier in this.#manifest.entryModules)) {
+          throw new Error(`Unable to resolve [${specifier}]`);
+        }
+        const bundlePath = this.#manifest.entryModules[specifier];
+        switch (true) {
+          case bundlePath.startsWith("data:"):
+          case bundlePath.length === 0: {
+            return bundlePath;
+          }
+          default: {
+            return createAssetLink(bundlePath, this.#manifest.base, this.#manifest.assetsPrefix);
+          }
+        }
+      },
+      routeCache: new RouteCache(this.#logger),
+      site: this.#manifest.site,
+      ssr: true,
+      streaming
+    });
+  }
+  set setManifestData(newManifestData) {
+    this.#manifestData = newManifestData;
+  }
+  removeBase(pathname) {
+    if (pathname.startsWith(this.#manifest.base)) {
+      return pathname.slice(this.#baseWithoutTrailingSlash.length + 1);
+    }
+    return pathname;
+  }
+  match(request, _opts = {}) {
+    const url = new URL(request.url);
+    if (this.#manifest.assets.has(url.pathname))
+      return void 0;
+    const pathname = prependForwardSlash(this.removeBase(url.pathname));
+    const routeData = matchRoute(pathname, this.#manifestData);
+    if (!routeData || routeData.prerender)
+      return void 0;
+    return routeData;
+  }
+  async render(request, routeData, locals) {
+    if (request.url !== collapseDuplicateSlashes(request.url)) {
+      request = new Request(collapseDuplicateSlashes(request.url), request);
+    }
+    if (!routeData) {
+      routeData = this.match(request);
+    }
+    if (!routeData) {
+      return this.#renderError(request, { status: 404 });
+    }
+    Reflect.set(request, clientLocalsSymbol, locals ?? {});
+    const defaultStatus = this.#getDefaultStatusCode(routeData.route);
+    const mod = await this.#getModuleForRoute(routeData);
+    const pageModule = await mod.page();
+    const url = new URL(request.url);
+    const renderContext = await this.#createRenderContext(
+      url,
+      request,
+      routeData,
+      mod,
+      defaultStatus
+    );
+    let response;
+    try {
+      let i18nMiddleware = createI18nMiddleware(this.#manifest.i18n, this.#manifest.base);
+      if (i18nMiddleware) {
+        if (mod.onRequest) {
+          this.#pipeline.setMiddlewareFunction(
+            sequence(i18nMiddleware, mod.onRequest)
+          );
+        } else {
+          this.#pipeline.setMiddlewareFunction(i18nMiddleware);
+        }
+      } else {
+        if (mod.onRequest) {
+          this.#pipeline.setMiddlewareFunction(mod.onRequest);
+        }
+      }
+      response = await this.#pipeline.renderRoute(renderContext, pageModule);
+    } catch (err) {
+      if (err instanceof EndpointNotFoundError) {
+        return this.#renderError(request, { status: 404, response: err.originalResponse });
+      } else {
+        this.#logger.error("ssr", err.stack || err.message || String(err));
+        return this.#renderError(request, { status: 500 });
+      }
+    }
+    if (routeData.type === "page" || routeData.type === "redirect") {
+      if (STATUS_CODES.has(response.status)) {
+        return this.#renderError(request, {
+          response,
+          status: response.status
+        });
+      }
+      Reflect.set(response, responseSentSymbol, true);
+      return response;
+    }
+    return response;
+  }
+  setCookieHeaders(response) {
+    return getSetCookiesFromResponse(response);
+  }
+  /**
+   * Creates the render context of the current route
+   */
+  async #createRenderContext(url, request, routeData, page, status = 200) {
+    if (routeData.type === "endpoint") {
+      const pathname = "/" + this.removeBase(url.pathname);
+      const mod = await page.page();
+      const handler = mod;
+      return await createRenderContext({
+        request,
+        pathname,
+        route: routeData,
+        status,
+        env: this.#pipeline.env,
+        mod: handler,
+        locales: this.#manifest.i18n ? this.#manifest.i18n.locales : void 0
+      });
+    } else {
+      const pathname = prependForwardSlash(this.removeBase(url.pathname));
+      const info = this.#routeDataToRouteInfo.get(routeData);
+      const links = /* @__PURE__ */ new Set();
+      const styles = createStylesheetElementSet(info.styles);
+      let scripts = /* @__PURE__ */ new Set();
+      for (const script of info.scripts) {
+        if ("stage" in script) {
+          if (script.stage === "head-inline") {
+            scripts.add({
+              props: {},
+              children: script.children
+            });
+          }
+        } else {
+          scripts.add(createModuleScriptElement(script));
+        }
+      }
+      const mod = await page.page();
+      return await createRenderContext({
+        request,
+        pathname,
+        componentMetadata: this.#manifest.componentMetadata,
+        scripts,
+        styles,
+        links,
+        route: routeData,
+        status,
+        mod,
+        env: this.#pipeline.env,
+        locales: this.#manifest.i18n ? this.#manifest.i18n.locales : void 0
+      });
+    }
+  }
+  /**
+   * If it is a known error code, try sending the according page (e.g. 404.astro / 500.astro).
+   * This also handles pre-rendered /404 or /500 routes
+   */
+  async #renderError(request, { status, response: originalResponse, skipMiddleware = false }) {
+    const errorRouteData = matchRoute("/" + status, this.#manifestData);
+    const url = new URL(request.url);
+    if (errorRouteData) {
+      if (errorRouteData.prerender) {
+        const maybeDotHtml = errorRouteData.route.endsWith(`/${status}`) ? ".html" : "";
+        const statusURL = new URL(
+          `${this.#baseWithoutTrailingSlash}/${status}${maybeDotHtml}`,
+          url
+        );
+        const response2 = await fetch(statusURL.toString());
+        const override = { status };
+        return this.#mergeResponses(response2, originalResponse, override);
+      }
+      const mod = await this.#getModuleForRoute(errorRouteData);
+      try {
+        const newRenderContext = await this.#createRenderContext(
+          url,
+          request,
+          errorRouteData,
+          mod,
+          status
+        );
+        const page = await mod.page();
+        if (skipMiddleware === false && mod.onRequest) {
+          this.#pipeline.setMiddlewareFunction(mod.onRequest);
+        }
+        if (skipMiddleware) {
+          this.#pipeline.unsetMiddlewareFunction();
+        }
+        const response2 = await this.#pipeline.renderRoute(newRenderContext, page);
+        return this.#mergeResponses(response2, originalResponse);
+      } catch {
+        if (skipMiddleware === false && mod.onRequest) {
+          return this.#renderError(request, {
+            status,
+            response: originalResponse,
+            skipMiddleware: true
+          });
+        }
+      }
+    }
+    const response = this.#mergeResponses(new Response(null, { status }), originalResponse);
+    Reflect.set(response, responseSentSymbol, true);
+    return response;
+  }
+  #mergeResponses(newResponse, oldResponse, override) {
+    if (!oldResponse) {
+      if (override !== void 0) {
+        return new Response(newResponse.body, {
+          status: override.status,
+          statusText: newResponse.statusText,
+          headers: newResponse.headers
+        });
+      }
+      return newResponse;
+    }
+    const { statusText, headers } = oldResponse;
+    const status = override?.status ? override.status : oldResponse.status === 200 ? newResponse.status : oldResponse.status;
+    return new Response(newResponse.body, {
+      status,
+      statusText: status === 200 ? newResponse.statusText : statusText,
+      headers: new Headers(Array.from(headers))
+    });
+  }
+  #getDefaultStatusCode(route) {
+    route = removeTrailingForwardSlash(route);
+    if (route.endsWith("/404"))
+      return 404;
+    if (route.endsWith("/500"))
+      return 500;
+    return 200;
+  }
+  async #getModuleForRoute(route) {
+    if (route.type === "redirect") {
+      return RedirectSinglePageBuiltModule;
+    } else {
+      if (this.#manifest.pageMap) {
+        const importComponentInstance = this.#manifest.pageMap.get(route.component);
+        if (!importComponentInstance) {
+          throw new Error(
+            `Unexpectedly unable to find a component instance for route ${route.route}`
+          );
+        }
+        const pageModule = await importComponentInstance();
+        return pageModule;
+      } else if (this.#manifest.pageModule) {
+        const importComponentInstance = this.#manifest.pageModule;
+        return importComponentInstance;
+      } else {
+        throw new Error(
+          "Astro couldn't find the correct page to render, probably because it wasn't correctly mapped for SSR usage. This is an internal error, please file an issue."
+        );
+      }
+    }
+  }
+}
+export {
+  App,
+  deserializeManifest
+};

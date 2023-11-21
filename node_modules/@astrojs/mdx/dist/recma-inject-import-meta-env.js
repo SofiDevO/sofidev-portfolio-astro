@@ -1,0 +1,46 @@
+import { visit as estreeVisit } from "estree-util-visit";
+function recmaInjectImportMetaEnv({
+  importMetaEnv
+}) {
+  return (tree) => {
+    estreeVisit(tree, (node) => {
+      if (node.type === "MemberExpression") {
+        const envVarName = getImportMetaEnvVariableName(node);
+        if (typeof envVarName === "string") {
+          for (const key in node) {
+            delete node[key];
+          }
+          const envVarLiteral = {
+            type: "Literal",
+            value: importMetaEnv[envVarName],
+            raw: JSON.stringify(importMetaEnv[envVarName])
+          };
+          Object.assign(node, envVarLiteral);
+        }
+      }
+    });
+  };
+}
+function getImportMetaEnvVariableName(node) {
+  try {
+    if (node.object.type !== "MemberExpression" || node.property.type !== "Identifier")
+      return new Error();
+    const nestedExpression = node.object;
+    if (nestedExpression.property.type !== "Identifier" || nestedExpression.property.name !== "env")
+      return new Error();
+    const envExpression = nestedExpression.object;
+    if (envExpression.type !== "MetaProperty" || envExpression.property.type !== "Identifier" || envExpression.property.name !== "meta")
+      return new Error();
+    if (envExpression.meta.name !== "import")
+      return new Error();
+    return node.property.name;
+  } catch (e) {
+    if (e instanceof Error) {
+      return e;
+    }
+    return new Error("Unknown parsing error");
+  }
+}
+export {
+  recmaInjectImportMetaEnv
+};

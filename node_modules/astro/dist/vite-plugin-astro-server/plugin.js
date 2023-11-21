@@ -1,0 +1,89 @@
+import { patchOverlay } from "../core/errors/overlay.js";
+import { createViteLoader } from "../core/module-loader/index.js";
+import { createRouteManifest } from "../core/routing/index.js";
+import { baseMiddleware } from "./base.js";
+import { createController } from "./controller.js";
+import DevPipeline from "./devPipeline.js";
+import { handleRequest } from "./request.js";
+function createVitePluginAstroServer({
+  settings,
+  logger,
+  fs: fsMod
+}) {
+  return {
+    name: "astro:server",
+    configureServer(viteServer) {
+      const loader = createViteLoader(viteServer);
+      const manifest = createDevelopmentManifest(settings);
+      const pipeline = new DevPipeline({ logger, manifest, settings, loader });
+      let manifestData = createRouteManifest({ settings, fsMod }, logger);
+      const controller = createController({ loader });
+      function rebuildManifest(needsManifestRebuild) {
+        pipeline.clearRouteCache();
+        if (needsManifestRebuild) {
+          manifestData = createRouteManifest({ settings }, logger);
+        }
+      }
+      viteServer.watcher.on("add", rebuildManifest.bind(null, true));
+      viteServer.watcher.on("unlink", rebuildManifest.bind(null, true));
+      viteServer.watcher.on("change", rebuildManifest.bind(null, false));
+      return () => {
+        viteServer.middlewares.stack.unshift({
+          route: "",
+          handle: baseMiddleware(settings, logger)
+        });
+        viteServer.middlewares.use(async function astroDevHandler(request, response) {
+          if (request.url === void 0 || !request.method) {
+            response.writeHead(500, "Incomplete request");
+            response.end();
+            return;
+          }
+          handleRequest({
+            pipeline,
+            manifestData,
+            controller,
+            incomingRequest: request,
+            incomingResponse: response,
+            manifest
+          });
+        });
+      };
+    },
+    transform(code, id, opts = {}) {
+      if (opts.ssr)
+        return;
+      if (!id.includes("vite/dist/client/client.mjs"))
+        return;
+      return patchOverlay(code);
+    }
+  };
+}
+function createDevelopmentManifest(settings) {
+  let i18nManifest = void 0;
+  if (settings.config.experimental.i18n) {
+    i18nManifest = {
+      fallback: settings.config.experimental.i18n.fallback,
+      routingStrategy: settings.config.experimental.i18n.routingStrategy,
+      defaultLocale: settings.config.experimental.i18n.defaultLocale,
+      locales: settings.config.experimental.i18n.locales
+    };
+  }
+  return {
+    compressHTML: settings.config.compressHTML,
+    assets: /* @__PURE__ */ new Set(),
+    entryModules: {},
+    routes: [],
+    adapterName: "",
+    clientDirectives: settings.clientDirectives,
+    renderers: [],
+    base: settings.config.base,
+    assetsPrefix: settings.config.build.assetsPrefix,
+    site: settings.config.site ? new URL(settings.config.base, settings.config.site).toString() : settings.config.site,
+    componentMetadata: /* @__PURE__ */ new Map(),
+    i18n: i18nManifest
+  };
+}
+export {
+  createDevelopmentManifest,
+  createVitePluginAstroServer as default
+};

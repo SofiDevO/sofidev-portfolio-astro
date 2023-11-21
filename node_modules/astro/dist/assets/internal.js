@@ -1,0 +1,103 @@
+import { isRemotePath } from "@astrojs/internal-helpers/path";
+import { AstroError, AstroErrorData } from "../core/errors/index.js";
+import { DEFAULT_HASH_PROPS } from "./consts.js";
+import { isLocalService } from "./services/service.js";
+import { matchHostname, matchPattern } from "./utils/remotePattern.js";
+function injectImageEndpoint(settings, mode) {
+  const endpointEntrypoint = settings.config.image.endpoint ?? (mode === "dev" ? "astro/assets/endpoint/node" : "astro/assets/endpoint/generic");
+  settings.injectedRoutes.push({
+    pattern: "/_image",
+    entryPoint: endpointEntrypoint,
+    prerender: false
+  });
+  return settings;
+}
+function isESMImportedImage(src) {
+  return typeof src === "object";
+}
+function isRemoteImage(src) {
+  return typeof src === "string";
+}
+function isRemoteAllowed(src, {
+  domains = [],
+  remotePatterns = []
+}) {
+  if (!isRemotePath(src))
+    return false;
+  const url = new URL(src);
+  return domains.some((domain) => matchHostname(url, domain)) || remotePatterns.some((remotePattern) => matchPattern(url, remotePattern));
+}
+async function getConfiguredImageService() {
+  if (!globalThis?.astroAsset?.imageService) {
+    const { default: service } = await import(
+      // @ts-expect-error
+      "virtual:image-service"
+    ).catch((e) => {
+      const error = new AstroError(AstroErrorData.InvalidImageService);
+      error.cause = e;
+      throw error;
+    });
+    if (!globalThis.astroAsset)
+      globalThis.astroAsset = {};
+    globalThis.astroAsset.imageService = service;
+    return service;
+  }
+  return globalThis.astroAsset.imageService;
+}
+async function getImage(options, imageConfig) {
+  if (!options || typeof options !== "object") {
+    throw new AstroError({
+      ...AstroErrorData.ExpectedImageOptions,
+      message: AstroErrorData.ExpectedImageOptions.message(JSON.stringify(options))
+    });
+  }
+  const service = await getConfiguredImageService();
+  const resolvedOptions = {
+    ...options,
+    src: typeof options.src === "object" && "then" in options.src ? (await options.src).default ?? await options.src : options.src
+  };
+  const clonedSrc = isESMImportedImage(resolvedOptions.src) ? (
+    // @ts-expect-error - clone is a private, hidden prop
+    resolvedOptions.src.clone ?? resolvedOptions.src
+  ) : resolvedOptions.src;
+  resolvedOptions.src = clonedSrc;
+  const validatedOptions = service.validateOptions ? await service.validateOptions(resolvedOptions, imageConfig) : resolvedOptions;
+  const srcSetTransforms = service.getSrcSet ? await service.getSrcSet(validatedOptions, imageConfig) : [];
+  let imageURL = await service.getURL(validatedOptions, imageConfig);
+  let srcSets = await Promise.all(
+    srcSetTransforms.map(async (srcSet) => ({
+      transform: srcSet.transform,
+      url: await service.getURL(srcSet.transform, imageConfig),
+      descriptor: srcSet.descriptor,
+      attributes: srcSet.attributes
+    }))
+  );
+  if (isLocalService(service) && globalThis.astroAsset.addStaticImage && !(isRemoteImage(validatedOptions.src) && imageURL === validatedOptions.src)) {
+    const propsToHash = service.propertiesToHash ?? DEFAULT_HASH_PROPS;
+    imageURL = globalThis.astroAsset.addStaticImage(validatedOptions, propsToHash);
+    srcSets = srcSetTransforms.map((srcSet) => ({
+      transform: srcSet.transform,
+      url: globalThis.astroAsset.addStaticImage(srcSet.transform, propsToHash),
+      descriptor: srcSet.descriptor,
+      attributes: srcSet.attributes
+    }));
+  }
+  return {
+    rawOptions: resolvedOptions,
+    options: validatedOptions,
+    src: imageURL,
+    srcSet: {
+      values: srcSets,
+      attribute: srcSets.map((srcSet) => `${srcSet.url} ${srcSet.descriptor}`).join(", ")
+    },
+    attributes: service.getHTMLAttributes !== void 0 ? await service.getHTMLAttributes(validatedOptions, imageConfig) : {}
+  };
+}
+export {
+  getConfiguredImageService,
+  getImage,
+  injectImageEndpoint,
+  isESMImportedImage,
+  isRemoteAllowed,
+  isRemoteImage
+};

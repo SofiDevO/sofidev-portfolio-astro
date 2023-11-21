@@ -1,0 +1,40 @@
+import * as vite from "vite";
+const virtualModuleId = "astro:transitions";
+const resolvedVirtualModuleId = "\0" + virtualModuleId;
+const virtualClientModuleId = "astro:transitions/client";
+const resolvedVirtualClientModuleId = "\0" + virtualClientModuleId;
+function astroTransitions({ settings }) {
+  return {
+    name: "astro:transitions",
+    async resolveId(id) {
+      if (id === virtualModuleId) {
+        return resolvedVirtualModuleId;
+      }
+      if (id === virtualClientModuleId) {
+        return resolvedVirtualClientModuleId;
+      }
+    },
+    load(id) {
+      if (id === resolvedVirtualModuleId) {
+        return `
+				export * from "astro/transitions";
+				export { default as ViewTransitions } from "astro/components/ViewTransitions.astro";
+			`;
+      }
+      if (id === resolvedVirtualClientModuleId) {
+        return `
+				export * from "astro/transitions/router";
+			`;
+      }
+    },
+    transform(code, id) {
+      if (id.includes("ViewTransitions.astro") && id.endsWith(".ts")) {
+        const prefetchDisabled = settings.config.prefetch === false;
+        return code.replace("__PREFETCH_DISABLED__", JSON.stringify(prefetchDisabled));
+      }
+    }
+  };
+}
+export {
+  astroTransitions as default
+};
