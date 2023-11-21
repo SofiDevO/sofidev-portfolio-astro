@@ -159,18 +159,15 @@
 	transform: translateY(-300px);
 	animation: expand 1.5s ease-in-out forwards;
 }
-
 .platzi .social__icon {
 	width: 53px;
 }
-
 .youtube {
 	bottom: -208px;
 	right: -33px;
 	transform: translateY(500px);
 	animation: expand 0.6s ease-in-out forwards 0.8s;
 }
-
 .youtube .social__icon {
 	width: 8rem;
 }
@@ -278,7 +275,7 @@
 	.youtube {
 		top: 112px;
 		right: -33px;
-		rotate: -23deg;
+		transform: rotate(-23deg);
 	}
 
 	.youtube .social__icon {
@@ -297,7 +294,7 @@
 
 @media (min-width: 1200px) {
 	.hero {
-		height: 129vh;
+		height: 133vh;
 		justify-content: center;
 	}
 
@@ -363,7 +360,6 @@
 	.youtube {
 		top: 181px;
 		right: -44px;
-		rotate: -23deg;
 	}
 
 

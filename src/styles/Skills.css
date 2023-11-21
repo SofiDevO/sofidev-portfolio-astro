@@ -17,7 +17,6 @@
     width: 100%;
     height: auto;
     align-items: center;
-    gap: 2rem;
     justify-content: center;
 
 }
@@ -157,7 +156,7 @@
 		flex-wrap: nowrap;
 		justify-content: center;
 		align-items: center;
-		padding: 0 10rem;
+		padding:0px 5rem;
     }
 
 	.skills__titulo {

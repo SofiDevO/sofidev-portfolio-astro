@@ -83,12 +83,17 @@
 	
 }
 
-.terminal__content {
-	font-size: 1.9rem;
-	text-align: left;
+.terminal__container{
 	padding: 0 1rem;
-	font-family: var(--fira-code);
-	width: 100%;
+
+}
+
+.terminal__content {
+	text-align: left;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: var(--fira-code);
+    line-height: normal;
 }
 .caja__cristal img {
 	max-width: 100%;
@@ -101,24 +106,23 @@
 	width: 25px;
 	filter: invert(100%) saturate(5);
 }
-
-.terminal__content p {
-	color: rgb(182, 182, 3);
-	text-align: left;
-	font-size: 18px;
-	font-weight: 400;
-	font-family: var(--fira-code);
-	line-height: 1.5;
-	margin: 0;
+.terminal__content--p {
+    color: rgb(182, 182, 3);
+}   
+.terminal__content--color {
+    color: var(--blue-terminal);
 }
-.terminal__content h3 {
-	color: var(--pink-terminal);
-	font-family: var(--fira-code);
+.terminal__content--h3 {
+    color: var(--pink-terminal);
+    font-family: var(--fira-code);
 }
-.terminal__content span {
-	color: var(--green-terminal);
-	font-weight: 500;
-	font-family: var(--fira-code);
+.terminal__content--span {
+    color: var(--green-terminal);
+    font-weight: 500;
+    font-family: var(--fira-code);
+}
+.terminal__link {
+    color: var(--pink-terminal);
 }
 .terminal__link {
 	color: var(--pink-terminal);
