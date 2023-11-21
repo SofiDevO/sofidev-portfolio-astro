@@ -1,4 +1,3 @@
-Mis disculpas por el malentendido. Parece que hubo un error al integrar la explicación de las clases y variables en el documento. A continuación, proporciono la versión corregida que incluye la información faltante:
 
 # My First Portfolio - Created with HTML, CSS, and Javascript
 
