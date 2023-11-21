@@ -1,0 +1,291 @@
+.dark-mode body {
+	background: rgba(0, 0, 0, 0.783);
+	z-index: 10;
+}
+.dark-mode .about__page {
+	background: rgba(0, 0, 0, 0.241);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+}
+.dark-mode {
+	.blockquote-with-attribution 
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 th,
+	p,
+	strong,
+	em,
+	li {
+		color: var(--seccond-color);
+	}
+}
+.dark-mode a {
+	color: var(--green-terminal);
+}
+.dark-mode code span {
+	background-color: #24292e;
+}
+.dark-mode code {
+	background-color: var(--main-color);
+}
+.dark-mode mark {
+	background-color: var(--blue);
+}
+/* elemntos del header */
+.dark-mode .header {
+	background: rgba(0, 0, 0, 0.802);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(12.5px);
+	-webkit-backdrop-filter: blur(12.5px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.dark-mode .logo__dark {
+	transition: 2s ease-in-out;
+	filter: drop-shadow(0 0 11px rgba(0, 212, 255, 1));
+	color: white;
+}
+
+.dark-mode .menu__link {
+	color: rgba(0, 212, 255, 1);
+}
+.dark-mode .menu__list:hover .menu__link {
+	color: white;
+}
+
+.dark-mode .menu__list:hover {
+	background-color: rgb(16, 16, 16);
+}
+
+
+.dark-mode .span__dark {
+	transition: 2s ease-in-out;
+	color: rgba(0, 212, 255, 1);
+	filter: drop-shadow(0 0 11px rgba(0, 212, 255, 1));
+}
+
+.dark-mode .dark-mode__icon {
+	align-items: center;
+	cursor: pointer;
+	display: block;
+	filter: invert(0%) sepia(80%) saturate(300%) hue-rotate(110deg)
+		brightness(91%) contrast(101%) drop-shadow(0 0 12px rgba(0, 212, 255, 1));
+	transition: 0.2s ease-in-out;
+}
+.dark-mode .bi-lightning-charge-fill {
+	font-size: 2.8rem;
+	filter: invert(0%) sepia(80%) saturate(300%) hue-rotate(110deg)
+		brightness(91%) contrast(101%) drop-shadow(0 0 12px rgba(0, 212, 255, 1));
+	color: white;
+	cursor: pointer;
+}
+
+/* ELEMENTOS DEL MENU HAMBURGUESA */
+.dark-mode .hamburger-inner {
+	filter: invert(74%) sepia(58%) saturate(4419%) hue-rotate(149deg)
+		brightness(102%) contrast(107%);
+}
+.dark-mode .panel__styles {
+	background: rgba(0, 0, 0, 0.99);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	color: var(--glow-blue);
+	.dark-mode .menu-hamburger__link {
+		color: var(--blue);
+	}
+}
+.dark-mode .idioma__icon {
+	filter: invert(100%) sepia(22%) saturate(7443%) hue-rotate(110deg)
+		brightness(91%) contrast(101%) drop-shadow(0 0 12px rgba(0, 212, 255, 1));
+}
+.dark-mode .idioma__icon {
+	filter: invert(100%) sepia(22%) saturate(7443%) hue-rotate(110deg)
+		brightness(91%) contrast(101%) drop-shadow(0 0 12px rgba(0, 212, 255, 1));
+}
+/* Btn to TOP */
+.dark-mode .bi-arrow-up-circle {
+	color: var(--blue);
+	filter: brightness(91%) contrast(101%)
+		drop-shadow(0 0 12px rgba(0, 212, 255, 1));
+}
+/* ELEMNTOS DEL HERO */
+.dark-mode .hero {
+	background-color: var(--pure-black);
+	background: rgba(0, 0, 0, 0.464);
+	backdrop-filter: blur(2.5px);
+	-webkit-backdrop-filter: blur(2.5px);
+}
+.dark-mode .hero__titulo span {
+	color: var(--blue);
+	filter: var(--glow-blue);
+	transition: 3s ease-in-out;
+}
+.dark-mode .img__ligth {
+	display: none;
+}
+.dark-mode .img__dark {
+	display: block;
+	position: relative;
+	filter: drop-shadow(1px 0 15px #ff2386);
+	transition: 3s ease-in-out;
+}
+.dark-mode .alura .social__icon,
+.dark-mode .platzi .social__icon,
+.dark-mode .linkedin .social__icon,
+.dark-mode .youtube .social__icon,
+.dark-mode .github .social__icon {
+	animation: none;
+}
+.dark-mode .icono__dark {
+	filter: invert(100%) saturate(0%) drop-shadow(0 0 10px #5cb5ac);
+}
+/* SKILLS */
+.dark-mode .skills {
+	justify-content: flex-start;
+	background: linear-gradient(var(--gradient));
+}
+/* Carrusel */
+.dark-mode .tools__caja__slider {
+	background-color: var(--pure-black);
+}
+/* icono terminal */
+.dark-mode .terminal {
+	filter: invert(100%) drop-shadow(-1px 2px 4px #76ffc3);
+}
+.dark-mode .tool__dark {
+	filter: drop-shadow(-1px 2px 4px #76ffc3);
+}
+/* SECCION ACERCA DE */
+.dark-mode .about {
+	background: black;
+}
+.dark-mode .titulo__dark {
+	transition: 3s ease-in-out;
+	color: var(--blue);
+	filter: var(--glow-blue);
+}
+.dark-mode .acerca__titulo span {
+	color: var(--blue);
+	filter: var(--glow-blue);
+	transition: 3s ease-in-out;
+}
+.dark-mode .card__about {
+	background-color: var(--terminal-bg-dark);
+	transition: 3s ease-in-out;
+}
+.card-title span {
+	color: var(--pink-terminal);
+	transition: 3s ease-in-out;
+}
+.dark-mode .terminal__link {
+	filter: none;
+}
+.dark-mode .terminal__link:hover {
+	color: var(--green-terminal);
+}
+.dark-mode .terminal__content--span {
+	color: var(--blue);
+	filter: var(--glow-blue);
+	transition: 3s ease-in-out;
+}
+.dark-mode .about__icons {
+	filter: var(--icons-glow-dark);
+}
+.dark-mode .terminal__content--h3{
+	color: var(--green-terminal);
+}
+.dark-mode .icono__boton {
+	filter: invert(100%) saturate(0%) drop-shadow(-1px 2px 4px #76ffc3);
+}
+.dark-mode .boton {
+	background: var(--pure-black);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(19px);
+	-webkit-backdrop-filter: blur(19px);
+	border: 3px solid rgba(244, 247, 247, 0.743);
+}
+.dark-mode .boton:hover {
+	transition: 0s ease-out;
+	border: 3px solid var(--green-terminal);
+}
+/* SECCION SKILLS */
+.dark-mode .skills__titulo {
+	transition: 3s ease-in-out;
+	color: rgba(0, 212, 255, 1);
+	filter: drop-shadow(0 0 5px rgba(0, 212, 255, 1));
+}
+.dark-mode .caja__dark {
+	background: rgba(18, 0, 33, 0.734);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(19px);
+	-webkit-backdrop-filter: blur(19px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.dark-mode .tools__caja {
+	border-radius: 50%;
+}
+.skills__caja:hover .skills__icono__dark {
+	filter: invert(24%) sepia(1%) saturate(40%) hue-rotate(42deg) brightness(96%)
+		contrast(80%);
+}
+/* Portafolio */
+.dark-mode .portafolio {
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(7px);
+	-webkit-backdrop-filter: blur(7px);
+}
+.dark-mode .caja__dark__portafolio {
+	background: rgba(0, 0, 0, 0.23);
+	box-shadow: 0 0px 12px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.dark-mode .portafolio__tarjeta .faceA,
+.dark-mode .portafolio__tarjeta .faceB {
+	background-color: unset;
+	background: rgba(0, 0, 0, 0.9);
+}
+/* Seccion Hobbies */
+.dark-mode .ytchannel {
+	
+	.ytchannel__title-red {
+		color: white;
+		text-shadow: 0px 1px 1px #000000;
+		filter: var(--glow-blue);
+	}
+	.ytchannel__title-red:hover {
+		color: red;
+
+		text-shadow: none;
+		filter: none;
+	}
+}
+.dark-mode .footer {
+	background-color: #040404;
+}
+@media (min-width: 768px) {
+	.dark-mode .header {
+		background: rgba(0, 0, 0, 0.802);
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(12.5px);
+		-webkit-backdrop-filter: blur(12.5px);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+	}
+
+	.dark-mode .panel__styles {
+		background: transparent;
+		box-shadow: unset;
+		border: none;
+		color: transparent;
+	}
+	.dark-mode .hero {
+		background-color: var(--pure-black);
+		background: rgba(0, 0, 0, 0.464);
+		backdrop-filter: blur(3px);
+		-webkit-backdrop-filter: blur(3px);
+	}
+}

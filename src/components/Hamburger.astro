@@ -1,0 +1,87 @@
+---
+
+
+---
+
+
+ <!-- menu movil (hamburguesa) -->
+ <button class="panel__btn hamburger hamburger--emphatic" type="button" aria-label="menu">
+	<span class="hamburger-box">
+		<span class="hamburger-inner" id="hamburguesa"></span>
+	</span>
+</button>
+
+
+
+<style>
+    /* Menu hamburguesa */
+.panel__btn {
+	position: fixed;
+    z-index: 9999;
+    bottom: 7%;
+    right: 1.5%;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: solid;
+    border-color: var(--dark-purple);
+}
+.panel {
+	position: fixed;
+	min-width: 100vw;
+	min-height: 100vh;
+	text-align: center;
+	z-index: 997;
+	top: 0;
+	right: 0;
+	transition: transform 0.3s ease;
+	transform: translate(100%, 0);
+	/* transform: translate(0, -100%); */
+	/* transform: translate(-100%, 0); */
+	/* transform: translate(0, 100%); */
+}
+.panel__styles {
+	background: var(--purple-bg);
+}
+.panel.is-active {
+	display: flex;
+	align-items: center;
+	transform: translate(0, 0);
+	background: linear-gradient(var(--gradient));
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	border-radius: 3rem 0 ;
+	border:  1px  solid rgba(255, 255, 255, 0.18);
+}
+
+@media (min-width:768px){
+    /* menu hamburguesa */
+	.panel__btn, .menu__avatar {
+		display: none;
+	}
+	.panel {
+		position: unset;
+		min-width: unset;
+		min-height: unset;
+		text-align: unset;
+		top: unset;
+		right: unset;
+	}
+
+	.panel__styles {
+		background: unset;
+		box-shadow: unset;
+		border: unset;
+		flex-direction: column;
+	}
+}
+</style>

@@ -1,0 +1,64 @@
+---
+import CardTerminal from "../layouts/CardTerminal.astro";
+import "../styles/global.css"
+import Button from "../components/Button"
+import BaseHead from "../components/BaseHead.astro";
+import DarkBg from "../components/DarkBg.astro";
+import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
+---
+<BaseHead/>
+<section>
+    <ToggleDarkBtn/>
+    <div class="container">
+        <div class="container__elements">
+            <img src="/img/sofidev_laptop.gif" alt="">
+        </div>
+        <CardTerminal>
+            <h1 class="found__titulo">const getErrorMessage = () => "404: Not Found";</h1>
+            <h3 class="found__subtitulo">Nanais, Nothing here</h3>
+            <div class="container__elements">
+                <Button
+            href="/"
+            src=""
+            text="Go Back!"
+            />
+            </div>
+        </CardTerminal>
+        <DarkBg/>
+    </div>
+        
+    </section>
+    
+<style>
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .container{
+        width: 56%;
+        display: flex;
+        flex-direction: column;
+    }
+    .container img{
+        width: 30rem;
+    }
+    .found__titulo{
+        color: var(--green-terminal);
+        text-align: center;
+        font-weight: 400;
+    }
+    .found__subtitulo{
+        font-weight: 400;
+        text-align: center;
+    }
+    .container__elements{
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+
+

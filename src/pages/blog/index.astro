@@ -1,0 +1,163 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import ToggleDarkBtn from "../../components/ToggleDarkBtn.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import BtnToTop from "../../components/BtnToTop.astro";
+import BarraTerminal from "../../components/BarraTerminal.astro";
+import CardTerminal from "../../layouts/CardTerminal.astro";
+import SecundaryMenu from "../../components/SecundaryMenu.astro";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<SecundaryMenu/>
+	<ToggleDarkBtn />
+	<BtnToTop />
+	<body>
+		<main>
+			<section class="blog__hero">
+				<div class="hero__img"></div>
+			</section>
+			<section class="blog">
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a class="post__link" href={`/blog/${post.slug}/`}>
+									<div class="text__content">
+										<h4 class="title">≥ {post.data.title}</h4>
+										<p class="post__description">{post.data.description}</p>
+										<p class="date">
+											{" "}
+											≥ <FormattedDate date={post.data.pubDate} />
+										</p>
+									</div>
+									<img class="post__img" src={post.data.heroImage} alt="" />
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+	<style>
+		main {
+			padding-top: 1rem;
+			width: 100%;
+		}
+		.blog__hero {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.hero__img {
+			background-size: cover;
+			height: 33vh;
+			background-position: center;
+			width: 100%;
+			background-image: url(../img/write.webp);
+		}
+		.dark-mode body {
+			background-color: var(--dark-purple);
+		}
+		.post__description {
+			font-family: var(--fira-code);
+			color: var(--main-color);
+		}
+		.dark-mode .post__description {
+			color: var(--yellow-terminal);
+		}
+		.date {
+			color: var(--pink-terminal);
+		}
+
+		.blog {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 4rem;
+		}
+		li{
+			list-style: none;
+		}
+		ul {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 2.5em;
+			flex-direction: column;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+		}
+		.post__link {
+			display: flex;
+			align-items: center;
+			width: 91vw;
+			justify-content: space-between;
+			border-bottom: solid 0.1rem #cacaca;
+		}
+		.post__img {
+			width: 35%;
+			max-height: 21.2rem;
+			height: auto;
+			object-fit: cover;
+		}
+
+		.text__content {
+			display: flex;
+			flex-direction: column;
+			word-break: break-word;
+			min-width: 15rem;
+			width: 60%;
+		}
+		.title {
+			margin: 0;
+			font-size: 2rem;
+			line-height: 1;
+			text-align: left;
+			color: var(--main-color);
+			font-family: var(--fira-code);
+		}
+		.dark-mode .title {
+			color: var(--green-terminal);
+		}
+
+		.date {
+			margin: 0;
+			text-align: left;
+		}
+		.dark-mode ul a:hover img {
+			box-shadow: var(--box-shadow);
+		}
+		@media (min-width: 768px) {
+			.hero__img {
+				width: 103vw;
+				height: 60vh;
+				min-width: 56vw;
+			}
+			.post__link {
+				width: 59vw;
+			}
+			.text__content {
+				width: 30rem;
+			}
+			.post__img {
+				width: 43%;
+			}
+		}
+	</style>
+</html>

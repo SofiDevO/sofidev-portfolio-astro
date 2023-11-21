@@ -1,1 +1,0 @@
-const o=document,t=o.querySelector(".to__top");t.addEventListener("click",()=>{window.location.href="#"});const e=o.querySelector(".to__top");window.addEventListener("scroll",()=>{window.pageYOffset>500?e.classList.add("active"):e.classList.remove("active")});

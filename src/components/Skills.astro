@@ -1,0 +1,32 @@
+---
+import CardSkill from "./CardSkills";
+import CardTerminal from "../layouts/CardTerminal.astro";
+import Button from "../components/Button";
+
+---
+
+<section class="skills" id="skills">
+	<h2 class="titulo titulo__dark">Skills</h2>
+	<div class="skills__container">
+        <CardTerminal>
+			<p class="terminal__content terminal__content--p">
+				≥ Happily graduated from the" <a href="https://www.oracle.com/mx/education/oracle-next-education/">'One Oracle Next Education'</a> <span class="terminal__content terminal__content--span">program.</span>
+			</p>
+			
+			<p class="terminal__content terminal__content--p"> ≥ Strong foundation in 
+				<span class="terminal__content terminal__content--span">semantic HTML, CSS, SCSS,Javascript,React, Styled Components,SASS, React Router, Axios, and Astro. I also have basic knowledge of MySQL.</span>
+			</p>
+			<p class="terminal__content terminal__content--color">≥ In addition to my technical skills, I have experince in, graphic design, and UI design.</p>
+        <Button
+        href="./docs/Angela_Sofia_Osorio_Cv_2023.pdf"
+		text="Download Cv"
+		target="_blank"
+        />
+		</CardTerminal>
+		<div class="skills__cards-container">
+			<div class="skills__cajas">
+				<CardSkill />
+			</div>
+		</div>
+	</div>
+</section>
