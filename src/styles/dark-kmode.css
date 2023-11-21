@@ -57,9 +57,7 @@
 	background-color: rgb(16, 16, 16);
 }
 
-.dark-mode .custom-shape-divider-bottom-1693539436 .shape-fill {
-	fill: #040404;
-}
+
 
 .dark-mode .span__dark {
 	transition: 2s ease-in-out;
@@ -186,10 +184,13 @@
 .dark-mode .terminal__link:hover {
 	color: var(--green-terminal);
 }
-.dark-mode .terminal__content span {
+.dark-mode .terminal__content--span {
 	color: var(--blue);
 	filter: var(--glow-blue);
 	transition: 3s ease-in-out;
+}
+.dark-mode .terminal__content--h3{
+	color: var(--green-terminal);
 }
 .dark-mode .about__icons {
 	filter: var(--icons-glow-dark);

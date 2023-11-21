@@ -5,7 +5,9 @@
     height: 28vh;
 }
 .dark-mode .wrapper__black {
-    background-color: #2e006e;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    background: rgba(0, 0, 0, 0.6);
 }
 .custom-shape-divider-bottom-1693539436 {
     position: absolute;

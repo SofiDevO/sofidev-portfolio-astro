@@ -2,7 +2,6 @@
 import CardTerminal from "../layouts/CardTerminal.astro";
 import CardsPostsHome from "./CardsPostsHome.astro";
 import TitleSpan from "./TitleSpan.astro"
-import TerminalText from "./TerminalText.astro"
 
 ---
 
@@ -11,12 +10,12 @@ import TerminalText from "./TerminalText.astro"
     <div class="post__container">
         <CardsPostsHome/>
         <div class="container__terminal">
+            
             <CardTerminal>
-                <TerminalText
-                spanLink="In my free time, you'll often find me"
-                textWithSpan="sipping coffee and  writing articles on my blog."
-                textInSpan="I love writing about programming, writing tips, and personal branding 💛"
-                />
+                <p class="terminal__content terminal__content--p">In my free time, you'll often find me
+                    <span class="terminal__content--span spna__dark">sipping coffee and  writing articles on my blog.</span>
+                </p>
+                <p class="terminal__content terminal__content--p">I love writing about programming, writing tips, and personal branding 💛</p>
             </CardTerminal>
         </div>
     </div>

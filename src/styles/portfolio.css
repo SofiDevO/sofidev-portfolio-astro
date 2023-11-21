@@ -184,6 +184,7 @@
 		align-items: center;
 		justify-content: space-evenly;
 		height: auto;
+		padding: 5rem 0;
 	}
 	.portafolio__contenedor {
 		justify-content: center;
