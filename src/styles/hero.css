@@ -302,10 +302,11 @@
 	}
 
 	.hero__contenedor {
-		justify-content: center;
-		gap: 7rem;
+		justify-content: space-around;
+		/* gap: 7rem; */
 		margin-top: -12rem;
 		flex-wrap: nowrap;
+		max-width: 1920px;
 	}
 
 	.hero__titulo {
@@ -364,8 +365,9 @@
 		right: -44px;
 		rotate: -23deg;
 	}
-}
+
 
 .youtube .social__icon {
 	width: 12rem;
+}
 }

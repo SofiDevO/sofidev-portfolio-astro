@@ -252,7 +252,7 @@
 }
 /* Seccion Hobbies */
 .dark-mode .ytchannel {
-	background: linear-gradient(var(--gradient));
+	
 	.ytchannel__title-red {
 		color: white;
 		text-shadow: 0px 1px 1px #000000;
