@@ -1,5 +1,5 @@
 
-# My First Portfolio - Created with HTML, CSS, and Javascript
+# My  Portfolio - Created with Astro
 
 This is my first portfolio, built using the Astro framework and incorporating components from React. Feel free to clone this repository and customize it to your liking.
 
