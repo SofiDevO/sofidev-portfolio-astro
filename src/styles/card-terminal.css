@@ -84,7 +84,9 @@
 }
 
 .terminal__container{
-	padding: 0 1rem;
+	width: 100%;
+	max-width: 76rem;
+	padding:17px 10px;
 
 }
 
