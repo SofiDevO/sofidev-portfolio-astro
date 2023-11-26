@@ -18,7 +18,7 @@
     height: auto;
     align-items: center;
     justify-content: center;
-
+	gap: 10px;
 }
 .skills__titulo {
 	font-size: 3.5rem;
