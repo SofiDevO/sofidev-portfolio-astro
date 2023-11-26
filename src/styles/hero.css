@@ -9,8 +9,8 @@
 	height: 752px;
 	background: linear-gradient(var(--gradient));
 	flex-direction: column;
-	z-index: 2;
 	justify-content: space-evenly;
+	margin-top: -20px;
 }
 
 .hero__contenedor {
@@ -190,7 +190,7 @@
 		align-items: center;
 		justify-content: space-evenly;
 		width: 100%;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 		height: auto;
 	}
 
@@ -300,7 +300,7 @@
 
 	.hero__contenedor {
 		justify-content: space-around;
-		margin-top: -12rem;
+		margin-top: -17rem;
 		flex-wrap: nowrap;
 		max-width: 1534px;
 		align-self: center;

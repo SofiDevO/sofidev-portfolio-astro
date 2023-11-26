@@ -13,6 +13,7 @@
     backdrop-filter: blur(13px);
     -webkit-backdrop-filter: blur(13px);
     box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.46);
+	height: 8dvh;
 }
 
 .menu__list {
