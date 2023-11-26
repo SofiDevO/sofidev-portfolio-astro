@@ -300,10 +300,10 @@
 
 	.hero__contenedor {
 		justify-content: space-around;
-		/* gap: 7rem; */
 		margin-top: -12rem;
 		flex-wrap: nowrap;
-		max-width: 1920px;
+		max-width: 1534px;
+		align-self: center;
 	}
 
 	.hero__titulo {
