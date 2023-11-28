@@ -294,10 +294,9 @@
 
 @media (min-width: 1200px) {
 	.hero {
-		height: 133vh;
+		height: 141vh;
 		justify-content: center;
 	}
-
 	.hero__contenedor {
 		justify-content: space-around;
 		margin-top: -17rem;
