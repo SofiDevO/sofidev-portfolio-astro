@@ -1,16 +1,17 @@
-@import url("../styles/animation-up-down.css");
+@import url("../styles/animations/animation-up-down.css");
 
-@import url("../styles/animation-flicker.css");
-@import url("../styles/animations-slides.css");
+@import url("../styles/animations/animation-flicker.css");
+@import url("../styles/animations/animations-slides.css");
 
 .hero {
 	transition: 0.9s ease;
-	display: flex;
-	height: 752px;
-	background: linear-gradient(var(--gradient));
-	flex-direction: column;
-	justify-content: space-evenly;
-	margin-top: -20px;
+    display: flex;
+    min-height: 100dvh;
+    background: linear-gradient(var(--gradient));
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 18rem 0;
 }
 
 .hero__contenedor {
@@ -26,13 +27,15 @@
 }
 
 .hero__titulo {
-	font-family: "Montserrat", sans-serif;
-	transition: all 0.9s;
-	color: var(--seccond-color);
-	font-size: 4.3rem;
-	text-align: center;
-	font-weight: bold;
-	filter: drop-shadow(2 -1px 1px var(--pure-black));
+    font-family: "Montserrat", sans-serif;
+    transition: all 0.9s;
+    color: var(--seccond-color);
+    font-size: 4.2rem;
+    margin: 29px 0;
+    text-align: center;
+    font-weight: bold;
+    filter: drop-shadow(2 -1px 1px var(--pure-black));
+    line-height: initial;
 }
 
 .hero__titulo span {
@@ -53,12 +56,14 @@
 	font-size: 1.5rem;
 	font-weight: 400;
 	font-family: var(--fira-code);
-	color: #ffffff;
+	color: var(--green-terminal);
 	padding: 0;
 	margin-top: -3rem;
 	text-align: center;
 }
-
+.hero__subtitulo--span{
+	color: var(--yellow-terminal);
+}
 .side__container {
 	transition: all 0.9s;
 	display: flex;
@@ -303,6 +308,7 @@
 		flex-wrap: nowrap;
 		max-width: 1534px;
 		align-self: center;
+		align-items: center;
 	}
 
 	.hero__titulo {

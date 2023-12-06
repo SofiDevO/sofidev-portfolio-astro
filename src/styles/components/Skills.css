@@ -1,5 +1,5 @@
 /** @format */
-@import url('./animation-up-down.css');
+@import url('../animations/animation-up-down.css');
 .skills {
     display: flex;
     flex-direction: column;

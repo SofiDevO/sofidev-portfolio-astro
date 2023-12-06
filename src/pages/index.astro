@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import Header from "../layouts/Header.astro";
 import Hero from "../components/Hero.astro";
 import Divider1 from "../components/Divider1.astro"
 import ToogleDarkBtn from"../components/ToggleDarkBtn.astro"
@@ -18,6 +18,7 @@ import AboutHome from "../components/AboutHome.astro";
 import PortfolioSection from "../components/PortfolioSection.astro";
 import Divider4 from "../components/Divider4.astro";
 import PostSection from "../components/PostSection.astro";
+import NavHome from "../components/Navs/NavHome.astro";
 ---
 
 <!doctype html>
@@ -26,7 +27,7 @@ import PostSection from "../components/PostSection.astro";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header  />
+		<NavHome/>
 		<ToogleDarkBtn  />
 		<BtnToTop  />
 		<main >

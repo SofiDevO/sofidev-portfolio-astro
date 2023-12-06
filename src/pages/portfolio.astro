@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import DarkBg from "../components/DarkBg.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BtnToTop from "../components/BtnToTop.astro";
-import SecundaryMenu from "../components/SecundaryMenu.astro";
 import { portafolioData } from "../components/data/portfolioData";
 import { skillIcons } from "../components/data/skillsIcons";
 import "../styles/portfolio.css";
-import "../styles/animation-up-down.css"
+import NavSecundary from "../components/Navs/NavSecundary.astro";
+
 ---
 
 <!doctype html>
@@ -18,7 +18,7 @@ import "../styles/animation-up-down.css"
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<SecundaryMenu />
+		<NavSecundary/>
 		<ToogleDarkBtn />
 		<BtnToTop />
 		<main>

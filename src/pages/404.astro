@@ -5,8 +5,15 @@ import Button from "../components/Button.astro"
 import BaseHead from "../components/BaseHead.astro";
 import DarkBg from "../components/DarkBg.astro";
 import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
+const { title, description } = Astro.props;
+
 ---
-<BaseHead/>
+<!doctype html>
+<html lang="en">
+	<head>	
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
 <section>
     <ToggleDarkBtn/>
     <div class="container">
@@ -28,6 +35,7 @@ import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
     </div>
         
     </section>
+    </body>
     
 <style>
     section{

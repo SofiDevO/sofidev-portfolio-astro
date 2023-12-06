@@ -1,4 +1,4 @@
-@import url('./animation-flicker-infinite.css');
+@import url('./animations/animation-flicker-infinite.css');
 .short-circuit  body{
     background: rgb(13, 13, 13);
     color: white;

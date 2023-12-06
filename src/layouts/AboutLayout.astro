@@ -1,0 +1,34 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import "../styles/global.css";
+import "../styles/about-section.css";
+import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
+import Footer from "../components/Footer.astro";
+import NavSecundary from "../components/Navs/NavSecundary.astro";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+<body>
+    <ToggleDarkBtn/>
+    <NavSecundary/>
+    <main>
+      <section class="section__about">
+        <img
+          class="about__profile"
+          src="/public/img/sofi4.webp"
+          alt="sofidev picture"
+        />
+        <aside class="about__text">
+          <slot />
+        </aside>
+      </section>
+    </main>
+    <Footer/>
+</body>
+</html>
