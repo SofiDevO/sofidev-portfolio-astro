@@ -80,6 +80,8 @@ Feel free to explore and modify the styles to match your preferences. The color 
 This project is licensed under the MIT License. Feel free to use, modify, and share it in accordance with the terms of the license. If you have any questions or need assistance, don't hesitate to reach out.
 
 Happy coding! 🚀
+![image](https://github.com/SofiDevO/sofidev-portfolio-astro/assets/102200061/15177113-19c4-4de0-aa90-a4f5a32ef07e)
+
 
 [Visit my website](https://itssofi.dev/)
 
