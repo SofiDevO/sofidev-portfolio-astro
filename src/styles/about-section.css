@@ -9,22 +9,22 @@
     padding-top: 10rem;
     height: auto;
 }
+
 .about__profile{
     width: 100%;
     object-fit: cover;
     border-radius: 35px 0 25px;
     max-width: 385px;
 }
+
 .about__text{
     padding: 2rem;
     width: 40%;
     min-width: 300px;
 }
-
 p{
     font-size: 1.6rem;
 }
-
 @media screen and (min-width:768px)  {
     .section__about{
         min-height: 84vh;
