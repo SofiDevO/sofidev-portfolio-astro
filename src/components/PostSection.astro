@@ -1,58 +1,83 @@
 ---
 import CardTerminal from "../layouts/CardTerminal.astro";
 import CardsPostsHome from "./CardsPostsHome.astro";
-import TitleSpan from "./TitleSpan.astro"
-
 ---
 
 <section class="post">
-    <TitleSpan classColor="color__white" text1="My Latest" span="Post" />
-    <div class="post__container">
-        <CardsPostsHome/>
-        <div class="container__terminal">
-            
-            <CardTerminal>
-                <p class="terminal__content terminal__content--p">In my free time, you'll often find me
-                    <span class="terminal__content--span spna__dark">sipping coffee and  writing articles on my blog.</span>
-                </p>
-                <p class="terminal__content terminal__content--p">I love writing about programming, writing tips, and personal branding 💛</p>
-            </CardTerminal>
-        </div>
+  <h2 class="about__titulo--post post__titulo" id="aboutDeTitulo">
+    My latest <span class="span__dark" id="span-titulo2"> Post</span>
+  </h2>
+  <div class="post__container">
+    <CardsPostsHome />
+    <div class="container__terminal">
+      <CardTerminal>
+        <p class="terminal__content terminal__content--p">
+          In my free time, you'll often find me
+          <span class="terminal__content--span spna__dark"
+            >sipping coffee and writing articles on my blog.</span
+          >
+        </p>
+        <p class="terminal__content terminal__content--p">
+          I love writing about programming, writing tips, and personal branding
+          💛
+        </p>
+      </CardTerminal>
     </div>
+  </div>
 </section>
 
-
 <style>
-    .post{
-        background-color: black;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-    }
-    .post__container{
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            width: 100%;
-        }
+  .post {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  .post__container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+  }
+  .post__titulo {
+    display: flex;
+    font-size: 3.5rem;
+    margin: 0;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    color: var(--seccond-color);
+    justify-content: center;
+  }
 
-    @media screen and (min-width: 768px) {
-        .post__container{
-            flex-direction: row;
-            justify-content: space-evenly;
-            width: 80%;
-        }
-        .container__terminal{
-            width: 65rem;
-        }
+  .post__titulo span {
+    color: rgb(1, 242, 255);
+	filter: drop-shadow(0 0 2px rgb(0, 0, 0));
+  }
+  .post__titulo span:hover {
+    color: var(--blue);
+  }
+
+  @media screen and (min-width: 768px) {
+    .post__container {
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 80%;
     }
-        
+    .container__terminal {
+      width: 65rem;
+    }
+    .post__titulo {
+      display: flex;
+      font-size: 4rem;
+      margin: 0;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      color: var(--seccond-color);
+    }
+  }
 </style>
-
-
-
