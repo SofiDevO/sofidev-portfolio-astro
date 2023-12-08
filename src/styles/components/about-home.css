@@ -115,9 +115,9 @@
 	font-family: var(--montserrat);
 }
 .about__titulo span {
-	color: rgb(1, 242, 255);
-	filter: drop-shadow(0 0 2px rgb(0, 0, 0));
-    
+	color: #01f2ff;
+    filter: drop-shadow(0px 0px 4px rgb(0,0,0));
+    text-shadow: -2px 3px 5px black;
 }
 
 .about__titulo span:hover {
