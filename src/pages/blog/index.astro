@@ -59,13 +59,14 @@ const posts = (await getCollection("blog")).sort(
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			height: 79dvh;
 		}
 		.hero__img {
 			background-size: cover;
-			height: 33vh;
+			object-fit: cover;
 			background-position: center;
 			width: 100%;
-			background-image: url(../img/write.webp);
+			background-image: url(../img/cover.webp);
 		}
 		.dark-mode body {
 			background-color: var(--dark-purple);
@@ -85,7 +86,9 @@ const posts = (await getCollection("blog")).sort(
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			margin-top: 4rem;
+			margin-top: 2rem;
+			padding: 2rem 0;
+
 		}
 		li{
 			list-style: none;

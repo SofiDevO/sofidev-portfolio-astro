@@ -25,3 +25,6 @@
 .custom-shape-divider-top-1699780157 .shape-fill {
   fill: var(--purple-bg);
 }
+.dark-mode .custom-shape-divider-top-1699780157 .shape-fill {
+  fill: black;
+}

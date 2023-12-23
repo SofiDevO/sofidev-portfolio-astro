@@ -28,6 +28,9 @@
 .dark-mode .custom-shape-divider-top-1697134839 {
   background-color: black;
 }
+.custom-shape-divider-top-1697134839 {
+  background-color: var(--purple-bg);
+}
 @media (min-width: 768px) {
   .wraper__skills {
     position: relative;

@@ -7,6 +7,7 @@
 .tools__titulo {
   color: var(--green-terminal);
   text-align: center;
+  margin: 14px 0 0;
 }
 .tools__caja__slider {
   display: flex;

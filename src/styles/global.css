@@ -3,7 +3,7 @@
   --seccond-color: rgb(228, 228, 228);
   --black: 15, 18, 25;
   --purple: #2e016c;
-  --dark-purple: rgb(22 0 54);
+  --dark-purple: rgb(11 0 37);
   --purple-bg: #19003c;
   --ligth-purple: #610094;
   --blue: #58ecff;
@@ -37,7 +37,7 @@
   --pure-black: #000000;
   --terminal-bg-dark: rgba(18, 0, 33, 0.734);
   --icons-glow-dark: invert(100%) var(--glow-blue);
-  --glow-blue: drop-shadow(0 -1px 5px rgba(0, 212, 255, 1));
+  --glow-blue: drop-shadow(0 0px 5px rgba(0, 230, 270, 2));
 }
 * {
   box-sizing: border-box;
