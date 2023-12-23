@@ -1,7 +1,7 @@
-@import url("../styles/animations/animation-up-down.css");
+@import url("../animations/animation-up-down.css");
 
-@import url("../styles/animations/animation-flicker.css");
-@import url("../styles/animations/animations-slides.css");
+@import url("../animations/animation-flicker.css");
+@import url("../animations/animations-slides.css");
 
 .hero {
   transition: 0.9s ease;
@@ -54,12 +54,12 @@
 
 .hero__subtitulo {
   font-size: 1.5rem;
-  font-weight: 400;
   font-family: var(--fira-code);
   color: var(--green-terminal);
   padding: 0;
   margin-top: -3rem;
   text-align: center;
+  font-weight: bold;
 }
 .hero__subtitulo--span {
   color: var(--yellow-terminal);
@@ -210,7 +210,6 @@
 
   .hero__subtitulo {
     font-size: 2rem;
-    font-weight: 400;
   }
 
   .side__container {
@@ -302,7 +301,7 @@
 
 @media (min-width: 1200px) {
   .hero {
-    height: 133vh;
+    height: 137vh;
     justify-content: center;
   }
   .hero__contenedor {

@@ -5,6 +5,7 @@ import "../styles/about-section.css";
 import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
 import Footer from "../components/Footer.astro";
 import NavSecundary from "../components/Navs/NavSecundary.astro";
+import BtnToTop from "../components/BtnToTop.astro";
 const { title, description } = Astro.props;
 ---
 
@@ -15,6 +16,7 @@ const { title, description } = Astro.props;
   <body>
     <ToggleDarkBtn />
     <NavSecundary />
+    <BtnToTop />
     <main>
       <section class="section__about">
         <img

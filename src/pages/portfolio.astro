@@ -5,8 +5,8 @@ import Footer from "../components/Footer.astro";
 import DarkBg from "../components/DarkBg.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BtnToTop from "../components/BtnToTop.astro";
-import { portafolioData } from "../components/data/portfolioData";
-import { skillIcons } from "../components/data/skillsIcons";
+import { portafolioData } from "../data/portfolioData.js";
+import { skillIcons } from "../data/skillsIcons";
 import "../styles/portfolio.css";
 import NavSecundary from "../components/Navs/NavSecundary.astro";
 
@@ -89,7 +89,7 @@ import NavSecundary from "../components/Navs/NavSecundary.astro";
 				width: 100%;
 				padding: 16rem 1rem 10rem ;
 				backdrop-filter: blur(6px);
-				
+
 			}
 			.cards__container {
 				display: flex;

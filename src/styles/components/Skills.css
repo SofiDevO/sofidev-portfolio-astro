@@ -18,7 +18,9 @@
   height: auto;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 52px;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 .skills__titulo {
   font-size: 3.5rem;
@@ -27,15 +29,21 @@
 
 .skills__cards-container {
   display: flex;
+  overflow: hidden;
+  width: 100%;
 }
 
 .skills__cajas {
   display: flex;
   height: auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 13px;
   justify-content: center;
   column-gap: 1.5rem;
+  width: 100%;
+  height: 39dvh;
+  animation: 24s slide infinite linear;
+  animation-direction: reverse;
 }
 .skills__caja {
   height: 112px;
@@ -48,6 +56,9 @@
   align-items: center;
   transition: 0.2s ease-in-out;
   padding: 6rem;
+}
+.skills__cajas:has(.skills__caja:hover) {
+  animation-play-state: paused;
 }
 .img {
   position: absolute;
@@ -110,6 +121,7 @@
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
+    gap: 0px;
   }
   .skills__titulo {
     font-size: 3.5rem;
@@ -121,7 +133,6 @@
   .skills__cajas {
     display: flex;
     align-items: center;
-    z-index: 10;
   }
   .skills__caja {
     height: 130px;
@@ -150,7 +161,7 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    padding: 0 42px 5rem;
+    padding: 0 0 42px 5rem;
   }
 
   .skills__titulo {
