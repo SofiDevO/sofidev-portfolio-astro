@@ -21,8 +21,8 @@ export const portafolioData = [
     titulo: "Alura Geek",
     skills: ["JavaScript"],
     descripcion: " CRUD operations using HTTP requests.",
-    demoURL: "https://sofidevo.github.io/alura-geek/index.html",
-    repoURL: "https://alura-geek-ruddy.vercel.app/",
+    demoURL: "https://alura-geek-ruddy.vercel.app/",
+    repoURL: "https://github.com/SofiDevO/alura-geek",
   },
   {
     imgSrc: "../img/portfolio_img//react_org.webp",
