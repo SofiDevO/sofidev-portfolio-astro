@@ -1,6 +1,2 @@
-/**
- * @typedef {import('./lib/index.js').Options} Options
- * @typedef {import('./lib/index.js').Space} Space
- */
-
+// Note: extra types exposed from `index.d.ts`.
 export {fromParse5} from './lib/index.js'

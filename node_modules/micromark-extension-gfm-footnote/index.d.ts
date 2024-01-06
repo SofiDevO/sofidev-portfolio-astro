@@ -7,7 +7,6 @@ export {
 } from './lib/html.js'
 
 declare module 'micromark-util-types' {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface TokenTypeMap {
     gfmFootnoteCall: 'gfmFootnoteCall'
     gfmFootnoteCallLabelMarker: 'gfmFootnoteCallLabelMarker'
@@ -22,7 +21,10 @@ declare module 'micromark-util-types' {
     gfmFootnoteDefinitionWhitespace: 'gfmFootnoteDefinitionWhitespace'
   }
 
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+  interface ParseContext {
+    gfmFootnotes?: string[]
+  }
+
   interface CompileData {
     gfmFootnoteDefinitions?: Record<string, string>
     gfmFootnoteDefinitionStack?: string[]

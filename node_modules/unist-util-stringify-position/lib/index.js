@@ -9,21 +9,21 @@
  * @property {string} type
  * @property {PositionLike | null | undefined} [position]
  *
- * @typedef PositionLike
- * @property {PointLike | null | undefined} [start]
- * @property {PointLike | null | undefined} [end]
- *
  * @typedef PointLike
  * @property {number | null | undefined} [line]
  * @property {number | null | undefined} [column]
  * @property {number | null | undefined} [offset]
+ *
+ * @typedef PositionLike
+ * @property {PointLike | null | undefined} [start]
+ * @property {PointLike | null | undefined} [end]
  */
 
 /**
  * Serialize the positional info of a point, position (start and end points),
  * or node.
  *
- * @param {Node | NodeLike | Position | PositionLike | Point | PointLike | null | undefined} [value]
+ * @param {Node | NodeLike | Point | PointLike | Position | PositionLike | null | undefined} [value]
  *   Node, position, or point.
  * @returns {string}
  *   Pretty printed positional info of a node (`string`).

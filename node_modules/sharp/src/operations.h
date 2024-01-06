@@ -15,9 +15,9 @@ using vips::VImage;
 namespace sharp {
 
   /*
-   * Tint an image using the specified chroma, preserving the original image luminance
+   * Tint an image using the provided RGB.
    */
-  VImage Tint(VImage image, double const a, double const b);
+  VImage Tint(VImage image, std::vector<double> const tint);
 
   /*
    * Stretch luminance to cover full dynamic range.
@@ -79,7 +79,7 @@ namespace sharp {
   /*
     Trim an image
   */
-  VImage Trim(VImage image, std::vector<double> background, double const threshold);
+  VImage Trim(VImage image, std::vector<double> background, double threshold, bool const lineArt);
 
   /*
    * Linear adjustment (a * in + b)

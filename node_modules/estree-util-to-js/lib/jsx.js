@@ -1,36 +1,37 @@
 /**
- * @typedef {import('estree-jsx').JSXAttribute} JSXAttribute
- * @typedef {import('estree-jsx').JSXClosingElement} JSXClosingElement
- * @typedef {import('estree-jsx').JSXClosingFragment} JSXClosingFragment
- * @typedef {import('estree-jsx').JSXElement} JSXElement
- * @typedef {import('estree-jsx').JSXExpressionContainer} JSXExpressionContainer
- * @typedef {import('estree-jsx').JSXFragment} JSXFragment
- * @typedef {import('estree-jsx').JSXIdentifier} JSXIdentifier
- * @typedef {import('estree-jsx').JSXMemberExpression} JSXMemberExpression
- * @typedef {import('estree-jsx').JSXNamespacedName} JSXNamespacedName
- * @typedef {import('estree-jsx').JSXOpeningElement} JSXOpeningElement
- * @typedef {import('estree-jsx').JSXOpeningFragment} JSXOpeningFragment
- * @typedef {import('estree-jsx').JSXSpreadAttribute} JSXSpreadAttribute
- * @typedef {import('estree-jsx').JSXText} JSXText
- * @typedef {import('./types.js').Generator} Generator
- * @typedef {import('./types.js').State} State
+ * @typedef {import('estree-jsx').JSXAttribute} JsxAttribute
+ * @typedef {import('estree-jsx').JSXClosingElement} JsxClosingElement
+ * @typedef {import('estree-jsx').JSXClosingFragment} JsxClosingFragment
+ * @typedef {import('estree-jsx').JSXElement} JsxElement
+ * @typedef {import('estree-jsx').JSXExpressionContainer} JsxExpressionContainer
+ * @typedef {import('estree-jsx').JSXFragment} JsxFragment
+ * @typedef {import('estree-jsx').JSXIdentifier} JsxIdentifier
+ * @typedef {import('estree-jsx').JSXMemberExpression} JsxMemberExpression
+ * @typedef {import('estree-jsx').JSXNamespacedName} JsxNamespacedName
+ * @typedef {import('estree-jsx').JSXOpeningElement} JsxOpeningElement
+ * @typedef {import('estree-jsx').JSXOpeningFragment} JsxOpeningFragment
+ * @typedef {import('estree-jsx').JSXSpreadAttribute} JsxSpreadAttribute
+ * @typedef {import('estree-jsx').JSXText} JsxText
+ *
+ * @typedef {import('./index.js').Generator} Generator
+ * @typedef {import('./index.js').State} State
  */
 
 export const jsx = {
-  JSXAttribute,
-  JSXClosingElement,
-  JSXClosingFragment,
-  JSXElement,
-  JSXEmptyExpression,
-  JSXExpressionContainer,
-  JSXFragment,
-  JSXIdentifier,
-  JSXMemberExpression,
-  JSXNamespacedName,
-  JSXOpeningElement,
-  JSXOpeningFragment,
-  JSXSpreadAttribute,
-  JSXText
+  JSXAttribute: jsxAttribute,
+  JSXClosingElement: jsxClosingElement,
+  JSXClosingFragment: jsxClosingFragment,
+  JSXElement: jsxElement,
+  JSXEmptyExpression: jsxEmptyExpression,
+  JSXExpressionContainer: jsxExpressionContainer,
+  JSXFragment: jsxFragment,
+  JSXIdentifier: jsxIdentifier,
+  JSXMemberExpression: jsxMemberExpression,
+  JSXNamespacedName: jsxNamespacedName,
+  JSXOpeningElement: jsxOpeningElement,
+  JSXOpeningFragment: jsxOpeningFragment,
+  JSXSpreadAttribute: jsxSpreadAttribute,
+  JSXText: jsxText
 }
 
 /**
@@ -40,17 +41,17 @@ export const jsx = {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXAttribute} node
+ * @param {JsxAttribute} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXAttribute(node, state) {
+function jsxAttribute(node, state) {
   this[node.name.type](node.name, state)
 
-  if (node.value !== undefined && node.value !== null) {
+  if (node.value !== null && node.value !== undefined) {
     state.write('=')
 
     // Encode double quotes in attribute values.
@@ -70,14 +71,14 @@ function JSXAttribute(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXClosingElement} node
+ * @param {JsxClosingElement} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXClosingElement(node, state) {
+function jsxClosingElement(node, state) {
   state.write('</')
   this[node.name.type](node.name, state)
   state.write('>')
@@ -88,14 +89,14 @@ function JSXClosingElement(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXClosingFragment} node
+ * @param {JsxClosingFragment} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXClosingFragment(node, state) {
+function jsxClosingFragment(node, state) {
   state.write('</>', node)
 }
 
@@ -105,14 +106,14 @@ function JSXClosingFragment(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXElement} node
+ * @param {JsxElement} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXElement(node, state) {
+function jsxElement(node, state) {
   let index = -1
 
   this[node.openingElement.type](node.openingElement, state)
@@ -141,24 +142,24 @@ function JSXElement(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXEmptyExpression() {}
+function jsxEmptyExpression() {}
 
 /**
  * `{expression}`
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXExpressionContainer} node
+ * @param {JsxExpressionContainer} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXExpressionContainer(node, state) {
+function jsxExpressionContainer(node, state) {
   state.write('{')
   this[node.expression.type](node.expression, state)
   state.write('}')
@@ -169,14 +170,14 @@ function JSXExpressionContainer(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXFragment} node
+ * @param {JsxFragment} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXFragment(node, state) {
+function jsxFragment(node, state) {
   let index = -1
 
   this[node.openingFragment.type](node.openingFragment, state)
@@ -203,14 +204,14 @@ function JSXFragment(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXIdentifier} node
+ * @param {JsxIdentifier} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXIdentifier(node, state) {
+function jsxIdentifier(node, state) {
   state.write(node.name, node)
 }
 
@@ -219,14 +220,14 @@ function JSXIdentifier(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXMemberExpression} node
+ * @param {JsxMemberExpression} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXMemberExpression(node, state) {
+function jsxMemberExpression(node, state) {
   this[node.object.type](node.object, state)
   state.write('.')
   this[node.property.type](node.property, state)
@@ -237,14 +238,14 @@ function JSXMemberExpression(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXNamespacedName} node
+ * @param {JsxNamespacedName} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXNamespacedName(node, state) {
+function jsxNamespacedName(node, state) {
   this[node.namespace.type](node.namespace, state)
   state.write(':')
   this[node.name.type](node.name, state)
@@ -255,14 +256,14 @@ function JSXNamespacedName(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXOpeningElement} node
+ * @param {JsxOpeningElement} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXOpeningElement(node, state) {
+function jsxOpeningElement(node, state) {
   let index = -1
 
   state.write('<')
@@ -283,14 +284,14 @@ function JSXOpeningElement(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXOpeningFragment} node
+ * @param {JsxOpeningFragment} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXOpeningFragment(node, state) {
+function jsxOpeningFragment(node, state) {
   state.write('<>', node)
 }
 
@@ -299,14 +300,14 @@ function JSXOpeningFragment(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXSpreadAttribute} node
+ * @param {JsxSpreadAttribute} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXSpreadAttribute(node, state) {
+function jsxSpreadAttribute(node, state) {
   state.write('{')
   // eslint-disable-next-line new-cap
   this.SpreadElement(node, state)
@@ -318,26 +319,15 @@ function JSXSpreadAttribute(node, state) {
  *
  * @this {Generator}
  *   `astring` generator.
- * @param {JSXText} node
+ * @param {JsxText} node
  *   Node to serialize.
  * @param {State} state
  *   Info passed around.
- * @returns {void}
+ * @returns {undefined}
  *   Nothing.
  */
-function JSXText(node, state) {
-  state.write(
-    encodeJsx(node.value).replace(/[<>{}]/g, ($0) =>
-      $0 === '<'
-        ? '&lt;'
-        : $0 === '>'
-        ? '&gt;'
-        : $0 === '{'
-        ? '&#123;'
-        : '&#125;'
-    ),
-    node
-  )
+function jsxText(node, state) {
+  state.write(encodeJsx(node.value).replace(/[<>{}]/g, replaceJsxChar), node)
 }
 
 /**
@@ -357,4 +347,18 @@ function JSXText(node, state) {
  */
 function encodeJsx(value) {
   return value.replace(/&(?=[#a-z])/gi, '&amp;')
+}
+
+/**
+ * @param {string} $0
+ * @returns {string}
+ */
+function replaceJsxChar($0) {
+  return $0 === '<'
+    ? '&lt;'
+    : $0 === '>'
+    ? '&gt;'
+    : $0 === '{'
+    ? '&#123;'
+    : '&#125;'
 }

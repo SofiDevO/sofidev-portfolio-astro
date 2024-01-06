@@ -137,19 +137,33 @@ const invalidParameterError = function (name, expected, actual) {
   );
 };
 
+/**
+ * Ensures an Error from C++ contains a JS stack.
+ *
+ * @param {Error} native - Error with message from C++.
+ * @param {Error} context - Error with stack from JS.
+ * @returns {Error} Error with message and stack.
+ * @private
+ */
+const nativeError = function (native, context) {
+  context.message = native.message;
+  return context;
+};
+
 module.exports = {
-  defined: defined,
-  object: object,
-  plainObject: plainObject,
-  fn: fn,
-  bool: bool,
-  buffer: buffer,
-  typedArray: typedArray,
-  arrayBuffer: arrayBuffer,
-  string: string,
-  number: number,
-  integer: integer,
-  inRange: inRange,
-  inArray: inArray,
-  invalidParameterError: invalidParameterError
+  defined,
+  object,
+  plainObject,
+  fn,
+  bool,
+  buffer,
+  typedArray,
+  arrayBuffer,
+  string,
+  number,
+  integer,
+  inRange,
+  inArray,
+  invalidParameterError,
+  nativeError
 };

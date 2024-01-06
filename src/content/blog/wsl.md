@@ -1,8 +1,8 @@
 ---
-title: 'Entorno de desarrollo con Windows'
-description: 'Aprende a usar el Subsistema de Windows para Linux (WSL) para tener un entorno de desarrollo en Windows'
-pubDate: 'Nov 20 2023'
-heroImage: '../img/img_blog/portadaWSl.webp'
+title: "Entorno de desarrollo con Windows"
+description: "Aprende a usar el Subsistema de Windows para Linux (WSL) para tener un entorno de desarrollo en Windows"
+pubDate: "Nov 20 2023"
+heroImage: "../img/img_blog/portadaWSl.webp"
 ---
 
 Con el Subsistema de Windows para Linux (WSL), puedes ejecutar un entorno de GNU/Linux, ¡tal cual!, directamente desde Windows sin tener que lidiar con máquinas virtuales o reiniciar el sistema. Así que puedes disfrutar de la línea de comandos, utilidades y aplicaciones de Linux sin complicaciones. ¡Increíble, ¿no?! 😉
@@ -10,20 +10,21 @@ Con el Subsistema de Windows para Linux (WSL), puedes ejecutar un entorno de GNU
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/JKThdA1UbTw?si=d42An_QpFz0UoDhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Pasos para validar que podemos instalar WSL
-1. Mostrar la pantalla de ejecutar con el comando Windows + R.
+
+1. Mostrar la pantalla de ejecutar con el comando `Windows + R.`
 2. Escribimos CMD para que muestre la terminal.
 3. Escribimos winver para validar que tenemos la versión 2004 Build 19041 o mayores.
 
 ## Instalación de Windows Subsystem for Linux
+
 1. Ejecutar Windows Powershell como administrador
-2. Abrimos la guía de Windows para obtener los códigos de instalación.
-3. Para Instalar, ejecutar el comando: ```wsl –install```
-4. ```wsl --set-default-version 2```
-5. Si no se puede hay que actualizar el kernel
-6. Ejecutar de nuevo: wsl ```--set-default-version 2```
+2. Abrimos la guía de Windows [Aquí](https://learn.microsoft.com/en-us/windows/wsl/install) para obtener los códigos de instalación.
+3. Para Instalar, ejecutar el comando: `wsl -–install`
+4. `wsl --set-default-version 2`
+5. Si no se puede hay que [actualizar el kernel ](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
+6. Ejecutar de nuevo: wsl `--set-default-version 2`
 7. Abrimos la tienda de Microsoft e Instalamos Ubuntu en su versión más reciente.
 8. Al abrirlo se comenzará a instalar.
-
 
 ![captura de pantalla instalación de WSL](/img/img_blog/ejemploWSLterminal.webp)
 **Nota:**
@@ -32,21 +33,22 @@ Si aún no te permite. deberás activar la virtualización de windows, desde el 
 ## Instalar Windows terminal
 
 ### Instala Vscode en Windows
+
 Ya debes tener instalado Visual studio Code EN WINDOWS.
 
-Si no lo tienes, instálalo [AQUÍ:](https://code.visualstudio.com/download) PODRÁS INSTALAR VISUAL STUDIO CODE
+Si no lo tienes, instálalo. [AQUÍ](https://code.visualstudio.com/download) PODRÁS INSTALAR VISUAL STUDIO CODE
 
 Una vez que instales Vscode, Busca el plugin WSL for windos, o instálalo aquí:
 
-[AQUÍ](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)PODRÁS INSTALAR EL PLUGIN WSL
+[AQUÍ](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) PODRÁS INSTALAR EL PLUGIN WSL
 
 Necesitas Conectar Wsl a vscode. Recuerda que todas tus extensiones y temas de vscode, deberás instalarlos también en wsl.
 
 ![Plugin WSl](/img/img_blog/pluginWSL.webp)
 
 ## Comandos básicos de la terminal Bash
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aFvk5UepU0o?si=ce1TO46-Lk5ufgQE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aFvk5UepU0o?si=ce1TO46-Lk5ufgQE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Comandos básicos en la terminal:
 
@@ -76,7 +78,6 @@ Ahora tenemos que instalar ZSH, una alternativa a bash, que nos permite la insta
 ```bash
 apt install zsh
 ```
-
 
 En ocasiones será necesario instalar dando permisos de administrador, de esta manera:
 
@@ -110,7 +111,8 @@ Oh My ZSH Sitio oficial: [Ir al sitio](https://ohmyz.sh/)
 
 Ahora podremos instalar los temas en este reposiorio [ir al repo. ](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
 
-***Powerlevel10k*** es mi tema favorito (Y el de muchos) si lo quieres instalar, puedes hacerlo con este comando:
+**_Powerlevel10k_** es mi tema favorito (Y el de muchos) si lo quieres instalar, puedes hacerlo con este comando:
+
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
@@ -118,28 +120,22 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 Necesitarás esta FUENTE: [Descagar Fuente](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
 
 Para establecer tu Theme, debes posisionarte en el Home de tu terminal, y abrir `.zshrc` en tu editor de código preferido. En mi caso yo uso Visual Studio Code. Por lo tanto solo tengo que ejecutar el siguiente comando:
+
 ```bash
 code .zshrc
 ```
 
-Ahora debes ubicar en el archivo `ZSH_THEME=` y agregar  tu tema de la siguiente manera:
+Ahora debes ubicar en el archivo `ZSH_THEME=` y agregar tu tema de la siguiente manera:
+
 ```zshrc
 ZSH_THEME='powerlevel10k/powerlevel10k'
 ```
 
-
 > Para comenzar a instalar los plugins, recuerda seguir los pasos del video. Recuerda que cada plugin tiene su propia documentación y forma de instalación.
-
-
 
 Oh My ZSH Sitio oficial: [Ir al sitio](https://ohmyz.sh/)
 
 [Aquí](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) podremos instalar los temas en este repositorio
-
-
-
-
-
 
 ## Para comenzar a instalar los plugins debemos acceder a este repositorio
 
@@ -163,6 +159,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ```
+
 - fast-syntax-highlighting
 
 ```bash
@@ -189,4 +186,4 @@ Los alias deben tener un formato como este ejemplo:
 
 ## Conclusión
 
-Recuerda que tienes los videos para seguir paso a paso y todo funcione correctamente. 
+Recuerda que tienes los videos para seguir paso a paso y todo funcione correctamente.

@@ -42,20 +42,20 @@ export class EditMap {
    * @param {number} index
    * @param {number} remove
    * @param {Array<Event>} add
-   * @returns {void}
+   * @returns {undefined}
    */
   add(index, remove, add) {
     addImpl(this, index, remove, add)
   }
 
-  // To do: not used here.
+  // To do: add this when moving to `micromark`.
   // /**
   //  * Create an edit: but insert `add` before existing additions.
   //  *
   //  * @param {number} index
   //  * @param {number} remove
   //  * @param {Array<Event>} add
-  //  * @returns {void}
+  //  * @returns {undefined}
   //  */
   // addBefore(index, remove, add) {
   //   addImpl(this, index, remove, add, true)
@@ -65,10 +65,12 @@ export class EditMap {
    * Done, change the events.
    *
    * @param {Array<Event>} events
-   * @returns {void}
+   * @returns {undefined}
    */
   consume(events) {
-    this.map.sort((a, b) => a[0] - b[0])
+    this.map.sort(function (a, b) {
+      return a[0] - b[0]
+    })
 
     /* c8 ignore next 3 -- `resolve` is never called without tables, so without edits. */
     if (this.map.length === 0) {
@@ -98,9 +100,10 @@ export class EditMap {
     const vecs = []
     while (index > 0) {
       index -= 1
-      vecs.push(events.slice(this.map[index][0] + this.map[index][1]))
-      // eslint-disable-next-line unicorn/no-array-push-push
-      vecs.push(this.map[index][2])
+      vecs.push(
+        events.slice(this.map[index][0] + this.map[index][1]),
+        this.map[index][2]
+      )
 
       // Truncate rest.
       events.length = this.map[index][0]
@@ -128,7 +131,7 @@ export class EditMap {
  * @param {number} at
  * @param {number} remove
  * @param {Array<Event>} add
- * @returns {void}
+ * @returns {undefined}
  */
 function addImpl(editMap, at, remove, add) {
   let index = 0
@@ -142,7 +145,7 @@ function addImpl(editMap, at, remove, add) {
     if (editMap.map[index][0] === at) {
       editMap.map[index][1] += remove
 
-      // To do: before not used.
+      // To do: before not used by tables, use when moving to micromark.
       // if (before) {
       //   add.push(...editMap.map[index][2])
       //   editMap.map[index][2] = add
@@ -186,7 +189,6 @@ function addImpl(editMap, at, remove, add) {
 //     if (rm > rmCurr) {
 //       index += rm - rmCurr
 //     } else {
-//       console.log('to do: links?', add, rmCurr)
 //       // ?
 //       // if let Some(link) = &events[index].link {
 //       //     if let Some(next) = link.next {

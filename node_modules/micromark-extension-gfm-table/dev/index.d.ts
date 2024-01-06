@@ -4,12 +4,10 @@ export {gfmTableHtml} from './lib/html.js'
 export {gfmTable} from './lib/syntax.js'
 
 declare module 'micromark-util-types' {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface Token {
     _align?: Align[]
   }
 
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface TokenTypeMap {
     table: 'table'
     tableBody: 'tableBody'
@@ -25,7 +23,6 @@ declare module 'micromark-util-types' {
     tableRow: 'tableRow'
   }
 
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface CompileData {
     tableAlign?: Align[]
     tableColumn?: number

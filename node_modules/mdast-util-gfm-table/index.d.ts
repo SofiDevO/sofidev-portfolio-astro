@@ -4,7 +4,6 @@ export {gfmTableFromMarkdown, gfmTableToMarkdown} from './lib/index.js'
 
 // Add custom data tracked to turn markdown into a tree.
 declare module 'mdast-util-from-markdown' {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface CompileData {
     /**
      * Whether we’re currently in a table.
@@ -15,7 +14,6 @@ declare module 'mdast-util-from-markdown' {
 
 // Add custom data tracked to turn a syntax tree into markdown.
 declare module 'mdast-util-to-markdown' {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface ConstructNameMap {
     /**
      * Whole table.

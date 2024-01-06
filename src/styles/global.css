@@ -82,6 +82,10 @@ a {
 .prose p {
   font-size: 1.7rem;
 }
+
+.dark-mode .prose {
+  color: white;
+}
 textarea {
   width: 100%;
   font-size: 16px;

@@ -2,15 +2,16 @@
  * @typedef {import('micromark-util-types').Extension} Extension
  */
 
-// To do: next major: expose functions.
-
 /**
- * Extension for `micromark` that can be passed in `extensions` to disable
- * some CommonMark syntax (code (indented), autolinks, and HTML (flow and
- * text)) for MDX.
+ * Create an extension for `micromark` to disable some CommonMark syntax (code
+ * (indented), autolinks, and HTML (flow and text)) for MDX.
  *
- * @type {Extension}
+ * @returns {Extension}
+ *   Extension for `micromark` that can be passed in `extensions` to disable
+ *   some CommonMark syntax for MDX.
  */
-export const mdxMd = {
-  disable: {null: ['autolink', 'codeIndented', 'htmlFlow', 'htmlText']}
+export function mdxMd() {
+  return {
+    disable: {null: ['autolink', 'codeIndented', 'htmlFlow', 'htmlText']}
+  }
 }
