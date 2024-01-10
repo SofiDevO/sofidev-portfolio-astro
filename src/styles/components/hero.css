@@ -62,7 +62,7 @@
   font-weight: bold;
 }
 .hero__subtitulo--span {
-  color: var(--yellow-terminal);
+  color: var(--pink-terminal);
 }
 .side__container {
   transition: all 0.9s;
