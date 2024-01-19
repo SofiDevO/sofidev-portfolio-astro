@@ -1,6 +1,6 @@
 ---
-title: "Introducción a JavaScript: Una Guía Práctica"
-description: "Conceptos básicos de Javascript. Pt2"
+title: "JavaScript:Funciones y ambito de las variables"
+description: "Funciones y Comprendiendo Variables"
 pubDate: "Jan 9 2024"
 heroImage: "../img/img_blog/javascript3.webp"
 ---
@@ -8,6 +8,7 @@ heroImage: "../img/img_blog/javascript3.webp"
 ## JavaScript: Explorando Funciones y Comprendiendo Variables
 
 ![javascript image](/img/img_blog/javascript2.webp)
+
 En esta segunda entrega de nuestra guía práctica de JavaScript, nos sumergiremos en el fascinante mundo de las funciones y exploraremos las sutilezas entre `var`, `let` y `const`. Prepárate para desentrañar estos conceptos cruciales en tu viaje por el desarrollo web.
 
 ## Funciones en JavaScript

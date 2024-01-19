@@ -192,6 +192,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"condiciones-js.md": {
+	id: "condiciones-js.md";
+  slug: "condiciones-js";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "funciones-js.md": {
 	id: "funciones-js.md";
   slug: "funciones-js";
