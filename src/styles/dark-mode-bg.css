@@ -24,7 +24,7 @@
 	animation-duration: 30;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	color: var(--pink-terminal);
+	color: var(--purple-buble);
 }
 .dark-mode .background span:nth-child(0) {
 	background-image: url("../../svg/javascript-color.svg");
@@ -63,7 +63,7 @@
 	box-shadow: -44vmin 0 6.067807537859071vmin currentColor;
 }
 .dark-mode .background span:nth-child(3) {
-	color: var(--yellow-terminal);
+	color: var(--purple-buble);
 	top: 44%;
 	left: 6%;
 	animation-duration: 103s;
@@ -120,7 +120,7 @@
 	box-shadow: 44vmin 0 5.504111027962081vmin currentColor;
 }
 .dark-mode .background span:nth-child(8) {
-	color: #340494;
+	color: var(--purple-buble);
 	top: 10%;
 	left: 21%;
 	animation-duration: 203s;
@@ -213,7 +213,7 @@
 	box-shadow: 44vmin 0 6.1765324638286065vmin currentColor;
 }
 .dark-mode .background span:nth-child(16) {
-	color: var(--purple);
+	color: var(--purple-buble);
 	top: 32%;
 	left: 71%;
 	animation-duration: 128s;
@@ -246,7 +246,7 @@
 	box-shadow: 44vmin 0 6.1765324638286065vmin currentColor;
 }
 .dark-mode .background span:nth-child(19) {
-	color: var(--purple);
+	color: var(--purple-buble);
 	top: 40%;
 	left: 51%;
 	animation-duration: 128s;
@@ -255,7 +255,7 @@
 	box-shadow: 44vmin 0 6.1765324638286065vmin currentColor;
 }
 .dark-mode .background span:nth-child(20) {
-	color: var(--purple);
+	color: var(--purple-buble);
 	top: 66%;
 	left: 100%;
 	animation-duration: 128s;
@@ -275,7 +275,7 @@
 		animation-duration: 30;
 		animation-timing-function: linear;
 		animation-iteration-count: infinite;
-		color: var(--pink-terminal);
+		color: var(--purple-buble);
 	}
 
 	.dark-mode .background span:nth-child(0) {
@@ -314,7 +314,7 @@
 		box-shadow: -44vmin 0 6.067807537859071vmin currentColor;
 	}
 	.dark-mode .background span:nth-child(3) {
-		color: var(--yellow-terminal);
+		color: var(--purple-buble);
 		top: 34%;
 		left: 16%;
 		animation-duration: 103s;
@@ -371,7 +371,7 @@
 		box-shadow: 44vmin 0 5.504111027962081vmin currentColor;
 	}
 	.dark-mode .background span:nth-child(8) {
-		color: #340494;
+		color: var(--purple-buble);
 		top: 90%;
 		left: 21%;
 		animation-duration: 203s;
@@ -464,7 +464,7 @@
 		box-shadow: 44vmin 0 6.1765324638286065vmin currentColor;
 	}
 	.dark-mode .background span:nth-child(16) {
-		color: var(--purple);
+		color: var(--purple-buble);
 		top: 105%;
 		left: 71%;
 		animation-duration: 128s;
@@ -497,7 +497,7 @@
 		box-shadow: 44vmin 0 6.1765324638286065vmin currentColor;
 	}
 	.dark-mode .background span:nth-child(19) {
-		color: var(--purple);
+		color: var(--purple-buble);
 		top: -70%;
 		left: 51%;
 		animation-duration: 128s;
@@ -506,7 +506,7 @@
 		box-shadow: 44vmin 0 6.1765324638286065vmin currentColor;
 	}
 	.dark-mode .background span:nth-child(20) {
-		color: var(--purple);
+		color: var(--purple-buble);
 		top: 56%;
 		left: 100%;
 		animation-duration: 128s;

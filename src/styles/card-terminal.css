@@ -69,7 +69,6 @@
 }
 
 .caja__cristal {
-	animation: myAnim 1s ease 4s 1 normal forwards;
 	background: var(--dark-purple);
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(15px);
@@ -80,7 +79,7 @@
     min-width: 30rem;
     height: auto;
     width: 100%;
-	
+
 }
 
 .terminal__container{
@@ -110,7 +109,7 @@
 }
 .terminal__content--p {
     color: rgb(182, 182, 3);
-}   
+}
 .terminal__content--color {
     color: var(--blue-terminal);
 }

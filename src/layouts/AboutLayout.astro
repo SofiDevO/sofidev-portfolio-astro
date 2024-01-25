@@ -2,33 +2,21 @@
 import BaseHead from "../components/BaseHead.astro";
 import "../styles/global.css";
 import "../styles/about-section.css";
-import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
-import Footer from "../components/Footer.astro";
-import NavSecundary from "../components/Navs/NavSecundary.astro";
-import BtnToTop from "../components/BtnToTop.astro";
-const { title, description } = Astro.props;
+import CardTerminal from "./CardTerminal.astro";
+
+
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-  <body>
-    <ToggleDarkBtn />
-    <NavSecundary />
-    <BtnToTop />
-    <main>
-      <section class="section__about">
+
+      <section class="section__about about__page" id="about">
         <img
           class="about__profile"
           src="../img/sofi4.webp"
           alt="sofidev picture"
         />
         <aside class="about__text">
-          <slot />
+          <CardTerminal>
+            <slot />
+          </CardTerminal>
         </aside>
       </section>
-    </main>
-    <Footer />
-  </body>
-</html>

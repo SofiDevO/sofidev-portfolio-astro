@@ -16,7 +16,7 @@
   justify-content: center;
 }
 
-.tools__caja__slider:hover .slider {
+.slider:has(.tools__grupo:hover ){
   animation-play-state: paused;
   white-space: nowrap;
 }

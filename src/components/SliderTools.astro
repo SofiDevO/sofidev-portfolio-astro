@@ -6,13 +6,10 @@ import toolsInfo from "../data/ToolsInfo.js";
 {
 	[...toolsInfo, ...toolsInfo].map((tool) => (
 		<div class="tools__grupo">
-			<a
-				href={tool.link}
-				target="_blank"
-				rel="nofollow noreferer nopener"
+			<div
 				class="tools__link tools__caja caja__dark">
 				<img class="tools__icono tool__dark" src={tool.src} alt={tool.title} />
-			</a>
+			</div>
 			<span class="tools__descripcion titulo__dark">{tool.title}</span>
 		</div>
 	))

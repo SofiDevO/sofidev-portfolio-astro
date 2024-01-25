@@ -27,6 +27,8 @@
   height: auto;
   padding-top: 10rem;
   height: auto;
+
+
 }
 .about__profile {
   width: 100%;
@@ -41,6 +43,7 @@
   width: 50%;
   min-width: 309px;
 }
+
 
 p {
   font-size: 1.6rem;

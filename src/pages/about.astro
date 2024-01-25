@@ -1,8 +1,27 @@
 ---
 import AboutLayout from "../layouts/AboutLayout.astro";
 import "../styles/about-section.css"
+import YoutubeLastvid from "../components/YoutubeLastvid.astro";
+import BaseHead from "../components/BaseHead.astro";
+import "../styles/global.css";
+import "../styles/about-section.css";
+import ToogleDarkBtn from "../components/ToggleDarkBtn.astro";
+import AboutNav from "../components/Navs/AboutNav.astro"
+import BtnToTop from "../components/BtnToTop.astro";
+import Footer from "../components/Footer.astro";
+import DarkBg from "../components/DarkBg.astro";
+const { title, description } = Astro.props;
 ---
 
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <AboutNav />
+		<ToogleDarkBtn />
+		<BtnToTop />
+    <main>
 <AboutLayout>
   <h2 class="about__titulo--post post__titulo">
     Ángela <span class="span__dark" id="span-titulo2"> Sofía</span> Osorio
@@ -27,5 +46,18 @@ import "../styles/about-section.css"
     where we continue organizing events for our alumni.
   </p>
 </AboutLayout>
-
-
+<section class="about__page">
+  <YoutubeLastvid/>
+</section>
+    </main>
+    <DarkBg />
+<Footer/>
+</body>
+</html>
+<style>
+  .about__page {
+    width: 100%;
+    padding: 10rem 2rem 0 2rem;
+    height: auto;
+  }
+</style>

@@ -1,5 +1,6 @@
 /** @format */
 @import url("../animations/animation-up-down.css");
+@import url("../animations/infinite-slider.css");
 .skills {
   display: flex;
   flex-direction: column;
@@ -42,7 +43,7 @@
   column-gap: 1.5rem;
   width: 100%;
   height: 39dvh;
-  animation: 24s slide infinite linear;
+  animation: 24s infiniteSlide infinite linear;
   animation-direction: reverse;
 }
 .skills__caja {
