@@ -10,7 +10,7 @@ const { title, description } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
-	<head>	
+	<head>
 		<BaseHead title={title} description={description} />
 	</head>
 	<body>
@@ -33,10 +33,10 @@ const { title, description } = Astro.props;
         </CardTerminal>
         <DarkBg/>
     </div>
-        
+
     </section>
     </body>
-    
+
 <style>
     section{
         display: flex;
@@ -60,13 +60,12 @@ const { title, description } = Astro.props;
     }
     .found__subtitulo{
         font-weight: 400;
+        font-size: 1.8rem;
         text-align: center;
+        color: var(--pink-terminal);
     }
     .container__elements{
         display: flex;
         justify-content: center;
     }
 </style>
-
-
-
