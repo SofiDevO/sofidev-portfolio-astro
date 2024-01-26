@@ -26,16 +26,16 @@ const { title, description } = Astro.props;
   <h2 class="about__titulo--post post__titulo">
     Ángela <span class="span__dark" id="span-titulo2"> Sofía</span> Osorio
   </h2>
-  <p>
+  <p class="text_content">
     If I were asked to highlight a single quality in myself, it would be the
     love for what I do. Programming, in particular, is something I engage in for
     the sheer pleasure of creating.
   </p>
-  <p>
+  <p class="text_content">
     As a frontend developer, I consider myself an artisan of CSS. I take joy in
     crafting beautiful and interactive components.
   </p>
-  <p>
+  <p class="text_content">
     I studied in the "One Oracle Next Education" program, where I had the
     opportunity to be recognized as a "One Helper" for my supportive role in
     guiding my peers on their journey to becoming developers. We also initiated
@@ -59,5 +59,11 @@ const { title, description } = Astro.props;
     width: 100%;
     padding: 10rem 2rem 0 2rem;
     height: auto;
+  }
+  .post__titulo{
+    color: white;
+  }
+  .text_content{
+    color: white;
   }
 </style>
