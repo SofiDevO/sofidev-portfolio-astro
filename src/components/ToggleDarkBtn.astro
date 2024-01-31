@@ -2,7 +2,7 @@
 
 ---
 
-<script>
+<script >
 	const d = document;
 	const btnDarkMode = d.querySelector("[data-toogle]");
 
@@ -62,8 +62,8 @@
 	// Initial setting
 	toggleDarkMode(localStorage.getItem("dark-mode") == "true");
 	let botonShortCut = 0;
-  
-  
+
+
 
 
 	// Listen for changes in the OS settings.
@@ -81,7 +81,7 @@
 		} else if (botonShortCut <= 15) {
 			document.documentElement.classList.add("short-circuit");
 			document.documentElement.classList.remove("dark-mode");
-			
+
 		} else {
 			alert("You messed up. Click here to reload");
 			location.reload();
@@ -90,8 +90,8 @@
 	toogleDarkMode.addEventListener("click", clickHandler);
 </script>
 
-<div class="toogle-dark__container">
-	<i class="bi bi-lightning-charge toogle__rayo" data-toogle></i>
+<div class="toogle-dark__container" transition:persist>
+	<i class="bi bi-lightning-charge toogle__rayo" data-toogle transition:persist></i>
 </div>
 
 <style>

@@ -10,6 +10,7 @@ import AboutNav from "../components/Navs/AboutNav.astro"
 import BtnToTop from "../components/BtnToTop.astro";
 import Footer from "../components/Footer.astro";
 import DarkBg from "../components/DarkBg.astro";
+import GitHubCalendar from "../components/GitHubCalendar"
 const { title, description } = Astro.props;
 ---
 
@@ -40,7 +41,10 @@ const { title, description } = Astro.props;
     opportunity to be recognized as a "One Helper" for my supportive role in
     guiding my peers on their journey to becoming developers. We also initiated
     a live streaming program to provide valuable information, covering both hard
-    and soft skills. I was chosen to showcase my project live and, ultimately,
+    and soft skills.
+  </p>
+  <p class="text_content">
+  I was chosen to showcase my project live and, ultimately,
     deliver the graduation speech for the program. Currently, I remain actively
     involved as part of the student committee of One Oracle Next Education,
     where we continue organizing events for our alumni.
@@ -57,7 +61,7 @@ const { title, description } = Astro.props;
 <style>
   .about__page {
     width: 100%;
-    padding: 10rem 2rem 0 2rem;
+    padding: 1rem 2rem 0 2rem;
     height: auto;
   }
   .post__titulo{

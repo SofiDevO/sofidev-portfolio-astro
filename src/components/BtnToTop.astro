@@ -3,91 +3,92 @@
 ---
 
 <script>
-	/* Boton "To top" */
-	const d = document;
-	const cajaToTop = d.querySelector(".to__top");
+  /* Boton "To top" */
+  const d = document;
+  const cajaToTop = d.querySelector(".to__top");
 
-	/* Dar click en en la caja del btn "toTop*/
-	cajaToTop.addEventListener("click", () => {
-		window.location.href = "#";
-	});
+  /* Dar click en en la caja del btn "toTop*/
+  cajaToTop.addEventListener("click", () => {
+    window.location.href = "#";
+  });
 
-	const toTop = d.querySelector(".to__top");
-	window.addEventListener("scroll", () => {
-		if (window.pageYOffset > 500) {
-			toTop.classList.add("active");
-		} else {
-			toTop.classList.remove("active");
-		}
-	});
+  const toTop = d.querySelector(".to__top");
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 500) {
+      toTop.classList.add("active");
+    } else {
+      toTop.classList.remove("active");
+    }
+  });
 </script>
 
 <div class="menu__flotante">
-	<div class="icon__top-container">
-		<div class="to__top" data-menu="float">
-			<a class="to__top-link" href="#"> </a>
-			<i class="bi bi-arrow-up-circle"></i>
-		</div>
-	</div>
+  <div class="icon__top-container">
+    <div class="to__top" data-menu="float">
+      <a class="to__top-link" href="#"> </a>
+      <i class="bi bi-arrow-up-circle"></i>
+    </div>
+  </div>
 </div>
 <style>
-	/** @format */
+  /** @format */
 
-	.menu__flotante {
-		position: fixed;
-		z-index: 999;
-		bottom: 26%;
-		right: 3%;
-	}
-	.to__top {
-		display: flex;
-		width: 4rem;
-		height: 4rem;
-		opacity: 0;
-		pointer-events: none;
-		transition: all 0.4s;
-		justify-content: center;
-		align-items: center;
-		backdrop-filter: blur(10px);
-		background-color: rgba(255, 255, 255, 0);
-		border-radius: 50px;
-		box-shadow:var(--box-shadow-toggle);
-	}
-	.to__top,
-	.bi-arrow-up-circle {
-		cursor: pointer;
-		font-size: 2.3rem;
-		color: black;
-	}
+  .menu__flotante {
+    position: fixed;
+    z-index: 999;
+    bottom: 22%;
+    right: -84%;
+    width: 100%;
+  }
+  .to__top {
+    display: flex;
+    width: 4rem;
+    height: 4rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50px;
+    box-shadow: var(--box-shadow-toggle);
+  }
+  .to__top,
+  .bi-arrow-up-circle {
+    cursor: pointer;
+    font-size: 2.3rem;
+    color: black;
+  }
 
-	.to__top.active {
-		opacity: 1;
-		pointer-events: auto;
-	}
+  .to__top.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-	@media (min-width: 768px) {
-		.menu__flotante {
-			bottom: 16%;
-			right: 1.6%;
-		}
-	}
-	@media (min-width: 1200px) {
-		.menu__flotante {
-			bottom: 36%;
-			right: 5.3%;
-		}
-		.icon__top-container {
-			display: flex;
-			position: absolute;
-			z-index: 1;
-		}
-		.to__top {
-			width: 4.8rem;
-			height: 4.8rem;
-		}
-		.bi-arrow-up-circle {
-			font-size: 2.8rem;
-			color: black;
-		}
-	}
+  @media (min-width: 768px) {
+    .menu__flotante {
+      bottom: 34%;
+      right: -93.8%;
+    }
+  }
+  @media (min-width: 1200px) {
+    .menu__flotante {
+      bottom: 36%;
+      right: -95.8%;
+    }
+    .icon__top-container {
+      display: flex;
+      position: absolute;
+      z-index: 1;
+    }
+    .to__top {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+    .bi-arrow-up-circle {
+      font-size: 2.8rem;
+      color: black;
+    }
+  }
 </style>

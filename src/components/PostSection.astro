@@ -1,9 +1,10 @@
 ---
 import CardTerminal from "../layouts/CardTerminal.astro";
+import Button from "./Button.astro";
 import CardsPostsHome from "./CardsPostsHome.astro";
 ---
 
-<section class="post">
+<section class="post" id="blog">
   <h2 class="about__titulo--post post__titulo" id="aboutDeTitulo">
     My latest <span class="span__dark" id="span-titulo2"> Post</span>
   </h2>
@@ -14,7 +15,7 @@ import CardsPostsHome from "./CardsPostsHome.astro";
         <p class="terminal__content terminal__content--p">
           In my free time, you'll often find me
           <span class="terminal__content--span spna__dark"
-            >sipping coffee and writing articles on my blog.</span
+            >sipping coffee and writing articles on my blog(Spanish only).</span
           >
         </p>
         <p class="terminal__content terminal__content--p">
@@ -22,6 +23,10 @@ import CardsPostsHome from "./CardsPostsHome.astro";
           💛
         </p>
       </CardTerminal>
+      <Button
+      href="/blog"
+      text="See all posts"
+  />
     </div>
   </div>
 </section>
@@ -38,11 +43,11 @@ import CardsPostsHome from "./CardsPostsHome.astro";
   }
   .post__container {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 3rem;
     width: 100%;
+    align-items: center;
   }
   .post__titulo {
     display: flex;
@@ -62,18 +67,20 @@ import CardsPostsHome from "./CardsPostsHome.astro";
   .post__titulo span:hover {
     color: var(--blue);
   }
-
+  .container__terminal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   @media screen and (min-width: 768px) {
     .post__container {
       flex-direction: row;
       justify-content: space-evenly;
       width: 80%;
     }
-    .container__terminal {
-      width: 65rem;
-    }
+
     .post__titulo {
-      display: flex;
       font-size: 4rem;
       margin: 0;
       gap: 2rem;

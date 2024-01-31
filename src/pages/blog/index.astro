@@ -7,6 +7,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import BtnToTop from "../../components/BtnToTop.astro";
 import NavSecundary from "../../components/Navs/NavSecundary.astro";
+import { ViewTransitions } from 'astro:transitions';
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -14,9 +15,11 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="slide">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ViewTransitions />
+
   </head>
   <NavSecundary />
   <ToggleDarkBtn />
@@ -24,14 +27,14 @@ const posts = (await getCollection("blog")).sort(
   <body>
     <main>
       <section class="blog__hero">
-        <div class="hero__img"></div>
+        <div class="hero__img" ></div>
       </section>
       <section class="blog">
         <ul>
           {
             posts.map((post) => (
               <li>
-                <a class="post__link" href={`/blog/${post.slug}/`}>
+                <a class="post__link" href={`/blog/${post.slug}/`} >
                   <div class="text__content">
                     <h4 class="title">≥ {post.data.title}</h4>
                     <p class="post__description">{post.data.description}</p>
@@ -59,7 +62,7 @@ const posts = (await getCollection("blog")).sort(
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 79dvh;
+      height: 61dvh;
     }
     .hero__img {
       background-size: cover;

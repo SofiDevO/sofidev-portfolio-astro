@@ -40,7 +40,7 @@
 
 .about__text {
   padding: 2rem 1rem;
-  width: 50%;
+  width: 100%;
   min-width: 309px;
 }
 
@@ -52,6 +52,9 @@ p {
   .section__about {
     min-height: 84vh;
   }
+  .about__text {
+  width: 50%;
+}
   .about__text {
     padding: 2rem;
     width: 40%;

@@ -9,21 +9,16 @@
   align-items: center;
   justify-content: center;
   z-index: 200;
-  background: #000000be;
+  background: #000000de;
   backdrop-filter: blur(13px);
   -webkit-backdrop-filter: blur(13px);
   box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.46);
-  height: 13dvh;
+  height: 10dvh;
 }
 
 .menu__list {
   list-style: none;
 }
-
-.header__link {
-  text-decoration: none;
-}
-
 /* Menu hamburguesa */
 .panel__btn {
   position: fixed;

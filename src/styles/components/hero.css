@@ -131,6 +131,8 @@
 
 .github .social__icon {
   width: 55px;
+  animation: anim 4s ease-out infinite;
+  animation-delay: 3.2s;
 }
 
 .alura {
@@ -144,6 +146,8 @@
 
 .alura .social__icon {
   width: 30px;
+  animation: anim 4s infinite;
+  animation-delay: 2.9s;
 }
 
 .linkedin {
@@ -157,6 +161,8 @@
 
 .linkedin .social__icon {
   width: 4.7rem;
+  animation: anim 4s infinite;
+  animation-delay: 1s;
 }
 
 .platzi {
@@ -169,6 +175,8 @@
 }
 .platzi .social__icon {
   width: 53px;
+  animation: anim 4s infinite;
+  animation-delay: 3s;
 }
 .youtube {
   bottom: -208px;
@@ -178,6 +186,7 @@
 }
 .youtube .social__icon {
   width: 8rem;
+  animation: anim 4s infinite;
 }
 
 /* VISTA DESKTOP */
@@ -227,7 +236,7 @@
   }
 
   .social__icon:hover {
-    animation: anim none;
+    animation: anim paused;
     transform: scale(1.3);
   }
 

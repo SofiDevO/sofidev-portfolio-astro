@@ -9,14 +9,6 @@ export const portafolioData = [
     repoURL: "https://github.com/SofiDevO/alura-flix",
   },
   {
-    imgSrc: "../img/portfolio_img//portfolio.webp",
-    titulo: "My Portfolio",
-    skills: ["Astro", "React", "JavaScript"],
-    descripcion: "Just the repository of my portfolio on GitHub.",
-    demoURL: "https://sofidev-portfolio-astro.vercel.app/",
-    repoURL: "https://github.com/SofiDevO/sofidev-portfolio-astro",
-  },
-  {
     imgSrc: "../img/portfolio_img/alura_geek.webp",
     titulo: "Alura Geek",
     skills: ["JavaScript"],
@@ -31,6 +23,14 @@ export const portafolioData = [
     descripcion: "React application to manage your team members.",
     demoURL: "https://react-org-delta.vercel.app/",
     repoURL: "https://github.com/SofiDevO/react-org",
+  },
+  {
+    imgSrc: "../img/portfolio_img//portfolio.webp",
+    titulo: "My Portfolio",
+    skills: ["Astro", "React", "JavaScript"],
+    descripcion: "Just the repository of my portfolio on GitHub.",
+    demoURL: "https://sofidev-portfolio-astro.vercel.app/",
+    repoURL: "https://github.com/SofiDevO/sofidev-portfolio-astro",
   },
   {
     imgSrc: "../img/portfolio_img/SASS.webp",

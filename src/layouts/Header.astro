@@ -1,5 +1,6 @@
 ---
 import MainLogo from "../components/MainLogo.astro";
+import IconLogo from "../components/IconLogo.astro";
 import "../styles/components/header.css";
 ---
 
@@ -25,7 +26,7 @@ import "../styles/components/header.css";
   <!-- Menu  -->
   <nav class="menu__nav panel__styles panel" id="panel">
     <ul class="menu__ul">
-		<img class="menu__avatar" src="/img/avatar_pink.webp" alt="logo Icon" />
+      <IconLogo/>
       <slot />
     </ul>
   </nav>

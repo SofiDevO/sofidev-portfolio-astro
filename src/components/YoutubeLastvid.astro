@@ -4,6 +4,8 @@ import CardTerminal from "../layouts/CardTerminal.astro";
 ---
 
 <script>
+   const loader = document.querySelector(".heart__loader");
+  loader.style.display = "block";
   const loadVideo = (iframe) => {
     const cid = "UC36_js-krsAHAEAWpEDhHtw";
     const channelURL = encodeURIComponent(
@@ -21,6 +23,8 @@ import CardTerminal from "../layouts/CardTerminal.astro";
           "src",
           `https://youtube.com/embed/${id}?controls=0&autoplay=1`
         );
+         // Ocultar el loader después de cargar el video
+      loader.style.display = "none";
       })
       .catch((error) => console.log("error", error));
   };
@@ -33,7 +37,7 @@ import CardTerminal from "../layouts/CardTerminal.astro";
   });
 </script>
 
-<section id="ytchannel" class="ytchannel">
+<section  class="ytchannel">
   <h2 class="titulo titulo__dark ytchannel__titulo">
     Suscribe to my <span class="ytchannel__title-red">Youtube</span> Channel
     <img class="logo__yt" src="../svg/youtube-solid.svg" alt="Logo Youtube" />
@@ -43,7 +47,7 @@ import CardTerminal from "../layouts/CardTerminal.astro";
     <div class="terminal__content" id="textos">
       <CardTerminal>
         <p class="terminal__content terminal__content--p">
-			≥ I think that 
+			≥ I think that
           <span class="terminal__content--span span__dark">
             the best way to learn and master something, is to
             teach others.</span
@@ -61,15 +65,18 @@ import CardTerminal from "../layouts/CardTerminal.astro";
       </CardTerminal>
     </div>
 
-    <div class="vid__container">
+    <div class="vid__container" >
       <h2 class="vid__titulo">≥ My latest Video ❤️</h2>
+      <img class="heart__loader" src="../../public/svg/loaders/hearts.svg" alt="loader">
       <iframe
         class="latestVideoEmbed"
         vnum="0"
         width="600"
         height="340"
         frameborder="0"
-        allowfullscreen></iframe>
+        allowfullscreen
+        id="ytchannel"
+        ></iframe>
     </div>
   </div>
 </section>
