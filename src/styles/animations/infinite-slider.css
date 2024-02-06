@@ -3,6 +3,18 @@
       transform: translateX(0);
     }
     to {
-      transform: translate(-178%);
+      transform: translate(-498%);
     }
+}
+
+@media screen and (min-width:768px) {
+
+  @keyframes infiniteSlide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translate(208%);
+    }
+  }
 }
