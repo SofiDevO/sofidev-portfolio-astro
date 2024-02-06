@@ -105,9 +105,10 @@
 .dark-mode .bi-arrow-up-circle {
   color: var(--blue);
   filter: brightness(91%) contrast(101%)
-    drop-shadow(0 0 12px rgba(0, 212, 255, 1));
+    drop-shadow(0 0 12px rgb(48, 200, 231));
 }
-/* ELEMNTOS DEL HERO */
+/* **************** */
+/* HERO SECTION */
 .dark-mode .hero {
   background-color: var(--pure-black);
   background: rgba(0, 0, 0, 0.464);
@@ -135,16 +136,20 @@
   filter: drop-shadow(0px 0 17px #972eff);
   transition: 3s ease-in-out;
 }
-.dark-mode .alura .social__icon,
-.dark-mode .platzi .social__icon,
-.dark-mode .linkedin .social__icon,
-.dark-mode .youtube .social__icon,
-.dark-mode .github .social__icon {
+/* Hero Icons */
+.dark-mode .icon-1 .social__icon,
+.dark-mode .icon-2 .social__icon,
+.dark-mode .icon-3 .social__icon,
+.dark-mode .icon-4 .social__icon,
+.dark-mode .icon-5 .social__icon{
   animation: none;
 }
+
 .dark-mode .icono__dark {
-  filter: invert(100%) saturate(0%) drop-shadow(0 0 10px #5cb5ac);
+ filter: invert(600%) sepia(100) saturate(0%) drop-shadow(0 0 10px #5cb5ac)
 }
+
+/* ********************* */
 /* SKILLS */
 .dark-mode .skills {
   justify-content: flex-start;
@@ -200,7 +205,7 @@
 .dark-mode .terminal__content--h3 {
   color: var(--green-terminal);
 }
-.dark-mode .about__icons {
+.dark-mode .about__icons--pdf {
   filter: var(--icons-glow-dark);
 }
 .dark-mode .terminal__content p {

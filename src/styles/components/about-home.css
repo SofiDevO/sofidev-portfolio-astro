@@ -77,7 +77,6 @@
 }
 .about__icons {
 	width: 3rem;
-	filter: invert(100%);
 }
 .about__icons:hover {
 	transform: scale(1.2);

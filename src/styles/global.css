@@ -37,7 +37,7 @@
   /* Darktheme */
   --pure-black: #000000;
   --terminal-bg-dark: rgba(18, 0, 33, 0.734);
-  --icons-glow-dark: invert(100%) var(--glow-blue);
+  --icons-glow-dark:invert(1) saturate(0%) sepia(0) var(--glow-blue);
   --glow-blue: drop-shadow(0 0px 5px rgba(0, 230, 270, 2));
 }
 * {

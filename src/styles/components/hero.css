@@ -113,14 +113,18 @@
 }
 
 .social__icon {
-  width: 8.4rem;
+  max-width: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  max-height: 56px;
+  width: 100%;
   filter: drop-shadow(0 0 12px var(--seccond-color));
   transition: 0.2s ease-in-out;
 }
 
-.github {
-  bottom: 32px;
-  right: 82px;
+.icon-1 {
+  bottom: 43px;
+    right: 74px;
   transform: translateY(-200px);
   animation: slideIn 1s ease-in-out forwards;
 }
@@ -129,43 +133,38 @@
   animation: anim none;
 }
 
-.github .social__icon {
-  width: 55px;
+.icon-1 .social__icon {
   animation: anim 4s ease-out infinite;
   animation-delay: 3.2s;
 }
 
-.alura {
+.icon-2 {
   filter: invert(30%) sepia(100%) saturate(1072%) hue-rotate(180deg)
     brightness(96%) contrast(97%) drop-shadow(0 0 3px var(--pure-black));
   bottom: -102px;
-  right: 115px;
+  right: 84px;
   transform: translateY(-600px);
   animation: expand 0.8s ease forwards;
 }
 
-.alura .social__icon {
-  width: 30px;
+.icon-2 .social__icon {
   animation: anim 4s infinite;
   animation-delay: 2.9s;
 }
 
-.linkedin {
-  filter: invert(30%) sepia(100%) saturate(1072%) hue-rotate(180deg)
-    brightness(96%) contrast(97%) drop-shadow(0 0 3px var(--pure-black));
+.icon-3 {
   bottom: -75px;
   right: -141px;
   transform: translateY(-300px);
   animation: expand 0.8s ease forwards;
 }
 
-.linkedin .social__icon {
-  width: 4.7rem;
+.icon-3 .social__icon {
   animation: anim 4s infinite;
   animation-delay: 1s;
 }
 
-.platzi {
+.icon-4 {
   filter: invert(53%) sepia(39%) saturate(3085%) hue-rotate(64deg)
     brightness(100%) contrast(101%);
   bottom: 50px;
@@ -173,19 +172,17 @@
   transform: translateY(-300px);
   animation: expand 1.5s ease-in-out forwards;
 }
-.platzi .social__icon {
-  width: 53px;
+.icon-4 .social__icon {
   animation: anim 4s infinite;
   animation-delay: 3s;
 }
-.youtube {
-  bottom: -208px;
+.icon-5 {
+  bottom: -183px;
   right: -33px;
   transform: translateY(500px);
   animation: expand 0.6s ease-in-out forwards 0.8s;
 }
-.youtube .social__icon {
-  width: 8rem;
+.icon-5 .social__icon {
   animation: anim 4s infinite;
 }
 
@@ -234,6 +231,14 @@
     flex-direction: column;
     gap: 16px;
   }
+  .social__icon {
+    max-width: 70px;
+    max-height: 68px;
+    min-width: 68px;
+    min-height: 68px;
+    width: 100%;
+    height: 100%;
+  }
 
   .social__icon:hover {
     animation: anim paused;
@@ -244,66 +249,62 @@
     transform: scale(1.2);
   }
 
-  .github {
+  .icon-1 {
     top: -168px;
-    right: 103px;
+    right: 68px;
   }
 
-  .github .social__icon {
-    width: 78px;
+  .icon-1 .social__icon {
     animation: anim 4s infinite;
     animation-delay: 0.9s;
   }
 
-  .alura {
-    top: 19px;
-    right: 119px;
+  .icon-2 {
+    top: 27px;
+    right: 104px;
   }
 
-  .alura .social__icon {
-    width: 3.7rem;
+  .icon-2 .social__icon {
     animation: anim 3.4s infinite;
     animation-delay: 3s;
   }
 
-  .linkedin {
+  .icon-3 {
     top: -20px;
     right: -173px;
   }
 
-  .linkedin .social__icon {
-    width: 5rem;
+  .icon-3 .social__icon {
     animation: anim 3.3s infinite;
     animation-delay: 3.3s;
   }
 
-  .platzi {
+  .icon-4 {
     top: -165px;
     right: -153px;
   }
 
-  .platzi .social__icon {
-    width: 56px;
+  .icon-4 .social__icon {
     animation: anim 4s infinite;
     animation-delay: 3.1s;
   }
 
-  .youtube {
+  .icon-5 {
     top: 112px;
     right: -33px;
     transform: rotate(-23deg);
   }
 
-  .youtube .social__icon {
+  .icon-5 .social__icon {
     animation: anim 4s infinite;
     animation-delay: 3.3s;
   }
 
-  .alura .social__icon:hover,
-  .platzi .social__icon:hover,
-  .linkedin .social__icon:hover,
-  .youtube .social__icon:hover,
-  .github .social__icon:hover {
+  .icon-2 .social__icon:hover,
+  .icon-4 .social__icon:hover,
+  .icon-3 .social__icon:hover,
+  .icon-5 .social__icon:hover,
+  .icon-1 .social__icon:hover {
     animation: none;
   }
 }
@@ -337,48 +338,44 @@
     max-width: 44rem;
   }
 
-  .github {
+  .social__icon {
+    max-width: 82px;
+    max-height: 82px;
+    min-width: 78px;
+    min-height: 78px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon-1 {
     top: -214px;
     right: 117px;
   }
 
-  .github .social__icon {
+  .icon-1 .social__icon {
     width: 100px;
   }
 
-  .alura {
+  .icon-2 {
     top: 44px;
     right: 160px;
   }
 
-  .alura .social__icon {
-    width: 5.4rem;
-  }
-
-  .linkedin {
+  .icon-3 {
     top: -20px;
     right: -216px;
   }
 
-  .linkedin .social__icon {
-    width: 65px;
-  }
 
-  .platzi {
+
+  .icon-4 {
     top: -239px;
     right: -146px;
   }
 
-  .platzi .social__icon {
-    width: 9rem;
-  }
 
-  .youtube {
+  .icon-5 {
     top: 181px;
     right: -44px;
-  }
-
-  .youtube .social__icon {
-    width: 12rem;
   }
 }

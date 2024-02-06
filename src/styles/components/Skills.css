@@ -43,7 +43,7 @@
   column-gap: 1.5rem;
   width: 100%;
   height: 39dvh;
-  animation: 18s infiniteSlide infinite linear;
+  animation: 7s infiniteSlide infinite linear;
   animation-direction: reverse;
 }
 .skills__caja {
@@ -134,6 +134,7 @@
   .skills__cajas {
     display: flex;
     align-items: center;
+    animation: 13s infiniteSlide infinite linear;
   }
   .skills__caja {
     height: 130px;

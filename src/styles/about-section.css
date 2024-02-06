@@ -8,6 +8,16 @@
     justify-content: center;
 }
 
+.about__imageIcons{
+  display: flex;
+  flex-direction: column;
+}
+.icons__container{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 2rem;
+}
 
 .post__titulo span {
     color: rgb(1, 242, 255);
@@ -32,10 +42,10 @@
 }
 .about__profile {
   width: 100%;
-  object-fit: cover;
-  border-radius: 35px 0 25px;
-  max-width: 299px;
-  margin-top: 3rem;
+    object-fit: cover;
+    border-radius: 35px 0 25px;
+    max-width: 275px;
+    margin-top: -2rem;
 }
 
 .about__text {
@@ -46,7 +56,7 @@
 
 
 p {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
 }
 @media screen and (min-width: 768px) {
   .section__about {

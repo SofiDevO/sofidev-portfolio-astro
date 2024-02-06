@@ -1,0 +1,18 @@
+---
+import {HeroIconsSocial} from "../data/HeroIconsData";
+---
+
+{
+  HeroIconsSocial.map((icon) => (
+    <div class="social">
+      <a
+        class={`social__link ${icon.class} icono__dark`}
+        href={icon.url}
+        target="_blank"
+        rel="nofollow noreferrer noopener"
+      >
+        <img class="social__icon" src={icon.src} alt={`${icon.name} icon`} />
+      </a>
+    </div>
+  ))
+}

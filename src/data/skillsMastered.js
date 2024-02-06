@@ -18,6 +18,18 @@ export const cardsData = [
     clas: "",
   },
   {
+    imgSrc: "./svg/bootstrap.svg",
+    imgAlt: "Bootstrap icon",
+    title: "Bootstrap✅",
+    clas: "",
+  },
+  {
+    imgSrc: "./svg/tailwind.svg",
+    imgAlt: "Tailwind icon",
+    title: "Tailwind✅",
+    clas: "",
+  },
+  {
     imgSrc: "./svg/styledcomponents.svg",
     imgAlt: "Styled components icon",
     title: "Styled Components✅",
