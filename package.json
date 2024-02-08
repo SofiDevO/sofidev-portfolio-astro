@@ -25,6 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
+    "solid-js": "^1.8.14",
     "vue": "^3.4.15"
   },
   "devDependencies": {

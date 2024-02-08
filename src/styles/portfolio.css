@@ -256,3 +256,18 @@
     transform: scale(1.1);
   }
 }
+
+/* Page portfolio */
+.portfolio__padre {
+  width: 100%;
+  padding: 16rem 1rem 10rem;
+  backdrop-filter: blur(6px);
+}
+.cards__container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+height: auto;
+gap: 3rem;
+}

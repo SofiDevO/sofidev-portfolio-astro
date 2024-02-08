@@ -3,6 +3,6 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "jsx": "preserve",
-    "jsxImportSource": "react"
+    "jsxImportSource": "solid-js"
   }
 }
