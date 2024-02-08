@@ -1,8 +1,7 @@
 ---
-import type { GetStaticPaths } from "astro";
 /* This component handles the rendering of portfolio cards based on selected skills.
    It initially renders all cards and provides functionality to filter cards by skill. */
-
+import type { GetStaticPaths } from "astro";
 // Importing necessary Astro components
 import BaseHead from "../components/BaseHead.astro";
 import ToogleDarkBtn from "../components/ToggleDarkBtn.astro";
@@ -17,7 +16,7 @@ import { portafolioData } from "../data/portfolioData";
 
 
 ---
-/*  Script section for handling portfolio card filtering  */
+
 <script>
   // Importing necessary data
   import { skillIcons } from "../data/skillsIcons";
