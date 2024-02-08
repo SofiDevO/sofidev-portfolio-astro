@@ -4,11 +4,11 @@ import sitemap from '@astrojs/sitemap';
 import react from "@astrojs/react";
 import vue from "@astrojs/vue";
 
-import solidJs from "@astrojs/solid-js";
+
 
 // https://astro.build/config
 export default defineConfig({
   renderers: ['@astrojs/renderer-react'],
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), react(), vue(), solidJs()]
+  integrations: [mdx(), sitemap(), react(), vue()]
 });
