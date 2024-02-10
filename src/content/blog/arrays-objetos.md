@@ -151,21 +151,31 @@ Vamos a combinar todos estos conceptos en un ejercicio:
 **Ejercicio:** Crea un array de frutas y un objeto de persona. Utiliza al menos tres métodos diferentes para modificar el array y el objeto, como añadir nuevas frutas, cambiar la edad de la persona y eliminar una propiedad del objeto.
 
 ```javascript
-// Ejercicio: Aplicando Métodos de Recorrido y Modificación
-const nuevasFrutas = ['Kiwi', 'Melocotón'];
+// Ejercicio: Agrega nuevasFrutas al array de frutas
 const frutas = ['Manzana', 'Uva', 'Fresa'];
+const nuevasFrutas = ['Kiwi', 'Melocotón'];
+  // Tu código aquí: Utiliza métodos como push.
 
-const nuevaPersona = {
+
+
+
+
+//Edita la edad de Ana, a 31 años
+const persona = {
   nombre: 'Ana',
   edad: 30,
   ciudad: 'Madrid'
 };
 
-// Tu código aquí: Utiliza métodos como push, forEach, delete, etc.
+// Tu código aquí:
+
+
 
 // Imprimir resultados
-console.log('Frutas modificadas:', frutas);
-console.log('Persona modificada:', nuevaPersona);
+console.log('Frutas:', frutas);
+
+console.log('Edad Persona :', persona);
+
 ```
 
 Este ejercicio te proporcionará una práctica completa, aplicando métodos tanto en arrays como en objetos. ¡Explora y experimenta con confianza en este emocionante viaje por JavaScript!

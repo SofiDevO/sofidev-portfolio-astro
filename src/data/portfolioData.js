@@ -11,7 +11,7 @@ export const portafolioData = [
   {
     imgSrc: "../img/portfolio_img/alura_geek.webp",
     titulo: "Alura Geek",
-    skills: ["JavaScript"],
+    skills: ["JavaScript", "CSS"],
     descripcion: " CRUD operations using HTTP requests.",
     demoURL: "https://alura-geek-ruddy.vercel.app/",
     repoURL: "https://github.com/SofiDevO/alura-geek",
@@ -19,7 +19,7 @@ export const portafolioData = [
   {
     imgSrc: "../img/portfolio_img//react_org.webp",
     titulo: "React ORG",
-    skills: ["React"],
+    skills: ["React", "CSS"],
     descripcion: "React application to manage your team members.",
     demoURL: "https://react-org-delta.vercel.app/",
     repoURL: "https://github.com/SofiDevO/react-org",
@@ -40,11 +40,19 @@ export const portafolioData = [
     demoURL: "https://sofidevo.github.io/eco-store-sass/",
     repoURL: "https://github.com/SofiDevO/eco-store-sass",
   },
+  {
+    imgSrc: "../img/portfolio_img/BooststrapCurso.webp",
+    titulo: "fruto & Fruta",
+    skills: ["Bootstrap", "JavaScript"],
+    descripcion: "Made with Bootstrap for the, Bootstrap  course",
+    demoURL: "https://sofidevo.github.io/eco-store-sass/",
+    repoURL: "https://github.com/SofiDevO/eco-store-sass",
+  },
 
   {
     imgSrc: "../img/portfolio_img//encriptador_mensajes_dark.webp",
     titulo: "Message Encryptor",
-    skills: ["JavaScript"],
+    skills: ["JavaScript","CSS"],
     descripcion:
       "Message Encryptor for the first Alura Latam Challenge: Programming Logic.",
     demoURL: "https://sofidevo.github.io/encriptador-mensajes/",

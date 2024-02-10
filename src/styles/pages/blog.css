@@ -41,7 +41,7 @@
 	.dark-mode .hero-image img {
 		box-shadow: none;
 	}
-	
+
 	.prose {
 		width: 720px;
 		max-width: calc(100% - 2em);
@@ -62,7 +62,7 @@
 	.dark-mode .article__title{
 		color: var(--seccond-color);
 	}
-		
+
 	.date {
 		margin-bottom: 0.5em;
 		color: rgb(var(--gray));

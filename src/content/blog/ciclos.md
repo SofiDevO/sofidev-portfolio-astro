@@ -72,15 +72,8 @@ Aquí, `ciudades.forEach` recorre cada elemento del arreglo `ciudades` y ejecuta
 
 Ahora, para poner a prueba tus habilidades, aquí hay un pequeño desafío:
 
-**Reto:** Crea un programa que imprima los números del 1 al 10, pero solo los números impares. Utiliza el tipo de ciclo que consideres más adecuado para esta tarea.
+## **Reto:** Crea un programa que imprima los números del 1 al 10, pero solo los números impares. Utiliza el tipo de ciclo que consideres más adecuado para esta tarea.
 
-```javascript
-// Solución al reto utilizando un ciclo for
-for (let num = 1; num <= 10; num++) {
-  if (num % 2 !== 0) {
-    console.log(num);
-  }
-}
-```
 
-Recuerda, cada ciclo tiene su propio encanto y propósito. ¡Escoge sabiamente en tu viaje por el fascinante mundo de JavaScript! ¡Buena suerte, viajero principiante!
+
+Recuerda, cada ciclo tiene su propio encanto y propósito. ¡Escoge sabiamente  ¡Buena suerte!

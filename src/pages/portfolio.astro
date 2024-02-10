@@ -9,12 +9,10 @@ import Footer from "../components/Footer.astro";
 import DarkBg from "../components/DarkBg.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.js";
 import BtnToTop from "../components/BtnToTop.astro";
-import "../styles/portfolio.css";
+import "../styles/pages/portfolio.css";
 import NavSecundary from "../components/Navs/NavSecundary.astro";
 import { skillIcons } from "../data/skillsIcons";
 import { portafolioData } from "../data/portfolioData";
-
-
 ---
 
 <script>
@@ -26,13 +24,15 @@ import { portafolioData } from "../data/portfolioData";
   let clicked = false;
 
   // Selecting DOM elements
-  const buttons = document.querySelectorAll('[data-skill]');
-  const cardsContainer = document.querySelector('.cards__container');
-  const allButton = document.querySelector('[data-All]');
+  const buttons = document.querySelectorAll("[data-skill]");
+  const cardsContainer = document.querySelector(".cards__container");
+  const allButton = document.querySelector("[data-All]");
 
   // Function to render all portfolio cards
   function renderAllCards() {
-    const allCardsHTML = portafolioData.map(data => `
+    const allCardsHTML = portafolioData
+      .map(
+        (data) => `
         <!-- Rendering a single portfolio card -->
         <div class="portafolio__tarjeta" >
             <div class="portafolio__cara faceA card__content caja__dark__portafolio">
@@ -48,14 +48,18 @@ import { portafolioData } from "../data/portfolioData";
                         ${data.titulo}
                     </h3>
                     <div class="skills__used">
-                        ${data.skills.map(skill => `
+                        ${data.skills
+                          .map(
+                            (skill) => `
                             <div class="tecnology" >
                                 <iconify-icon
-                                    icon="${skillIcons[skill] || ''}"
+                                    icon="${skillIcons[skill] || ""}"
                                     width="22"
                                 />
                             </div>
-                        `).join('')}
+                        `
+                          )
+                          .join("")}
                     </div>
                 </div>
             </div>
@@ -87,7 +91,9 @@ import { portafolioData } from "../data/portfolioData";
                 </div>
             </div>
         </div>
-    `).join('');
+    `
+      )
+      .join("");
 
     // Render all cards in the container
     cardsContainer.innerHTML = allCardsHTML;
@@ -98,13 +104,17 @@ import { portafolioData } from "../data/portfolioData";
 
   // Add click event listener to skill buttons
   buttons.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener("click", () => {
       clicked = true;
-      const skill = button.getAttribute('data-skill');
-      const projectsWithSkill = portafolioData.filter(project => project.skills.includes(skill));
+      const skill = button.getAttribute("data-skill");
+      const projectsWithSkill = portafolioData.filter((project) =>
+        project.skills.includes(skill)
+      );
 
       // Generate HTML for filtered cards
-      const filteredCardsHTML = projectsWithSkill.map(data => `
+      const filteredCardsHTML = projectsWithSkill
+        .map(
+          (data) => `
           <!-- Rendering a single portfolio card -->
           <div class="portafolio__tarjeta" >
               <div class="portafolio__cara faceA card__content caja__dark__portafolio">
@@ -120,14 +130,18 @@ import { portafolioData } from "../data/portfolioData";
                           ${data.titulo}
                       </h3>
                       <div class="skills__used">
-                          ${data.skills.map(skill => `
+                          ${data.skills
+                            .map(
+                              (skill) => `
                               <div class="tecnology" >
                                   <iconify-icon
-                                      icon="${skillIcons[skill] || ''}"
+                                      icon="${skillIcons[skill] || ""}"
                                       width="22"
                                   />
                               </div>
-                          `).join('')}
+                          `
+                            )
+                            .join("")}
                       </div>
                   </div>
               </div>
@@ -159,7 +173,9 @@ import { portafolioData } from "../data/portfolioData";
                   </div>
               </div>
           </div>
-      `).join('');
+      `
+        )
+        .join("");
 
       // Render filtered cards in the container
       cardsContainer.innerHTML = filteredCardsHTML;
@@ -167,7 +183,7 @@ import { portafolioData } from "../data/portfolioData";
   });
 
   // Add click event listener to the "All" button to show all cards
-  allButton.addEventListener('click', () => {
+  allButton.addEventListener("click", () => {
     renderAllCards();
   });
 </script>
@@ -184,20 +200,21 @@ import { portafolioData } from "../data/portfolioData";
     <ToogleDarkBtn />
     <BtnToTop />
     <main>
-
       <!-- Portfolio section -->
       <section class="portfolio__padre">
         <!-- Button to show all cards -->
         <div class="buttons__container">
-          <button class="skill-button" data-All> All</button>
-          {
-            /*  Render buttons with icons for each available skill  */
-            Object.entries(skillIcons).map(([skill, icon]) => (
-              <button data-skill={skill} class="skill-button">
-                <iconify-icon icon={icon} width="22" />
-              </button>
-            ))
-          }
+          <div class="btn__caja">
+            <button class="skill-button" data-All> All</button>
+            {
+              /*  Render buttons with icons for each available skill  */
+              Object.entries(skillIcons).map(([skill, icon]) => (
+                <button data-skill={skill} class="skill-button">
+                  <iconify-icon icon={icon} width="22" />
+                </button>
+              ))
+            }
+          </div>
         </div>
         <!-- Container for portfolio cards -->
         <div class="cards__container"></div>
@@ -213,19 +230,25 @@ import { portafolioData } from "../data/portfolioData";
         backdrop-filter: blur(6px);
         min-height: 85dvh;
       }
-      .buttons__container{
+      .buttons__container {
         display: flex;
         align-items: center;
         justify-content: center;
         padding-bottom: 3rem;
-        flex-wrap: wrap;
-        gap: 2rem;
-      }
-      .skill-button{
+    }
+    .btn__caja {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: .8rem 1.4rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .skill-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.4rem;
         border-radius: 15px;
         font-size: 1.6rem;
         width: 6%;
@@ -241,6 +264,11 @@ import { portafolioData } from "../data/portfolioData";
         flex-wrap: wrap;
         height: auto;
         gap: 3rem;
+      }
+      @media screen and (min-width: 768px) {
+        .btn__caja {
+        width: 80%;
+      }
       }
     </style>
   </body>

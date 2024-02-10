@@ -2,12 +2,11 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
-import "../styles/dark-mode-bg.css";
-import "../styles/dark-kmode.css";
-import "../styles/short-circuit.css";
+import "../styles/settings/dark-mode-bg.css";
+import "../styles/settings/dark-kmode.css";
+import "../styles/settings/short-circuit.css";
 import "../styles/Dividers/divider-1.css";
 import "../styles/Dividers/divider-2.css";
-import "../styles/tools.css";
 
 
 interface Props {
@@ -18,7 +17,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "../img/IA_coca.webp" } = Astro.props;
+const { title, description, image = "../../img/IA_coca.webp" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -28,8 +27,6 @@ const { title, description, image = "../img/IA_coca.webp" } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-
-<!--  -->
 <!-- Google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -69,18 +66,18 @@ const { title, description, image = "../img/IA_coca.webp" } = Astro.props;
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 />
-
+<!-- CDN Hamburger libary -->
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
 />
 
+<!-- Bootstrap icons  -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
   integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
   crossorigin="anonymous"
 />
-
-<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
-></script>
+<!-- Iconify CDN -->
+<script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>

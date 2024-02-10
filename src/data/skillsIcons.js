@@ -1,7 +1,11 @@
+//
 export const skillIcons = {
-  "React": "skill-icons:react-dark",
   "JavaScript": "skill-icons:javascript",
+  "React": "skill-icons:react-dark",
+  "Astro": "skill-icons:astro",
+  "CSS": "skill-icons:css",
   "Sass": "skill-icons:sass",
   "Styled Components": "skill-icons:styledcomponents",
-  "Astro": "skill-icons:astro"
+  "Bootstrap": "devicon:bootstrap",
+  /*"Tailwind": "skill-icons:tailwindcss-dark", */
 };
