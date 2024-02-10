@@ -45,8 +45,8 @@ export const portafolioData = [
     titulo: "fruto & Fruta",
     skills: ["Bootstrap", "JavaScript"],
     descripcion: "Made with Bootstrap for the, Bootstrap  course",
-    demoURL: "https://sofidevo.github.io/eco-store-sass/",
-    repoURL: "https://github.com/SofiDevO/eco-store-sass",
+    demoURL: "https://sofidevo.github.io/bootstrap-curso/",
+    repoURL: "https://github.com/SofiDevO/bootstrap-curso",
   },
 
   {
