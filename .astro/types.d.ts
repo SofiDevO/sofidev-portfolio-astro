@@ -192,6 +192,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"arrays-objetos copy.md": {
+	id: "arrays-objetos copy.md";
+  slug: "arrays-objetos-copy";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "arrays-objetos.md": {
 	id: "arrays-objetos.md";
   slug: "arrays-objetos";
