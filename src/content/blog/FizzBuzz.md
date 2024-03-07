@@ -37,7 +37,7 @@ Para encontrar el múltiplo común de dos números (a y b):
 
 Por ejemplo, para encontrar el múltiplo común de 3 y 5:
 - Multiplicamos cada número base (3 y 5) por los enteros sucesivos:
-  Múltiplos de 3: 3, 6, 9, 12, ...
+  Múltiplos de 3: 3, 6, 9, 12,13, 14, 15 ...
   Múltiplos de 5: 5, 10, 15, 20, ...
 - Observamos que el primer número
   que aparece en ambos conjuntos de múltiplos es 15.
@@ -77,10 +77,12 @@ Ahora que hemos repasado estos conceptos básicos, podemos abordar el desafío d
 
 ## El reto
 ```javascript
-Para los múltiplos de 3, se imprime "fizz" en lugar del número.
-Para los múltiplos de 5, se imprime "buzz" en lugar del número.
-Para los números que son múltiplos tanto de 3 como de 5, se imprime "fizzBuzz".
-Para todos los demás números, simplemente se imprime el número en sí.
+// Escribe un programa que muestre por consola  los
+//  números de 1 a 100 (ambos incluidos y con un salto de línea entre
+//  cada impresión), sustituyendo los siguientes:
+//  - Múltiplos de 3 por la palabra "fizz".
+//  - Múltiplos de 5 por la palabra "buzz".
+//  - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
 
 
 ```
