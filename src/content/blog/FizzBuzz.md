@@ -75,6 +75,16 @@ console.log(residuo);
 
 Ahora que hemos repasado estos conceptos básicos, podemos abordar el desafío de FizzBuzz.
 
+## El reto
+```javascript
+Para los múltiplos de 3, se imprime "fizz" en lugar del número.
+Para los múltiplos de 5, se imprime "buzz" en lugar del número.
+Para los números que son múltiplos tanto de 3 como de 5, se imprime "fizzBuzz".
+Para todos los demás números, simplemente se imprime el número en sí.
+
+
+```
+
 #### Paso 1: Inicializar el bucle
 
 Comencemos escribiendo un bucle que recorra los números del 1 al 100. Esto se puede lograr con un bucle `for` en muchos lenguajes de programación.
