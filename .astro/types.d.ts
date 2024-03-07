@@ -192,13 +192,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"arrays-objetos copy.md": {
-	id: "arrays-objetos copy.md";
-  slug: "arrays-objetos-copy";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "arrays-objetos.md": {
 	id: "arrays-objetos.md";
   slug: "arrays-objetos";
@@ -230,6 +223,20 @@ declare module 'astro:content' {
 "heroe-roto.md": {
 	id: "heroe-roto.md";
   slug: "heroe-roto";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"manipulacion-dom copy.md": {
+	id: "manipulacion-dom copy.md";
+  slug: "manipulacion-dom-copy";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"manipulacion-dom.md": {
+	id: "manipulacion-dom.md";
+  slug: "manipulacion-dom";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
