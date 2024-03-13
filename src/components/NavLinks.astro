@@ -13,19 +13,19 @@ import { links, about,portfolio,blog,other} from "../data/MenuData";
     <a class="menu__link menu__hamburger-link" href={link.href}>{link.text}</a>
   </li>
     ))
-  : pathname === "/about" ?
+  : pathname == "/about" ?
     about.map((dataAbout)=>(
     <li class="menu__list">
     <a class="menu__link menu__hamburger-link" href={dataAbout.href}>{dataAbout.text}</a>
   </li>
     ))
-    :pathname === "/portfolio" ?
+    :pathname == "/portfolio" ?
     portfolio.map((portfolioLink)=>(
     <li class="menu__list">
     <a class="menu__link menu__hamburger-link" target={portfolioLink.target} href={portfolioLink.href}>{portfolioLink.text}</a>
   </li>
     ))
-    :pathname === "/blog" ?
+    :pathname == "/blog" ?
     blog.map((blogLink)=>(
     <li class="menu__list">
     <a class="menu__link menu__hamburger-link" target={blogLink.target} href={blogLink.href}>{blogLink.text}</a>
