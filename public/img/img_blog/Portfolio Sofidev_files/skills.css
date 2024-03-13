@@ -1,0 +1,69 @@
+@import url("../styles/animation.css");
+
+.skills {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 17rem 0;
+}
+
+
+.skills__container {
+  align-self: center;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 38px;
+}
+
+.card {
+  height: 190px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 13px;
+  pad: 2rem 3rem;
+  background-color: #9500ff67;
+  z-index: 5;
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(0, 255, 255, 0.13);
+}
+
+.card:hover {
+  border: 3px solid rgba(57, 1, 112, 0.69);
+  background-color: rgba(111, 0, 255, 0.13);
+}
+.card__icons {
+  font-size: 10rem;
+}
+
+.card:hover > .card__icons {
+  animation: floatingIcon 3s ease infinite 0.4s;
+}
+.card__icons--javascript {
+  font-size: 8.5rem;
+  margin-bottom: 3px;
+}
+.card__title {
+  margin-top: 5px;
+  font-size: var(--middle-size);
+  font-family: var(--text-hiligths);
+  color: var(--main-color);
+}
+
+@media screen and (max-width: 768px) {
+  .skills {
+    height: auto;
+    padding: 13rem 0;
+  }
+  .skills__img--bg {
+    min-width: 321px;
+  }
+}

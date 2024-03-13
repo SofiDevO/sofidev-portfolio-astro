@@ -17,7 +17,9 @@ import Tools from "../components/Tools.astro";
 import AboutHome from "../components/AboutHome.astro";
 import PortfolioSection from "../components/PortfolioSection.astro";
 import PostSection from "../components/PostSection.astro";
-import NavHome from "../components/Navs/NavHome.astro";
+import NavLinks from "../components/NavLinks.astro";
+const pagePathname = Astro.url.pathname;
+
 ---
 
 <!doctype html>
@@ -26,7 +28,7 @@ import NavHome from "../components/Navs/NavHome.astro";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<NavHome/>
+		<NavLinks pathname={pagePathname}/>
 		<ToogleDarkBtn  />
 		<BtnToTop  />
 		<main >

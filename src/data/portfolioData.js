@@ -2,7 +2,7 @@ export const portafolioData = [
   {
     imgSrc: "../img/portfolio_img/aluraFlix.webp",
     titulo: "Alura Flix",
-    skills: ["React", "Styled Components"],
+    skills: ["React", "StyledComponents"],
     descripcion:
       "Final project for the One Oracle Next Education Program. Educational programming video website demonstrating CRUD requests.",
     demoURL: "https://alura-flix-self.vercel.app/",
@@ -52,10 +52,21 @@ export const portafolioData = [
   {
     imgSrc: "../img/portfolio_img//encriptador_mensajes_dark.webp",
     titulo: "Message Encryptor",
-    skills: ["JavaScript","CSS"],
+    skills: ["JavaScript", "CSS"],
     descripcion:
       "Message Encryptor for the first Alura Latam Challenge: Programming Logic.",
     demoURL: "https://sofidevo.github.io/encriptador-mensajes/",
     repoURL: "https://github.com/SofiDevO/encriptador-mensajes",
   },
 ];
+
+export const skillIcons = {
+  JavaScript: "skill-icons:javascript",
+  React: "skill-icons:react-dark",
+  Astro: "skill-icons:astro",
+  CSS: "skill-icons:css",
+  Sass: "skill-icons:sass",
+  StyledComponents: "skill-icons:styledcomponents",
+  Bootstrap: "devicon:bootstrap",
+  /*  Tailwind: "skill-icons:tailwindcss-dark", */
+};

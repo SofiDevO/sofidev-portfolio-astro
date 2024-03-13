@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=http://127.0.0.1:3000/
+HostUrl=https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css

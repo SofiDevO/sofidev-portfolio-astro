@@ -1,0 +1,79 @@
+@import "../styles/animation.css";
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero__container {
+  display: flex;
+  height: 100dvh;
+  width: 85%;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.hero__pic {
+  width: 70%;
+  max-width: 407px;
+  border-radius: 50%;
+  border: 5px solid var(--main-color);
+  animation: floatingIcon 3s ease infinite 0.4s;
+}
+
+.hero__text {
+  font-family: var(----text-hiligths);
+  color: var(--text-color);
+}
+.hero__titulo {
+  font-family: var(--titles);
+  font-size: var(--title-size);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.hero__description {
+  font-size: var(--subtitles);
+  text-align: center;
+  font-family: var(--text-hiligths);
+  margin-bottom: 8px;
+  animation: text-blur 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.2s both;
+}
+.hero__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.hero__icon {
+  font-size: 2rem;
+}
+
+.hero__icon:hover {
+  transform: scale(1.2);
+}
+.hero__icon--mail {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hero__container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 100dvh;
+  }
+  .hero__pic {
+    min-width: 275px;
+  }
+  .hero__titulo {
+    text-align: center;
+    font-size: 3.6rem;
+    margin-top: 10px;
+  }
+  .hero__description {
+    font-size: 1.8rem;
+  }
+}

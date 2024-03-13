@@ -6,8 +6,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import BtnToTop from "../../components/BtnToTop.astro";
-import NavSecundary from "../../components/Navs/NavSecundary.astro";
 import { ViewTransitions } from 'astro:transitions';
+import NavLinks from "../../components/NavLinks.astro";
+const pagePathname = Astro.url.pathname;
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -21,7 +22,7 @@ const posts = (await getCollection("blog")).sort(
     <ViewTransitions />
 
   </head>
-  <NavSecundary />
+  <NavLinks pathname={pagePathname} />
   <ToggleDarkBtn />
   <BtnToTop />
   <body>

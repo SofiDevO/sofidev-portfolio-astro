@@ -6,11 +6,11 @@ import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import BtnToTop from "../components/BtnToTop.astro";
 import "../styles/pages/blog.css";
-import NavSecundary from "../components/Navs/NavSecundary.astro";
-
+import NavLinks from "../components/NavLinks.astro";
 type Props = CollectionEntry<"blog">["data"];
-
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const pagePathname = Astro.url.pathname
+
 ---
 
 <!doctype html>
@@ -20,7 +20,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   </head>
 
   <body>
-    <NavSecundary />
+    <NavLinks pathname={pagePathname} />
     <ToggleDarkBtn />
     <BtnToTop />
     <main>

@@ -31,7 +31,7 @@
 .skills__cards-container {
   display: flex;
   overflow: hidden;
-  width: 100%;
+  width: 65%;
 }
 
 .skills__cajas {

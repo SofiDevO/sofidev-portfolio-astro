@@ -1,3 +1,7 @@
+.blur{
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+}
 .header {
   display: flex;
   width: 100%;
@@ -5,13 +9,10 @@
   z-index: 50;
   top: 0;
   padding: 0 5rem;
-  transition: all 0.9s;
   align-items: center;
   justify-content: center;
   z-index: 200;
   background: #000000de;
-  backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
   box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.46);
   height: 10dvh;
 }
@@ -27,19 +28,20 @@
   right: 1.5%;
   width: 6rem;
   height: 6rem;
-  border-radius: 50%;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(17, 0, 46, 0.684);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border: solid;
-  border-color: var(--dark-purple);
+  border: 2px solid ;
+  border-color: var(--green-terminal);
+}
+.hamburger-inner {
+  filter: invert(71%) sepia(97%) saturate(2165%) hue-rotate(89deg) brightness(105%) contrast(107%);
 }
 .panel {
   position: fixed;
@@ -49,24 +51,25 @@
   z-index: 997;
   top: 0;
   right: 0;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: transform 0.3s ease;
   transform: translate(100%, 0);
   /* transform: translate(0, -100%); */
   /* transform: translate(-100%, 0); */
   /* transform: translate(0, 100%); */
 }
-.panel__styles {
-  background: var(--purple-bg);
-}
+
 
 .panel.is-active {
   display: flex;
   align-items: center;
   transform: translate(0, 0);
-  background: linear-gradient(var(--gradient));
+  background: rgba(17, 0, 46, 0.684);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   border-radius: 3rem 0;
   border: 1px solid rgba(255, 255, 255, 0.18);
+
 }
 .menu__hamburger-link {
   display: block;
@@ -76,7 +79,7 @@
   text-align: left;
   height: auto;
   text-align: left;
-  color: var(--seccond-color);
+  color: var(--green-terminal);
 }
 .menu__ul {
   display: flex;
@@ -111,6 +114,8 @@
     text-align: unset;
     top: unset;
     right: unset;
+    backdrop-filter: unset;
+    -webkit-backdrop-filter: unset;
   }
 
   .panel__styles {
