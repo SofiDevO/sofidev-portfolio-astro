@@ -8,7 +8,8 @@ export const links = [
 export const about = [
   { href: "/", text: "Home" },
   { href: "#about", text: "About" },
-  { href: "#ytChannel", text: "Youtube Channel" },
+  { href: "#vsTheme", text: "VsCode Theme" },
+  { href: "#ytChannel", text: "Youtube" },
   { href: "/portfolio", text: "Portfolio" },
   { href: "/blog", text: "Blog" },
 ];

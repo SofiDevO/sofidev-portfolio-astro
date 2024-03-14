@@ -1,6 +1,6 @@
 .boton {
 	display: flex;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	width: 100%;
 	max-width: 25rem;
 	margin-top: 20px;
@@ -10,42 +10,34 @@
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	border-radius: 40px;
-	border: 3px solid var(--green-terminal);
+	border-radius: 9px;
+	border: 1.5px solid var(--green-terminal);
 	justify-content: center;
 	font-weight: 700;
 	cursor: pointer;
 	gap: 1rem;
-}
-
-.link__boton {
-	text-decoration: none;
-    display: flex;
-    justify-content: center;
-    color: white;
-    width: 100%;
 	min-width: 203px;
+	text-decoration: none;
+	color: white;
 }
-
-
+.boton:hover {
+	border: 1.8px solid var(--blue);
+}
+.button-secondary{
+    background-color: rgba(68, 3, 181, 0.55);
+	backdrop-filter: blur(13px);
+    color: rgb(8, 243, 0);
+    border-color: rgb(1, 255, 22);
+}
+.button-secondary:hover{
+	color: rgba(255, 255, 255, 0.759);
+}
 
 @media (min-width: 768px) {
 	.boton {
-		font-size: 1.3rem;
-		width: 20rem;
-		padding: 11px 1px;
-	}
-
-	.boton:hover {
-		border: 3px solid var(--blue);
-	}
-	.butt {
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-	}
-	.user {
-		font-size: 1.9rem;
+		max-width: 10rem;
+		font-size: 1.2rem;
+		padding: 1.2rem 0.4rem;
 	}
 }
 

@@ -19,11 +19,15 @@
   position: relative;
   display: block;
   width: calc(131% + 1.3px);
-  height: 81px;
+  height: 147px;
 }
+/* color de fondo segun la prop */
 
 .custom-shape-divider-top-1699780157 .shape-fill {
   fill: var(--purple-bg);
+}
+.custom-shape-divider-top-1699780157 .fill__black {
+  fill: rgb(0, 0, 0);
 }
 .dark-mode .custom-shape-divider-top-1699780157 .shape-fill {
   fill: black;

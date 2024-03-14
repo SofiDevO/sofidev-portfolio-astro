@@ -6,8 +6,12 @@
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  padding: 14rem 1rem 4rem;
+  backdrop-filter: blur(7px);
 }
-
+.dark-mode .about__intro{
+  background: rgba(0, 0, 0, 0.301);
+}
 .about__imageIcons {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,68 @@
+---
+import "../styles/components/VsCodeTheme.css"
+---
+
+<script>
+  import { themeData } from "../data/VsCodeThemeData.js";
+  const themePanel = document.querySelector(".code__container");
+  const iconContainer = document.querySelector(".caja_icon");
+  const iconBtn = themeData
+    .map(
+      (iconData) => `
+        <div class="icon__container" data-language="${iconData.language}">
+        <iconify-icon class="icon__lang" icon=${iconData.icon}></iconify-icon>
+        </div>
+    `
+    )
+    .join("");
+  iconContainer.innerHTML = iconBtn;
+  renderView("javascript");
+
+  // Al hacer clic en el icono
+  const iconsClicked = document.querySelectorAll(".icon__container");
+
+  iconsClicked.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      const language = icon.dataset.language;
+      renderView(language);
+    });
+  });
+
+  function renderView(language) {
+    const data = themeData.find((item) => item.language === language);
+    if (data) {
+      const codeEditor = `
+            <div class="theme-preview">
+                <img loading="eager" src="${data.src}" alt="${language}">
+            </div>
+        `;
+      themePanel.innerHTML = codeEditor;
+    } else {
+      console.error(`No se encontraron datos para el lenguaje ${language}`);
+    }
+  }
+</script>
+<section class="about__page vsCode__theme" id="vsTheme">
+
+<div class="caja_icon"></div>
+
+<div class="extension">
+  <div class="code__container"></div>
+  <div class="extension-info">
+    <div class="extension-name">
+      <h2>SofiDev Theme</h2>
+      <h3>by SofiDev</h3>
+    </div>
+    <p class="extension-description">I build my own Visual Studio Code, theme 💙</p>
+    <h6 class="extension-actions-heading">Open With:</h6>
+    <div class="extension-actions">
+      <a class="link__boton boton titulo__dark  span" href="https://vscodethemes.com/e/sofidev.sofidev/sofidev/open?with=desktop"
+        >VS Code</a
+      ><a
+        class="link__boton boton titulo__dark  span button-secondary"
+        href="https://vscode.dev/editor/theme/SofiDev.sofidev" target="_blank">VS Code for the Web</a
+      >
+    </div>
+  </div>
+</div>
+</section>

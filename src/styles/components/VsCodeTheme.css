@@ -1,0 +1,112 @@
+.vsCode__theme {
+    width: 100%;
+    height: auto;
+    background-color: black !important;
+    padding: 12rem 0;
+    min-height: 100dvh;
+}
+.extension {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+.code__container {
+  display: flex;
+  width: 54%;
+  min-width: 30rem;
+}
+.theme-preview {
+    display: flex;
+    height: auto;
+    padding: 2rem 0;
+}
+.theme-preview img {
+  aspect-ratio: 110 / 79;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.theme-preview {
+  flex: 1;
+}
+.extension-name {
+
+  h2 {
+    color: white;
+    font-size: 2.5rem;
+  }
+
+ h3{
+    color: var(--blue);
+  }
+}
+p{
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: var(--green-terminal);
+    font-family: var(--fira-code);
+  }
+
+  .extension-actions-heading {
+    color: white;
+    font-size: 1.3rem;
+  }
+.language-option {
+  --language-option-svg-width: 1.75rem;
+  --language-option-svg-width-offset: 0.4rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: calc(
+    var(--language-option-svg-width) + 0.25rem -
+      var(--language-option-svg-width-offset)
+  );
+}
+
+.caja_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.icon__container {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: rgba(255, 255, 255, 0.443);
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+.icon__container:hover{
+    transform: scale(1.1);
+}
+.icon__lang {
+  font-size: 1.8rem;
+}
+.icon__lang--go {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .extension{
+        padding-top: 4rem;
+    }
+    .theme-preview img {
+        width: 78%;
+    }
+}

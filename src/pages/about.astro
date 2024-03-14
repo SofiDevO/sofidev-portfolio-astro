@@ -1,5 +1,4 @@
 ---
-import AboutLayout from "../layouts/AboutLayout.astro";
 import "../styles/about-section.css";
 import "../styles/about-section.css";
 import YoutubeLastvid from "../components/YoutubeLastvid.astro";
@@ -11,6 +10,10 @@ import DarkBg from "../components/DarkBg.astro";
 import NavLinks from "../components/NavLinks.astro";
 import CardTerminal from "../layouts/CardTerminal.astro";
 import ContactSocialIcons from "../components/ContactSocialIcons.astro";
+import VsCodeTheme from "../components/VsCodeTheme.astro"
+import Divider4 from "../components/Dividers/Divider4.astro";
+import Divider3 from "../components/Dividers/Divider3.astro";
+import Divider2 from "../components/Dividers/Divider2.astro";
 const { title, description } = Astro.props;
 const pagePathname = Astro.url.pathname;
 ---
@@ -24,7 +27,7 @@ const pagePathname = Astro.url.pathname;
     <ToogleDarkBtn />
     <BtnToTop />
     <main>
-      <section class="about__intro ">
+      <section class="about__intro" id="about">
         <div class=" about__imageIcons">
           <img
             class="about__profile"
@@ -51,14 +54,15 @@ const pagePathname = Astro.url.pathname;
             As a frontend developer, I consider myself an artisan of CSS. I take
             joy in crafting beautiful and interactive components.
           </p>
-          <p class="text_content">
+          <p class="terminal__content terminal__content--p">
             I studied in the "One Oracle Next Education" program, where I had
-            the opportunity to be recognized as a "One Helper" for my supportive
-            role in guiding my peers on their journey to becoming developers. We
+            the opportunity to  <span class="terminal__content terminal__content--span"
+            > be recognized as a "One Helper" for my supportive
+            role in guiding my peers on their journey to becoming developers.<span/> We
             also initiated a live streaming program to provide valuable
             information, covering both hard and soft skills.
           </p>
-          <p class="text_content">
+          <p class="terminal__content terminal__content--color">
             I was chosen to showcase my project live and, ultimately, deliver
             the graduation speech for the program. Currently, I remain actively
             involved as part of the student committee of One Oracle Next
@@ -66,8 +70,9 @@ const pagePathname = Astro.url.pathname;
           </p>
         </CardTerminal>
       </section>
-
-      <section class="about__page vsCode__theme"></section>
+      <Divider4/>
+      <VsCodeTheme/>
+      <Divider3 clase="fill__black"/>
       <section class="about__page" id="ytChannel">
         <YoutubeLastvid />
       </section>

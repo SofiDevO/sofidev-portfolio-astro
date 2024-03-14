@@ -31,8 +31,9 @@
 .skills__cards-container {
   display: flex;
   overflow: hidden;
-  width: 65%;
+  width: 100%;
 }
+
 
 .skills__cajas {
   display: flex;
@@ -178,6 +179,10 @@
     font-size: 1.6rem;
     font-weight: 700;
     text-align: center;
+  }
+  .skills__cards-container {
+
+    width: 65%;
   }
   .skills__icono {
     width: 78px;
