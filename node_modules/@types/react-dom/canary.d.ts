@@ -67,6 +67,7 @@ declare module "." {
         imageSizes?: string | undefined;
         imageSrcSet?: string | undefined;
         integrity?: string | undefined;
+        type?: string | undefined;
         nonce?: string | undefined;
         referrerPolicy?: ReferrerPolicy | undefined;
     }
@@ -131,12 +132,12 @@ declare module "." {
         action: (state: Awaited<State>) => State | Promise<State>,
         initialState: Awaited<State>,
         permalink?: string,
-    ): [state: Awaited<State>, dispatch: () => void];
+    ): [state: Awaited<State>, dispatch: () => void, isPending: boolean];
     function useFormState<State, Payload>(
         action: (state: Awaited<State>, payload: Payload) => State | Promise<State>,
         initialState: Awaited<State>,
         permalink?: string,
-    ): [state: Awaited<State>, dispatch: (payload: Payload) => void];
+    ): [state: Awaited<State>, dispatch: (payload: Payload) => void, isPending: boolean];
 }
 
 declare module "./client" {
@@ -146,5 +147,9 @@ declare module "./client" {
 
     interface HydrationOptions {
         formState?: ReactFormState | null;
+    }
+
+    interface DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_CREATE_ROOT_CONTAINERS {
+        document: Document;
     }
 }
