@@ -2,13 +2,12 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
-import "../styles/components/button.css"
+import "../styles/components/button.css";
 import "../styles/settings/dark-mode-bg.css";
 import "../styles/settings/dark-kmode.css";
 import "../styles/settings/short-circuit.css";
 import "../styles/Dividers/divider-1.css";
 import "../styles/Dividers/divider-2.css";
-
 
 interface Props {
   title: string;
@@ -20,6 +19,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = "../../img/IA_coca.webp" } = Astro.props;
 ---
+
+<!-- addsense -->
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3828278469742835"
+  crossorigin="anonymous"></script>
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
@@ -81,4 +86,5 @@ const { title, description, image = "../../img/IA_coca.webp" } = Astro.props;
   crossorigin="anonymous"
 />
 <!-- Iconify CDN -->
-<script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"
+></script>
