@@ -32,7 +32,7 @@ export const portafolioData = [
     titulo: "My Portfolio",
     skills: ["Astro", "React", "JavaScript"],
     descripcion: "Just the repository of my portfolio on GitHub.",
-    demoURL: "https://sofidev-portfolio-astro.vercel.app/",
+    demoURL: "https://sofidev-portfolio-astro-delta.vercel.app/",
     repoURL: "https://github.com/SofiDevO/sofidev-portfolio-astro",
     anim:"fade-right"
   },
