@@ -3,15 +3,15 @@ import "../styles/components/about-home.css";
 import Button from "./Button.astro";
 import CardTerminal from "../layouts/CardTerminal.astro";
 import CardAbout from "./CardAbout.astro";
-import TitleSpan from "./TitleSpan.astro";
+import TitleSpan from "./atoms/TitleSpan.astro";
 ---
 
 <section class="about" >
-	<TitleSpan text1="Who is Sofi" span="Dev" text2="?" />
+	<TitleSpan  text1="Who is Sofi" span="Dev" text2="?" />
 	<div class="about__container">
 		<CardAbout />
 		<div class="terminal__container">
-			<CardTerminal>
+			<CardTerminal animation="fade-left">
 				<h3 class="terminal__content terminal__content--h3">≥ Angela Sofía Osorio</h3>
 				<p class="terminal__content terminal__content--p">≥ Javascript Fan 😍. Always looking for new skills to learn.</p>
 

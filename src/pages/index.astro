@@ -1,49 +1,61 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Hero from "../components/Hero.astro";
-import ToogleDarkBtn from"../components/ToggleDarkBtn.astro"
+import ToogleDarkBtn from "../components/atoms/ToggleDarkBtn.astro";
 import Footer from "../components/Footer.astro";
-import DarkBg from "../components/DarkBg.astro"
+import DarkBg from "../components/DarkBg.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Skills from "../components/Skills.astro";
 import BtnToTop from "../components/BtnToTop.astro";
 
-
-import Divider1 from "../components/Dividers/Divider1.astro"
-import Divider2 from "../components/Dividers/Divider2.astro";
-import Divider3 from "../components/Dividers/Divider3.astro";
-import Divider4 from "../components/Dividers/Divider4.astro";
+import Divider1 from "../components/atoms/Dividers/Divider1.astro";
+import Divider2 from "../components/atoms/Dividers/Divider2.astro";
+import Divider3 from "../components/atoms/Dividers/Divider3.astro";
+import Divider4 from "../components/atoms/Dividers/Divider4.astro";
 import Tools from "../components/Tools.astro";
 import AboutHome from "../components/AboutHome.astro";
 import PortfolioSection from "../components/PortfolioSection.astro";
 import PostSection from "../components/PostSection.astro";
 import NavLinks from "../components/NavLinks.astro";
-const pagePathname = Astro.url.pathname;
-
+import { links } from "../data/MenuData";
+import AOS from "aos";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<NavLinks pathname={pagePathname}/>
-		<ToogleDarkBtn  />
-		<BtnToTop  />
-		<main >
-			<Hero/>
-			<DarkBg/>
-			<Divider1/>
-			<Skills/>
-			<Divider2/>
-			<Tools/>
-			<Divider3 clase="shape-fill"/>
-			<AboutHome/>
-			<PortfolioSection/>
-			<Divider4/>
-			<PostSection/>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <NavLinks origin={links} />
+    <ToogleDarkBtn />
+    <BtnToTop />
+    <main>
+      <Hero />
+      <DarkBg />
+      <Divider1 />
+      <Skills />
+      <Divider2 />
+      <Tools />
+      <Divider3 clase="shape-fill" />
+      <AboutHome />
+      <PortfolioSection />
+      <Divider4 />
+      <PostSection />
+    </main>
+    <Footer />
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 12, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: "ease", // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+      });
+    </script>
+  </body>
 </html>

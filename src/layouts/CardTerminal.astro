@@ -1,9 +1,10 @@
 ---
 import "../styles/card-terminal.css";
 import BarraTerminal from "../components/BarraTerminal.astro";
+const {animation} = Astro.props;
 ---
 
-<div class="caja__terminal">
+<div class="caja__terminal" data-aos={animation} >
   <BarraTerminal />
   <div class="caja__cristal caja__dark">
     <slot />

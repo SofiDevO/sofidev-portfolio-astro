@@ -29,9 +29,3 @@ export const blog = [
     target: "_blank",
   },
 ];
-export const other = [
-  { href: "/", text: "Home" },
-  { href: "/blog", text: "Blog" },
-  { href: "/portfolio", text: "Portfolio" },
-  { href: "/about", text: "About Me" },
-];

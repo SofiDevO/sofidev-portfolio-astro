@@ -126,3 +126,50 @@ hr {
 .cards__list {
   padding: 0;
 }
+
+
+ /* width */
+ ::-webkit-scrollbar {
+  width: 1.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(36, 36, 36);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00efe3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5f00e3;
+}
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+  background-color: #292929;
+  display: block;
+  border-style: solid;
+  height: 14px;
+  width: 13px;
+}
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #a0a5a5 transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  border-color: transparent transparent #777777 transparent;
+}
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 8px 8px 0 8px;
+  border-color: #a0a5a5 transparent transparent transparent;
+}
+
+::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+  border-color: #777777 transparent transparent transparent;
+}

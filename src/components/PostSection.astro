@@ -5,13 +5,13 @@ import CardsPostsHome from "./CardsPostsHome.astro";
 ---
 
 <section class="post" id="blog">
-  <h2 class="about__titulo--post post__titulo" id="aboutDeTitulo">
+  <h2 data-aos="fade-up" class="about__titulo--post post__titulo" id="aboutDeTitulo">
     My latest <span class="span__dark" id="span-titulo2"> Post</span>
   </h2>
   <div class="post__container">
     <CardsPostsHome />
     <div class="container__terminal">
-      <CardTerminal>
+      <CardTerminal animation="fade-left">
         <p class="terminal__content terminal__content--p">
           In my free time, you'll often find me
           <span class="terminal__content--span spna__dark"
@@ -24,6 +24,7 @@ import CardsPostsHome from "./CardsPostsHome.astro";
         </p>
       </CardTerminal>
       <Button
+      animation="zoom-in"
       href="/blog"
       text="See all posts"
   />

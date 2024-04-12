@@ -1,70 +1,76 @@
 ---
 import CardTerminal from "../layouts/CardTerminal.astro";
-import Button from "../components/Button.astro"
+import Button from "../components/Button.astro";
 import BaseHead from "../components/BaseHead.astro";
 import DarkBg from "../components/DarkBg.astro";
-import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
+import ToggleDarkBtn from "../components/atoms/ToggleDarkBtn.astro";
 const { title, description } = Astro.props;
-
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
-	<body>
-<section>
-    <ToggleDarkBtn/>
-    <div class="container">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <section>
+      <ToggleDarkBtn />
+      <div class="container">
         <div class="container__elements">
-            <img src="/img/sofidev_laptop.gif" alt="">
+          <img src="/img/sofidev_laptop.gif" alt="" />
         </div>
         <CardTerminal>
-            <h1 class="found__titulo">const getErrorMessage = () => "404: Not Found";</h1>
-            <h3 class="found__subtitulo">Nanais, Nothing here</h3>
-            <div class="container__elements">
-                <Button
-            href="/"
-            src=""
-            text="Go Back!"
-            />
-            </div>
+          <code class="found__titulo">
+            const getErrorMessage = () => "404: Not Found";</code
+          >
+          <h3 class="found__subtitulo">Nanais, Nothing here</h3>
+          <div class="container__elements">
+            <Button href="/" src="" text="Go Back!" />
+          </div>
         </CardTerminal>
-        <DarkBg/>
-    </div>
-
+        <DarkBg />
+      </div>
     </section>
-    </body>
-
-<style>
-    section{
+    <style>
+      section {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100vh;
-    }
-    .container{
-        width: 56%;
+        width: 100%;
+      }
+      .container {
         display: flex;
         flex-direction: column;
-    }
-    .container img{
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+      }
+      .container img {
         width: 30rem;
-    }
-    .found__titulo{
+        filter: drop-shadow(2px 4px 6px black);
+      }
+      .dark-mode .container img {
+        filter: drop-shadow(3px 4px 9px rgb(33, 255, 237));
+      }
+      .found__titulo {
         color: var(--green-terminal);
         text-align: center;
         font-weight: 400;
-    }
-    .found__subtitulo{
+        font-size: 2rem;
+        background: black;
+      }
+      .found__subtitulo {
         font-weight: 400;
         font-size: 1.8rem;
         text-align: center;
         color: var(--pink-terminal);
-    }
-    .container__elements{
+      }
+      .container__elements {
         display: flex;
         justify-content: center;
-    }
-</style>
+      }
+    </style>
+  </body>
+</html>

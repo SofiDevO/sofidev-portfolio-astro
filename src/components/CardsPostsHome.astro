@@ -13,7 +13,7 @@ const posts = (await getCollection("blog")).sort(
 		{
 			posts.slice(0, 1).map((post) => (
 				<li class="card__item">
-					<CardTerminal>
+					<CardTerminal animation="fade-right">
 						<a
 							class="card__link"
 							href={`/blog/${post.slug}/`}

@@ -1,7 +1,8 @@
 ---
 import "../styles/components/button.css"
+const{animation} = Astro.props;
 ---
 
-<a  class="link__boton boton titulo__dark  span"  href={Astro.props.href} target={Astro.props.target}>
+<a data-aos={animation} class="link__boton boton titulo__dark  span"  href={Astro.props.href} target={Astro.props.target}>
   {Astro.props.text}
 </a>

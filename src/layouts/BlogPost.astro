@@ -2,15 +2,14 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
-import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
+import ToggleDarkBtn from "../components/atoms/ToggleDarkBtn.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import BtnToTop from "../components/BtnToTop.astro";
 import "../styles/pages/blog.css";
 import NavLinks from "../components/NavLinks.astro";
 type Props = CollectionEntry<"blog">["data"];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
-const pagePathname = Astro.url.pathname
-
+import { blog}from "../data/MenuData";
 ---
 
 <!doctype html>
@@ -20,7 +19,7 @@ const pagePathname = Astro.url.pathname
   </head>
 
   <body>
-    <NavLinks pathname={pagePathname} />
+    <NavLinks origin={blog} />
     <ToggleDarkBtn />
     <BtnToTop />
     <main>

@@ -3,7 +3,7 @@ import "../styles/about-section.css";
 import "../styles/about-section.css";
 import YoutubeLastvid from "../components/YoutubeLastvid.astro";
 import BaseHead from "../components/BaseHead.astro";
-import ToogleDarkBtn from "../components/ToggleDarkBtn.astro";
+import ToogleDarkBtn from "../components/atoms/ToggleDarkBtn.astro";
 import BtnToTop from "../components/BtnToTop.astro";
 import Footer from "../components/Footer.astro";
 import DarkBg from "../components/DarkBg.astro";
@@ -11,23 +11,26 @@ import NavLinks from "../components/NavLinks.astro";
 import CardTerminal from "../layouts/CardTerminal.astro";
 import ContactSocialIcons from "../components/ContactSocialIcons.astro";
 import VsCodeTheme from "../components/VsCodeTheme.astro"
-import Divider4 from "../components/Dividers/Divider4.astro";
-import Divider3 from "../components/Dividers/Divider3.astro";
+import Divider4 from "../components/atoms/Dividers/Divider4.astro";
+import Divider3 from "../components/atoms/Dividers/Divider3.astro";
+import { about } from "../data/MenuData";
 const { title, description } = Astro.props;
-const pagePathname = Astro.url.pathname;
+
+
 ---
+
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
   </head>
   <body>
-    <NavLinks pathname={pagePathname} />
+    <NavLinks origin={about} />
     <ToogleDarkBtn />
     <BtnToTop />
     <main>
       <section class="about__intro" id="about">
-        <div class=" about__imageIcons">
+        <div class=" about__imageIcons" ata-aos="fade-up">
           <img
             class="about__profile"
             src="../img/sofi_retrato.webp"
@@ -99,5 +102,6 @@ const pagePathname = Astro.url.pathname;
       }
       }
     </style>
+
   </body>
 </html>
