@@ -34,7 +34,7 @@
   /* Darktheme */
   --pure-black: #000000;
   --terminal-bg-dark: rgba(18, 0, 33, 0.734);
-  --icons-glow-dark:invert(1) saturate(0%) sepia(0) var(--glow-blue);
+  --icons-glow-dark: invert(1) saturate(0%) sepia(0) var(--glow-blue);
   --glow-blue: drop-shadow(0 0px 5px rgba(0, 230, 270, 2));
 }
 * {
@@ -44,8 +44,10 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 body {
+  overflow-x: hidden;
   font-family: var(--montserrat);
   margin: 0;
   padding: 0;
@@ -76,10 +78,10 @@ a {
   color: var(--pink-terminal);
   text-decoration: none;
 }
-h3{
+h3 {
   font-size: 1.8rem;
 }
-h4{
+h4 {
   font-size: 1.6rem;
 }
 .prose p {
@@ -127,9 +129,8 @@ hr {
   padding: 0;
 }
 
-
- /* width */
- ::-webkit-scrollbar {
+/* width */
+::-webkit-scrollbar {
   width: 1.5rem;
 }
 
