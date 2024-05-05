@@ -13,9 +13,11 @@
     background: rgb(13, 13, 13);
 }
 .short-circuit .hero__titulo span{
-    transform: rotate(-90deg);
+    transform: rotate(25deg) !important;
     animation: flicker-in-infinite 2s linear 0.5s both infinite;
-	color: var(--seccond-color);
+    color: var(--seccond-color);
+    position: absolute;
+    top: calc(50% -2rem);
 }
 .short-circuit .img__damage{
     display: block;
