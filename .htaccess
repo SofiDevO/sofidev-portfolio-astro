@@ -8,7 +8,9 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 #Redirect to non index, .html version
 RewriteEngine on RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ https://sofidev-portfolio-astro.vercel.app/ [R=301,L]
+RewriteRule ^index\.html$ https://itssofi.dev [R=301,L]
+
+ErrorDocument 404 /404.html
 
 
 #Default page
