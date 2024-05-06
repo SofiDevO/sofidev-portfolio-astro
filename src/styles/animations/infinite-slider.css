@@ -6,6 +6,14 @@
       transform: translate(-498%);
     }
 }
+@keyframes infiniteSlideSkills {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-7.8rem * 13));
+    }
+}
 
 @media screen and (min-width:768px) {
 

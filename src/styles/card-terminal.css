@@ -9,6 +9,7 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background: linear-gradient(#504b45 0%, #3c3b37 100%);
+  z-index: 700;
 }
 .butt {
   display: flex;
@@ -80,10 +81,12 @@
   height: auto;
   width: 100%;
   padding: 0 1rem 2rem 1rem;
+  z-index: 200;
 }
 
 .terminal__container {
   padding: 17px 10px;
+  z-index: 200;
 }
 
 .terminal__content {

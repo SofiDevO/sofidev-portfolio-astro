@@ -3,6 +3,7 @@
 @import url("../animations/animation-flicker.css");
 @import url("../animations/animations-slides.css");
 
+
 .hero {
   transition: 0.9s ease;
   display: flex;

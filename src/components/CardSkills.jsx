@@ -4,7 +4,10 @@ import { cardsData } from "../data/skillsMastered";
 const CardSkill = () => {
   return (
     <>
-      {[...cardsData, ...cardsData, ...cardsData].map((cardData) => {
+    <div class="skills__cajas" >
+
+      {
+      [...cardsData, ...cardsData].map((cardData) => {
         return (
           <div className="skills__caja caja__dark">
             <div className="img">
@@ -20,6 +23,7 @@ const CardSkill = () => {
           </div>
         );
       })}
+      </div>
     </>
   );
 };

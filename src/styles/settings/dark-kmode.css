@@ -1,9 +1,9 @@
 .dark-mode body {
-  background: rgba(0, 0, 0, 0.783);
+  background: var(--dark-bg);
   z-index: 10;
 }
 .dark-mode .about__page {
-  background: rgba(0, 0, 0, 0.342);
+  background: var(--dark-bg);
   backdrop-filter: blur(2px);
 }
 .dark-mode {
@@ -103,12 +103,8 @@
 }
 /* **************** */
 /* HERO SECTION */
-.dark-mode .hero {
-  background-color: var(--pure-black);
-  background: rgba(0, 0, 0, 0.464);
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
-}
+
+
 
 .dark-mode .hero__titulo span {
   color: var(--blue);

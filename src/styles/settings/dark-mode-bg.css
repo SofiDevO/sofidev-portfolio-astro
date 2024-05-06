@@ -5,7 +5,7 @@
 }
 
 .dark-mode .background {
-	background-color: var(--pure-black);
+	background-color: var(--dark-bg);
 	position: fixed;
 	width: 105vw;
 	height: 100vh;
@@ -13,6 +13,7 @@
 	left: 0;
 	overflow: hidden;
 	z-index: -50;
+	filter: blur(4px);
 }
 .dark-mode .background span {
 	width: 15vmin;
@@ -28,6 +29,7 @@
 }
 .dark-mode .background span:nth-child(0) {
 	background-image: url("../../svg/javascript-color.svg");
+	filter: blur(4px);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

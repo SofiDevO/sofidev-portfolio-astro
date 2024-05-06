@@ -1,27 +1,17 @@
----
-
----
-
-<div class="background" transition:persist>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+<div class="background" id="background">
+    <!-- Dynamically generated span elements will be added here -->
 </div>
+
+<script>
+    // Select the container where spans will be appended
+    const backgroundContainer = document.getElementById('background');
+
+    // Number of spans to be generated
+    const numSpans = 20;
+
+    // Dynamically generate spans and append them to the container
+    for (let i = 0; i < numSpans; i++) {
+        const span = document.createElement('span');
+        backgroundContainer.appendChild(span);
+    }
+</script>

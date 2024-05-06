@@ -32,7 +32,9 @@
   --fira-code: "Fira Code", monospace;
   --montserrat: "Montserrat", sans-serif;
   /* Darktheme */
+  --dark-bg:rgb(6, 6, 6);
   --pure-black: #000000;
+
   --terminal-bg-dark: rgba(18, 0, 33, 0.734);
   --icons-glow-dark: invert(1) saturate(0%) sepia(0) var(--glow-blue);
   --glow-blue: drop-shadow(0 0px 5px rgba(0, 230, 270, 2));
@@ -72,6 +74,10 @@ ul li {
   font-size: 4rem;
   font-family: var(--montserrat);
   text-align: center;
+}
+
+.max__width{
+  max-width: 1344px;
 }
 
 a {
