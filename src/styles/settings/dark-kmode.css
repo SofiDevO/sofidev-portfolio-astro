@@ -145,7 +145,7 @@
 /* SKILLS */
 .dark-mode .skills {
   justify-content: flex-start;
-  background: linear-gradient(var(--gradient));
+  background: var(--gradient);
 }
 /* Carrusel */
 .dark-mode .tools {
