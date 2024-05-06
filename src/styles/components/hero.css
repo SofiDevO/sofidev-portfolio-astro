@@ -191,8 +191,9 @@
 
 @media (min-width: 768px) {
   .hero {
-    height: 100vh;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 25rem 0;
+    min-height: 130dvh;
   }
 
   .side__img {
@@ -311,8 +312,9 @@
 
 @media (min-width: 1200px) {
   .hero {
-    height: 137vh;
     justify-content: center;
+    padding: 25rem 0;
+    min-height: 130dvh;
   }
   .hero__contenedor {
     justify-content: space-around;

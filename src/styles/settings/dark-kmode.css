@@ -104,7 +104,9 @@
 /* **************** */
 /* HERO SECTION */
 
-
+.dark-mode .hero {
+  background: rgba(0, 0, 0, 0.464);
+}
 
 .dark-mode .hero__titulo span {
   color: var(--blue);
@@ -161,7 +163,7 @@
 }
 /* SECCION ACERCA DE */
 .dark-mode .about {
-  background: black;
+  background: var(--dark-bg);
 }
 .dark-mode .titulo__dark {
   transition: 3s ease-in-out;
@@ -269,7 +271,7 @@
   }
 }
 .dark-mode .footer {
-  background-color: #040404;
+  background-color: rgb(6, 6, 6);
 }
 @media (min-width: 768px) {
   .dark-mode .header {
@@ -282,11 +284,5 @@
     box-shadow: unset;
     border: none;
     color: transparent;
-  }
-  .dark-mode .hero {
-    background-color: var(--pure-black);
-    background: rgba(0, 0, 0, 0.464);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
   }
 }
