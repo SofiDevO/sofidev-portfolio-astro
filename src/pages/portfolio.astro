@@ -5,19 +5,17 @@
 import BaseHead from "../components/BaseHead.astro";
 import ToogleDarkBtn from "../ToggleDarkBtn.astro";
 import Footer from "../components/Footer.astro";
-import DarkBg from "../components/DarkBg.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.js";
 import BtnToTop from "../components/BtnToTop.astro";
 import "../styles/pages/portfolio.css";
 import NavLinks from "../components/NavLinks.astro";
-import { skillIcons } from "../data/portfolioData";
+import { skillIcons } from "../data/portfolioData.js";
 import { portfolio } from "../data/MenuData";
-const pagePathname = Astro.url.pathname;
 ---
 
 <script>
   // Importing necessary data
-  import { portafolioData, skillIcons } from "../data/portfolioData";
+  import { portafolioData, skillIcons } from "../data/portfolioData.js";
 
   // Variable to track if any skill button has been clicked
   let clicked = false;
@@ -215,14 +213,15 @@ const pagePathname = Astro.url.pathname;
       </section>
     </main>
     <!-- Dark background, footer, and styles -->
-    <DarkBg />
     <Footer />
     <style>
       .portfolio__padre {
         width: 100%;
         padding: 16rem 1rem 10rem;
-        backdrop-filter: blur(6px);
         min-height: 85dvh;
+      }
+      .dark-mode .portfolio__padre {
+        background: var(--gradient);
       }
       .buttons__container {
         display: flex;
@@ -251,9 +250,9 @@ const pagePathname = Astro.url.pathname;
         background-color: var(--dark-purple);
         border: 1px solid var(--green-terminal);
         cursor: pointer;
-        transition: transform .3s ease-out;
+        transition: transform 0.3s ease-out;
       }
-      .skill-button:hover{
+      .skill-button:hover {
         transform: scale(1.1);
       }
       .cards__container {

@@ -1,0 +1,59 @@
+.wraper__tools {
+  position: relative;
+  height: 21vh;
+
+}
+
+.custom-shape-divider-top-1699780157 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1699780157 svg {
+  position: relative;
+  display: block;
+  width: calc(131% + 1.3px);
+  height: 147px;
+}
+/* color de fondo segun la prop */
+
+.custom-shape-divider-top-1699780157 .fill__purple {
+  fill: var(--purple-bg);
+}
+.custom-shape-divider-top-1699780157 .fill__black {
+  fill: var(--pure-black);
+}
+.custom-shape-divider-top-1699780157 .fill__white {
+  fill: var(--seccond-color);
+}
+
+/* color de fondo DARK-MODE */
+
+.dark-mode .custom-shape-divider-top-1699780157 .dark__primary {
+  fill: var(--dark-bg)
+}
+.dark-mode .custom-shape-divider-top-1699780157 .dark__black {
+  fill: var(--pure-black)
+}
+.dark-mode .custom-shape-divider-top-1699780157 .purple__dark {
+  fill: #2c0069;
+}
+
+/* Color del divider contenedor */
+.dark-mode .wraper__tools.black {
+  background: black;
+}
+.dark-mode .wraper__tools.dark__background {
+  background: var(--dark-bg);
+}
+.wraper__tools .primary{
+  color: currentColor;
+}
+ .secundary{
+  background-color: var(--purple-bg);
+}

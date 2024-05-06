@@ -21,7 +21,7 @@
     inset 2px 0px 1px 0px rgba(214, 232, 255, 0.214),
     inset 0px 11px 28px 0px rgb(255, 255, 255);
 
-  --gradient: 181deg, #000000 35%, #2e006e 100%;
+  --gradient: linear-gradient(181deg, #000000 35%, #2e006e 100%);
   --gradient-transparent: 181deg, #2e006e 50%, #000000c5 100%;
 
   --green-terminal: rgb(0, 255, 102);

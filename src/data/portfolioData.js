@@ -1,4 +1,4 @@
-export const portafolioData = [
+ const portafolioData = [
   {
     imgSrc: "../img/portfolio_img/aluraFlix.webp",
     titulo: "Alura Flix",
@@ -67,7 +67,7 @@ export const portafolioData = [
   },
 ];
 
-export const skillIcons = {
+ const skillIcons = {
   JavaScript: "skill-icons:javascript",
   React: "skill-icons:react-dark",
   Astro: "skill-icons:astro",
@@ -77,3 +77,5 @@ export const skillIcons = {
   Bootstrap: "devicon:bootstrap",
   /*  Tailwind: "skill-icons:tailwindcss-dark", */
 };
+
+export  {portafolioData,skillIcons}

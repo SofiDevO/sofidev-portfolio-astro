@@ -12,8 +12,8 @@ import CardTerminal from "../layouts/CardTerminal.astro";
 import ContactSocialIcons from "../components/ContactSocialIcons.astro";
 import VsCodeTheme from "../components/VsCodeTheme.astro"
 import Divider4 from "../components/atoms/Dividers/Divider4.astro";
-import Divider3 from "../components/atoms/Dividers/Divider3.astro";
 import { about } from "../data/MenuData";
+import DividerTop from "../components/atoms/Dividers/DividerTop.astro";
 const { title, description } = Astro.props;
 
 
@@ -74,7 +74,7 @@ const { title, description } = Astro.props;
       </section>
       <Divider4/>
       <VsCodeTheme/>
-      <Divider3 clase="fill__black"/>
+      <DividerTop colorLight="fill__black" colorDark="dark__black" dividerBg="black" dividerBgDark="" />
       <section class="about__page" id="ytChannel">
         <YoutubeLastvid />
       </section>

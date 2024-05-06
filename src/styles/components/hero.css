@@ -8,7 +8,7 @@
   transition: 0.9s ease;
   display: flex;
   min-height: 100dvh;
-  background: linear-gradient(var(--gradient));
+  background: var(--gradient);;
   flex-direction: column;
   justify-content: center;
   height: auto;

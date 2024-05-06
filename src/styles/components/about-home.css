@@ -213,7 +213,7 @@
 
 @media (min-width: 1200px) {
 	.about {
-		min-height: 660px;
+		min-height: 100dvh;
 	}
 	.about__container {
 		display: flex;

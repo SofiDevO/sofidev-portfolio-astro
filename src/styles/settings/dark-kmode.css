@@ -149,10 +149,10 @@
 }
 /* Carrusel */
 .dark-mode .tools {
-  background-color: black;
+  background-color: var(--dark-bg);
 }
 .dark-mode .tools__caja__slider {
-  background-color: var(--pure-black);
+  background-color: var(--dark-bg);
 }
 /* icono terminal */
 .dark-mode .terminal {
@@ -240,8 +240,6 @@
 /* Portafolio */
 .dark-mode .portafolio {
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
 }
 .dark-mode .caja__dark__portafolio {
   background: rgba(0, 0, 0, 0.23);
