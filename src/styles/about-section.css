@@ -9,6 +9,10 @@
   padding: 14rem 1rem 4rem;
   backdrop-filter: blur(7px);
 }
+.dark-mode .about__page {
+  background: var(--dark-bg);
+  backdrop-filter: blur(2px);
+}
 .dark-mode .about__intro{
   background: rgba(0, 0, 0, 0.301);
 }

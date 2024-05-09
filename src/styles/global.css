@@ -62,6 +62,10 @@ body {
   line-height: 1.7;
   background-color: var(--seccond-color);
 }
+.dark-mode body {
+  background: var(--dark-bg);
+  z-index: 10;
+}
 
 ol li {
   list-style: decimal;
@@ -93,6 +97,33 @@ h4 {
 }
 .prose p {
   font-size: 1.7rem;
+}
+
+.dark-mode {
+  .blockquote-with-attribution h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 th,
+  p,
+  strong,
+  em,
+  li {
+    color: var(--seccond-color);
+  }
+}
+.dark-mode a {
+  color: var(--green-terminal);
+}
+.dark-mode code span {
+  background-color: #24292e;
+}
+.dark-mode code {
+  background-color: var(--main-color);
+}
+.dark-mode mark {
+  background-color: var(--blue);
 }
 
 .dark-mode .prose {

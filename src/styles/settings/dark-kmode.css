@@ -1,42 +1,9 @@
-.dark-mode body {
-  background: var(--dark-bg);
-  z-index: 10;
-}
-.dark-mode .about__page {
-  background: var(--dark-bg);
-  backdrop-filter: blur(2px);
-}
-.dark-mode {
-  .blockquote-with-attribution h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 th,
-  p,
-  strong,
-  em,
-  li {
-    color: var(--seccond-color);
-  }
-}
-.dark-mode a {
-  color: var(--green-terminal);
-}
-.dark-mode code span {
-  background-color: #24292e;
-}
-.dark-mode code {
-  background-color: var(--main-color);
-}
-.dark-mode mark {
-  background-color: var(--blue);
-}
 /* elemntos del header */
 .dark-mode .header {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 .dark-mode .logo__dark {
   transition:  filter 2s ease-in-out;
   filter: drop-shadow(0 0 11px rgba(0, 212, 255, 1));
@@ -266,21 +233,5 @@
 
     text-shadow: none;
     filter: none;
-  }
-}
-.dark-mode .footer {
-  background-color: rgb(6, 6, 6);
-}
-@media (min-width: 768px) {
-  .dark-mode .header {
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
-
-  .dark-mode .panel__styles {
-    background: transparent;
-    box-shadow: unset;
-    border: none;
-    color: transparent;
   }
 }

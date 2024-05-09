@@ -78,3 +78,7 @@
     background-color: black;
   }
 }
+
+.dark-mode .footer {
+  background-color: rgb(6, 6, 6);
+}
