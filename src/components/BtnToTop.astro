@@ -5,14 +5,14 @@
 <script>
   /* Boton "To top" */
   const d = document;
-  const cajaToTop = d.querySelector(".to__top");
+  const cajaToTop = d.querySelector(".to__top") as HTMLElement;
 
   /* Dar click en en la caja del btn "toTop*/
   cajaToTop.addEventListener("click", () => {
     window.location.href = "#";
   });
 
-  const toTop = d.querySelector(".to__top");
+  const toTop = d.querySelector(".to__top") as HTMLElement;
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 500) {
       toTop.classList.add("active");

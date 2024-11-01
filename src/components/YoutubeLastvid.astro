@@ -1,10 +1,10 @@
 ---
 import "../styles/youtube-last-vid.css";
-import CardTerminal from "../layouts/CardTerminal.astro";
+import CardTerminal from "@layouts/CardTerminal.astro";
 ---
 
 <script>
-   const loader = document.querySelector(".heart__loader");
+   const loader = document.querySelector(".heart__loader") as HTMLElement;
   loader.style.display = "block";
   const loadVideo = async (iframe) => {
       const cid = "UC36_js-krsAHAEAWpEDhHtw"; //this is the user ID from your Youtube channel URL
@@ -73,7 +73,7 @@ import CardTerminal from "../layouts/CardTerminal.astro";
       <img class="heart__loader" src="../svg/loaders/hearts.svg" alt="loader">
       <iframe
         class="latestVideoEmbed"
-        vnum="0"
+        vnum?="0"
         width="600"
         height="340"
         frameborder="0"

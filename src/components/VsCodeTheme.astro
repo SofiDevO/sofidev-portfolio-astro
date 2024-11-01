@@ -4,8 +4,8 @@ import "../styles/components/VsCodeTheme.css"
 
 <script>
   import { themeData } from "../data/VsCodeThemeData.js";
-  const themePanel = document.querySelector(".code__container");
-  const iconContainer = document.querySelector(".caja_icon");
+  const themePanel = document.querySelector(".code__container") as HTMLElement;
+  const iconContainer = document.querySelector(".caja_icon") as HTMLElement;
   const iconBtn = themeData
     .map(
       (iconData) => `
@@ -21,7 +21,7 @@ import "../styles/components/VsCodeTheme.css"
   // Al hacer clic en el icono
   const iconsClicked = document.querySelectorAll(".icon__container");
 
-  iconsClicked.forEach((icon) => {
+  iconsClicked.forEach((icon: HTMLElement) => {
     icon.addEventListener("click", () => {
       const language = icon.dataset.language;
       renderView(language);

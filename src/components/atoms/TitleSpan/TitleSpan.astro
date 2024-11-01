@@ -1,0 +1,28 @@
+---
+
+---
+
+<h2
+  data-aos="fade-up"
+  class=`about__titulo ${Astro.props.classColor}`
+  id="aboutDeTitulo"
+>
+  {Astro.props.text1}
+  <span data-aos="fade-left" class="span__dark" id="span-titulo2">
+    {Astro.props.span}
+  </span>
+  {Astro.props.text2}
+</h2>
+
+<style>
+  .about__titulo span {
+    color: #01f2ff;
+    filter: drop-shadow(0px 0px 4px rgb(0, 0, 0));
+    text-shadow: -2px 3px 5px black;
+  }
+
+  .about__titulo span:hover {
+    color: var(--blue);
+    filter: drop-shadow(-1px 1px 3px var(--pure-black));
+  }
+</style>

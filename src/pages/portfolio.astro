@@ -23,7 +23,7 @@ import { portfolio } from "../data/MenuData";
   // Selecting DOM elements
   const buttons = document.querySelectorAll("[data-skill]");
   const cardsContainer = document.querySelector(".cards__container");
-  const allButton = document.querySelector("[data-All]");
+  const allButton = document.querySelector("[data-All]") as HTMLElement;
 
   // Function to render all portfolio cards
   function renderAllCards() {

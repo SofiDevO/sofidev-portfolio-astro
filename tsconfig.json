@@ -3,6 +3,20 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsxImportSource": "solid-js",
+    "baseUrl": ".",
+	  "paths": {
+		"@src/*": ["src/*"],
+		"@components/*": ["src/components/*"],
+		"@atoms/*": ["src/components/atoms/*"],
+		"@molecules/*": ["src/components/molecules/*"],
+		"@organisms/*": ["src/components/organisms/*"],
+		"@layouts/*": ["src/layouts/*"],
+		"@pages/*": ["src/pages/*"],
+		"@controllers/*": ["src/controllers/*"],
+		"@data/*": ["src/data/*"],
+		"@styles/*": ["src/styles/*"],
+		"@img/*": ["public/img/*"]
+	  },
   }
 }

@@ -10,10 +10,27 @@
   margin: 14px 0 0;
 }
 .tools__caja__slider {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1300px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   justify-content: center;
+}
+.tools__caja__slider::after {
+  right: 274px;
+  top: 111px;
+  transform: rotateZ(-180deg);
+}
+
+.tools__caja__slider::before, .tools__caja__slider::after {
+  background: linear-gradient(to right, rgb(25, 0, 60) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 200px;
+  position: absolute;
+  width: 99px;
+  z-index: 2;
 }
 
 .slider:has(.tools__grupo:hover ){

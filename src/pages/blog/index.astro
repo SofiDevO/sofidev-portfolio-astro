@@ -52,10 +52,11 @@ const posts = (await getCollection("blog")).sort(
     <Footer />
 
   </body>
-  <style>
+  <style is:global>
     main {
       padding-top: 1rem;
       width: 100%;
+      margin: 0 auto;
     }
     .blog__hero {
       display: flex;

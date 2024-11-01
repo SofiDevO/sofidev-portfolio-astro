@@ -3,11 +3,13 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import react from "@astrojs/react";
 
-
-
+import purgecss from "astro-purgecss";
 
 // https://astro.build/config
 export default defineConfig({
+    build: {
+        inlineStylesheets: 'never'
+      },
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
@@ -19,10 +21,15 @@ export default defineConfig({
       // https://shiki.style/languages
       langs: [],
       // Enable word wrap to prevent horizontal scrolling
-      wrap: true,
-    },
+      wrap: true
+    }
   },
   renderers: ['@astrojs/renderer-react'],
   site: 'https://itssofi.dev/',
-  integrations: [mdx(), sitemap(), react()]
+  integrations: [mdx(), sitemap(), react(), purgecss({
+    keyframes: false,
+    safelist :{
+      greedy: [/*astro*/]
+    }
+  })]
 });

@@ -113,16 +113,7 @@
 	justify-content: center;
 	font-family: var(--montserrat);
 }
-.about__titulo span {
-	color: #01f2ff;
-    filter: drop-shadow(0px 0px 4px rgb(0,0,0));
-    text-shadow: -2px 3px 5px black;
-}
 
-.about__titulo span:hover {
-	color: var(--blue);
-	filter: drop-shadow(-1px 1px 3px var(--pure-black));
-}
 
 .about__caja {
 	display: flex;

@@ -31,13 +31,17 @@
   align-items: center;
   cursor: pointer;
   display: block;
-  filter: invert(0%) sepia(80%) saturate(300%) hue-rotate(110deg)
-    brightness(91%) contrast(101%) drop-shadow(0 0 12px rgba(0, 212, 255, 1));
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(110deg)
+    brightness(100%) contrast(200%) drop-shadow(0 0 12px rgba(0, 212, 255, 1));
   transition: 0.2s ease-in-out;
+}
+
+.dark-mode .icon-1 >iconify-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(10deg)
 }
 .dark-mode .bi-lightning-charge-fill {
   font-size: 2.8rem;
-  filter: invert(0%) sepia(80%) saturate(300%) hue-rotate(110deg)
+  filter: invert(0%) sepia(80%) saturate(0%) hue-rotate(110deg)
     brightness(91%) contrast(101%) drop-shadow(0 0 12px rgba(0, 212, 255, 1));
   color: white;
   cursor: pointer;
@@ -96,13 +100,13 @@
   transition: 3s ease-in-out;
 }
 /* Hero Icons */
-.dark-mode .icon-1 .social__icon,
+/* .dark-mode .icon-1 .social__icon,
 .dark-mode .icon-2 .social__icon,
 .dark-mode .icon-3 .social__icon,
 .dark-mode .icon-4 .social__icon,
 .dark-mode .icon-5 .social__icon{
   animation: none;
-}
+} */
 
 .dark-mode .icono__dark {
  filter: invert(600%) sepia(100) saturate(0%) drop-shadow(0 0 10px #5cb5ac)

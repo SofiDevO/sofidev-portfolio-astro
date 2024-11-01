@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
-import BarraTerminal from "./BarraTerminal.astro";
 import CardTerminal from "../layouts/CardTerminal.astro";
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
