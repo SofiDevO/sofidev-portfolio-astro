@@ -1,12 +1,12 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
+import BaseHead from "@components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import ToggleDarkBtn from "../ToggleDarkBtn.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import BtnToTop from "../components/BtnToTop.astro";
-import "../styles/pages/blog.css";
-import NavLinks from "../components/NavLinks.astro";
+import "@styles/pages/blog.css";
+import NavLinks from "@components/NavLinks.astro";
 type Props = CollectionEntry<"blog">["data"];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 import { blog}from "../data/MenuData";
