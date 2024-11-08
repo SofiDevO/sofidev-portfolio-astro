@@ -1,5 +1,5 @@
-import "../styles/components/Skills.css";
-import { cardsData } from "../data/skillsMastered";
+import "./Skills.css";
+import { cardsData } from "../../../data/skillsMastered";
 
 const CardSkill = () => {
   return (

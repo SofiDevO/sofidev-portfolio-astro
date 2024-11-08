@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig ,envField } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import react from "@astrojs/react";
@@ -26,5 +26,16 @@ export default defineConfig({
   },
   renderers: ['@astrojs/renderer-react'],
   site: 'https://itssofi.dev/',
-  integrations: [mdx(), sitemap(), react(),]
+  integrations: [mdx(), sitemap(), react(),],
+  experimental: {
+    env: {
+      schema: {
+        YT_API_KEY: envField.string({
+          context: "client",
+          access: "public",
+          optional: false,
+        }),
+      },
+    },
+  },
 });

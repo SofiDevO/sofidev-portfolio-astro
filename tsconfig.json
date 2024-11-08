@@ -14,8 +14,10 @@
 		"@layouts/*": ["src/layouts/*"],
 		"@pages/*": ["src/pages/*"],
 		"@controllers/*": ["src/controllers/*"],
+		"@services/*": ["src/services/*"],
 		"@data/*": ["src/data/*"],
 		"@styles/*": ["src/styles/*"],
+		"@animations/*": ["src/styles/animations/*"],
 		"@img/*": ["public/img/*"]
 	  },
   }
