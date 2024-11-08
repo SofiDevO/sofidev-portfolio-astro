@@ -2,7 +2,7 @@
 title: "Explorando Arrays y Objetos en JavaScript"
 description: "Aprenderemos sobre arrays y objetos  en Javascript así como su implementación"
 pubDate: "Jan 29 2024"
-heroImage: "../img/img_blog/arrays.webp"
+heroImage: "/img/img_blog/arrays.webp"
 ---
 **Explorando Arrays y Objetos en JavaScript: Desglose Práctico y Métodos de Recorrido y Modificación**
 

@@ -4,7 +4,7 @@
 
 <script >
 	const d = document;
-	const btnDarkMode = d.querySelector("[data-toogle]");
+	const btnDarkMode = d.querySelector("[data-toogle]") as HTMLElement;
 
 	function shortCircuit(set_in_milisec) {
 		let audio = new Audio();
@@ -37,7 +37,7 @@
 
 	/* Switch Themes */
 	let darkModeState = false;
-	const toogleDarkMode = d.querySelector("[data-toogle]");
+	const toogleDarkMode = d.querySelector("[data-toogle]") as HTMLElement;
 
 	// MediaQueryList object
 	const useDark = window.matchMedia("(prefers-color-scheme: dark)");

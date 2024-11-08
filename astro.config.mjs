@@ -26,10 +26,5 @@ export default defineConfig({
   },
   renderers: ['@astrojs/renderer-react'],
   site: 'https://itssofi.dev/',
-  integrations: [mdx(), sitemap(), react(), purgecss({
-    keyframes: false,
-    safelist :{
-      greedy: [/*astro*/]
-    }
-  })]
+  integrations: [mdx(), sitemap(), react(),]
 });

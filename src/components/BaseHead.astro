@@ -1,12 +1,12 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import "../styles/global.css";
+import "@styles/global.css";
 import "@atoms/Button/button.css";
-import "../styles/settings/dark-mode-bg.css";
-import "../styles/settings/dark-kmode.css";
-import "../styles/settings/short-circuit.css";
-import "../styles/Dividers/divider-1.css";
+import "@styles/settings/dark-mode-bg.css";
+import "@styles/settings/dark-kmode.css";
+import "@styles/settings/short-circuit.css";
+import "@styles/Dividers/divider-1.css";
 
 
 interface Props {
@@ -17,13 +17,13 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "../img/sofi.png" } = Astro.props;
+const { title, description, image = "/img/sofi.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/../../img/avatar_purple.webp" />
+<link rel="icon" type="image/svg+xml" href="/img/avatar_purple.webp" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
